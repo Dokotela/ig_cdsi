@@ -65,7 +65,8 @@ Future<void> createSupportingData(
         'final scheduleSupportingData = '
         'ScheduleSupportingData.fromJson(${jsonEncoder.convert(scheduleSupportingData)});';
 
-    await File('lib/generated_files/schedule_supporting_data.dart')
+    await File(
+            'pythia_generator/lib/generated_files/schedule_supporting_data.dart')
         .writeAsString(dataString);
   }
 
@@ -110,12 +111,14 @@ Future<void> createSupportingData(
     listString += '$diseaseName,\n';
     mapString += "'${antigenSupportingData.targetDisease}': $diseaseName,\n";
 
-    await File('lib/generated_files/$fileName.dart').writeAsString(dataString);
-    await File('lib/generated_files/$fileName.json')
+    await File('pythia_generator/lib/generated_files/$fileName.dart')
+        .writeAsString(dataString);
+    await File('pythia_generator/lib/generated_files/$fileName.json')
         .writeAsString(jsonEncoder.convert(antigenSupportingData));
   }
 
-  await File('lib/generated_files/antigen_supporting_data.dart')
+  await File(
+          'pythia_generator/lib/generated_files/antigen_supporting_data.dart')
       .writeAsString('$importString\n$listString];\n\n$mapString};');
 
   for (final string in testCasesStrings as List<TestCasesStrings>) {

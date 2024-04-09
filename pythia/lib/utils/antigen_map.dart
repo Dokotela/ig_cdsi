@@ -1,12 +1,8 @@
 import '../pythia.dart';
 
-Map<String, VaxAntigen> antigenMap(
-  List<VaxDose> doses,
-  Gender gender,
-  VaxObservations observations,
-  VaxDate dob,
-  VaxDate assessmentDate,
-) {
+Map<String, VaxAntigen> antigenMap(VaxPatient patient) {
+  VaxObservations observations = patient.observations;
+
   final agMap = <String, VaxAntigen>{};
   for (final data in antigenSupportingData) {
     if (data.series != null &&
@@ -23,16 +19,13 @@ Map<String, VaxAntigen> antigenMap(
           observations.codesAsInt?.contains(element.codeAsInt) ?? false);
       agMap[data.series!.first.targetDisease!] = VaxAntigen.fromSeries(
         series: data.series!,
-        gender: gender,
-        observations: observations,
-        dob: dob,
-        assessmentDate: assessmentDate,
         groupContraindications: groupContraindications,
         vaccineContraindications: vaccineContraindications,
+        patient: patient,
       );
     }
   }
-  for (final dose in doses) {
+  for (final dose in patient.pastDoses) {
     for (final ag in dose.antigens) {
       if (agMap.keys.contains(ag)) {
         dose.targetDisease = ag;

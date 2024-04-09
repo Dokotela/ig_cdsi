@@ -43,11 +43,15 @@ publisher:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-pages:
-  index.md:
-    title: CDSI IG Home
-  preparation.md:
-    title: Preparation
+# pages:
+#   index.md:
+#     title: CDSI IG Home
+#     preparation.md:
+#       title: Preparation
+    # decision-support-wg.md:
+    #   title: Decision Support WG
+    # logical.md:
+    #   title: Logical
   
 #   implementation.xml:
 #   examples.xml:

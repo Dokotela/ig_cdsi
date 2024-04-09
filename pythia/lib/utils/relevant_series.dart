@@ -1,17 +1,14 @@
 import '../pythia.dart';
 
 List<Series> relevantSeries(
-  Gender gender,
+  VaxPatient patient,
   List<Series> oldSeries,
-  VaxObservations patientObservations,
-  VaxDate dob,
-  VaxDate assessmentDate,
 ) {
   final series = oldSeries.toList();
   series.retainWhere((element) =>
       element.requiredGender == null ||
       element.requiredGender!.isEmpty ||
-      element.requiredGender!.contains(gender));
+      element.requiredGender!.contains(patient.gender));
 
   /// Keep each series where....
   series.retainWhere((series) {
@@ -48,15 +45,15 @@ List<Series> relevantSeries(
         /// one of the indications for this series
         else {
           final obsIndex = indicationList.indexWhere((obsCode) {
-            final indicationIndex = patientObservations.codeIndex(obsCode);
+            final indicationIndex = patient.observations.codeIndex(obsCode);
             if (indicationIndex == -1) {
               return false;
             } else {
-              return dob.changeIfNotNullElseMin(
+              return patient.birthdate.changeIfNotNullElseMin(
                           series.indication![indicationIndex].beginAge) <=
-                      assessmentDate &&
-                  assessmentDate <
-                      dob.changeIfNotNullElseMax(
+                      patient.assessmentDate &&
+                  patient.assessmentDate <
+                      patient.birthdate.changeIfNotNullElseMax(
                           series.indication![indicationIndex].endAge);
             }
           });

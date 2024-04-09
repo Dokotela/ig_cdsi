@@ -80,6 +80,65 @@ class VaxDose {
     );
   }
 
+  VaxDose copyWith({
+    String? doseId,
+    double? volume,
+    VaxDate? dateGiven,
+    String? cvx,
+    String? mvx,
+    List<String>? antigens,
+    VaxDate? dob,
+    String? targetDisease,
+    int? index,
+    bool? inadvertent,
+    bool? validAge,
+    String? validAgeReason,
+    bool? preferredInterval,
+    String? preferredIntervalReason,
+    bool? allowedInterval,
+    String? allowedIntervalReason,
+    bool? conflict,
+    String? conflictReason,
+    bool? preferredVaccine,
+    String? preferredVaccineReason,
+    bool? allowedVaccine,
+    String? allowedVaccineReason,
+    EvalStatus? evalStatus,
+    String? evalReason,
+  }) {
+    return VaxDose(
+      doseId: doseId ?? this.doseId,
+      volume: volume ?? this.volume,
+      dateGiven: dateGiven ?? this.dateGiven,
+      cvx: cvx ?? this.cvx,
+      mvx: mvx ?? this.mvx,
+      antigens: antigens ?? this.antigens,
+      dob: dob ?? this.dob,
+      targetDisease: targetDisease ?? this.targetDisease,
+      evalStatus: evalStatus ?? this.evalStatus,
+      evalReason: evalReason ?? this.evalReason,
+    )
+      ..allowedInterval = allowedInterval ?? this.allowedInterval
+      ..allowedIntervalReason =
+          allowedIntervalReason ?? this.allowedIntervalReason
+      ..allowedVaccine = allowedVaccine ?? this.allowedVaccine
+      ..allowedVaccineReason = allowedVaccineReason ?? this.allowedVaccineReason
+      ..conflict = conflict ?? this.conflict
+      ..conflictReason = conflictReason ?? this.conflictReason
+      ..inadvertent = inadvertent ?? this.inadvertent
+      ..index = index ?? this.index
+      ..preferredInterval = preferredInterval ?? this.preferredInterval
+      ..preferredIntervalReason =
+          preferredIntervalReason ?? this.preferredIntervalReason
+      ..preferredVaccine = preferredVaccine ?? this.preferredVaccine
+      ..preferredVaccineReason =
+          preferredVaccineReason ?? this.preferredVaccineReason
+      ..validAge = validAge ?? this.validAge
+      ..validAgeReason = validAgeReason ?? this.validAgeReason
+      ..evalStatus = evalStatus ?? this.evalStatus
+      ..evalReason = evalReason ?? this.evalReason;
+  }
+
   int get cvxAsInt => int.parse(cvx);
 
   bool notInadvertent(SeriesDose seriesDose) {
@@ -437,7 +496,8 @@ class VaxDose {
       return false;
     } else {
       final preferredList = vaccines.toList();
-      preferredList.retainWhere((element) => element.cvxAsInt == cvx);
+      preferredList
+          .retainWhere((element) => element.cvxAsInt == int.tryParse(cvx));
       if (preferredList.isEmpty) {
         preferredVaccine = false;
         preferredVaccineReason = 'Not preferred type';
@@ -498,7 +558,8 @@ class VaxDose {
       return false;
     } else {
       final allowedList = vaccines.toList();
-      allowedList.retainWhere((element) => element.cvxAsInt == cvx);
+      allowedList
+          .retainWhere((element) => element.cvxAsInt == int.tryParse(cvx));
       if (allowedList.isEmpty) {
         allowedVaccine = false;
         allowedVaccineReason = 'Not allowed type';
@@ -525,6 +586,22 @@ class VaxDose {
       }
     }
   }
+
+  String get validity => 'inadvertent $inadvertent\n'
+      'validAge $validAge\n'
+      'validAgeReason $validAgeReason\n'
+      'preferredInterval $preferredInterval\n'
+      'preferredIntervalReason $preferredIntervalReason\n'
+      'allowedInterval $allowedInterval\n'
+      'allowedIntervalReason $allowedIntervalReason\n'
+      'conflict $conflict\n'
+      'conflictReason $conflictReason\n'
+      'preferredVaccine $preferredVaccine\n'
+      'preferredVaccineReason $preferredVaccineReason\n'
+      'allowedVaccine $allowedVaccine\n'
+      'allowedVaccineReason $allowedVaccineReason\n'
+      'evalStatus $evalStatus\n'
+      'evalReason $evalReason';
 
   final String doseId;
   final double? volume;

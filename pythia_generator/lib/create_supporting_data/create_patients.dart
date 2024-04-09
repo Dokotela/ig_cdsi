@@ -152,10 +152,11 @@ Future<void> createPatients(
     writeString += '${jsonEncode(element.toJson())}\n';
   });
   if (string.isHealthy ?? false) {
-    await File('lib/generated_files/healthyTestCases.ndjson')
+    await File('pythia_generator/lib/generated_files/healthyTestCases.ndjson')
         .writeAsString(writeString);
   } else {
-    await File('lib/generated_files/underlyingConditionTestCases.ndjson')
+    await File(
+            'pythia_generator/lib/generated_files/underlyingConditionTestCases.ndjson')
         .writeAsString(writeString);
   }
 }

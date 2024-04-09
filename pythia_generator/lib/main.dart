@@ -11,15 +11,16 @@ Future<void> main() async {
   await createSupportingData(supportingStringsList);
 
   /// Edit this out if testing generating files, this writes files to the actual program
-  final dir = Directory('lib/generated_files');
+  final dir = Directory('pythia_generator/lib/generated_files');
   final fileList = await dir.list().map((event) => event.path).toList();
   for (var file in fileList) {
     if (file.endsWith('.dart')) {
       final newFile = await File(file).readAsString();
-      if (!(await File('../pythia/$file').exists())) {
-        await File('../pythia/$file').create();
+      final fileName = file.replaceAll('pythia_generator', 'pythia');
+      if (!(await File(fileName).exists())) {
+        await File(fileName).create();
       }
-      await File('../pythia/$file').writeAsString(newFile);
+      await File(fileName).writeAsString(newFile);
     }
   }
 }

@@ -47,7 +47,17 @@
       "page": [
         {
           "nameUrl": "index.html",
-          "title": "CDSI IG Home",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "decision-support-wg.html",
+          "title": "Decision Support Wg",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "logical-specification-concepts.html",
+          "title": "Logical Specification Concepts",
           "generation": "markdown"
         },
         {

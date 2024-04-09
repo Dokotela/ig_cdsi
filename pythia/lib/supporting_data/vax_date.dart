@@ -148,6 +148,7 @@ class VaxDate extends DateTime {
       changeIfNotNullElse(howMuch, VaxDate.min());
 
   VaxDate _parseDateString(String change) {
+    print('$this $change');
     var years = 0, months = 0, weeks = 0, days = 0, posNeg = 1;
     var time = change.split(' ');
     for (var i = 0; i < time.length; i++) {
@@ -174,20 +175,29 @@ class VaxDate extends DateTime {
     return _calculateTime(years, months, 7 * weeks + days);
   }
 
+  /// We add the years and months to the current date, and by adding 1 to the
+  /// month and then 0 to the day, we get the last day of the month. If that's
+  /// less than the current day, then that's the month, and we set the day
+  /// to 1.
+  ///
+  /// January 31 + 1 month
+  /// February 28/29th (depending on the year) is the last day of the month
+  /// Because that's less than 31, we set the day to 1, and the Month
+  /// to March
+  ///
   VaxDate _calculateTime(int years, int months, int days) {
-    // var newDate = DateTime(year + years, month + months, 1);
-    // if (DateUtils.lastDayOfMonth(newDate).day < day) {
-    //   newDate = DateTime(newDate.year, newDate.month + 1, 1);
-    // } else {
-    //   newDate = DateTime(newDate.year, newDate.month, day);
-    // }
-    // return VaxDate(newDate.year, newDate.month, newDate.day + days);
-    return VaxDate(1, 1, 1);
+    var newDate = DateTime(year + years, month + months + 1, 0);
+    if (newDate.day < day) {
+      newDate = DateTime(newDate.year, newDate.month, 1);
+    } else {
+      newDate = DateTime(newDate.year, newDate.month - 1, day);
+    }
+    return VaxDate(newDate.year, newDate.month, newDate.day + days);
   }
 }
 
 VaxDate latestOf(List<VaxDate> dates) {
-  var latest;
+  VaxDate? latest = null;
   for (final date in dates) {
     latest == null
         ? date
@@ -195,7 +205,7 @@ VaxDate latestOf(List<VaxDate> dates) {
             ? latest
             : date;
   }
-  return latest;
+  return latest!;
 }
 
 VaxDate earliestOf(List<VaxDate> dates) {

@@ -15,16 +15,12 @@ class VaxAntigen {
 
   factory VaxAntigen.fromSeries({
     required List<Series> series,
-    required Gender gender,
-    required VaxObservations observations,
-    required VaxDate dob,
-    required VaxDate assessmentDate,
     required List<GroupContraindication> groupContraindications,
     required List<VaccineContraindication> vaccineContraindications,
+    required VaxPatient patient,
   }) {
     final Map<String, VaxGroup> groups = <String, VaxGroup>{};
-    relevantSeries(gender, series, observations, dob, assessmentDate)
-        .forEach((element) {
+    relevantSeries(patient, series).forEach((element) {
       final nextGroup = element.selectSeries?.seriesGroup ?? 'none';
       if (!groups.keys.contains(nextGroup)) {
         groups[nextGroup] = VaxGroup(
@@ -33,8 +29,8 @@ class VaxAntigen {
           vaccineGroupName:
               series.first.vaccineGroup ?? series.first.targetDisease!,
           series: [],
-          assessmentDate: assessmentDate,
-          dob: dob,
+          assessmentDate: patient.assessmentDate,
+          dob: patient.birthdate,
         );
       }
       groups[nextGroup]!.newSeries(element);
@@ -45,10 +41,10 @@ class VaxAntigen {
       vaccineGroupName:
           series.first.vaccineGroup ?? series.first.targetDisease!,
       groups: groups,
-      dob: dob,
+      dob: patient.birthdate,
       groupContraindications: groupContraindications,
       vaccineContraindications: vaccineContraindications,
-      assessmentDate: assessmentDate,
+      assessmentDate: patient.assessmentDate,
     );
   }
 

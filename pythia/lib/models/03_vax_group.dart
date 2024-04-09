@@ -20,7 +20,7 @@ class VaxGroup {
       );
 
   void newDose(VaxDose dose) =>
-      series.forEach((element) => element.doses.add(dose));
+      series.forEach((element) => element.doses.add(dose.copyWith()));
 
   void evaluate() {
     series.forEach((element) => element.evaluate());

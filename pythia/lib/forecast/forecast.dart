@@ -11,21 +11,17 @@ Bundle forecastFromMap(Map<String, dynamic> parameters) {
 }
 
 Bundle forecastFromParameters(Parameters parameters) {
-  final container = ProviderContainer();
+  final ProviderContainer container = ProviderContainer();
 
   /// Parse out and organize all of the information from input parameters
-  final patient = container.read(patientForAssessmentProvider(parameters));
+  final VaxPatient patient =
+      container.read(patientForAssessmentProvider(parameters));
 
   container.read(observationsProvider.notifier).setValue(patient.observations);
 
   /// Create an agMap that we can work from to evaluate past vaccines
-  final agMap = antigenMap(
-    patient.pastDoses,
-    patient.gender,
-    patient.observations,
-    patient.birthdate,
-    patient.assessmentDate,
-  );
+  /// we pass in a list of all past vaccines, the patient's gender
+  final Map<String, VaxAntigen> agMap = antigenMap(patient);
 
   /// Sort into groups
   agMap.forEach((k, v) => v.groups.forEach((key, value) => container
@@ -35,18 +31,21 @@ Bundle forecastFromParameters(Parameters parameters) {
   /// Evaluate
   agMap.forEach((k, v) => v.evaluate());
 
-  // agMap.forEach((k, v) {
-  //   print(k);
-  //   v.groups.forEach((key, value) {
-  //     print('  $key');
-  //     value.series.forEach((element) {
-  //       print('    ${element.series.toJson()}');
-  //       element.doses.forEach((dose) {
-  //         print('      ${dose.cvx}');
-  //       });
-  //     });
-  //   });
-  // });
+  agMap.forEach((k, v) {
+    if (k.toLowerCase().contains('hep')) {
+      print(k);
+      v.groups.forEach((key, value) {
+        print('  $key');
+        value.series.forEach((element) {
+          print('    ${element.series.seriesName}');
+          print('    ${element.evaluatedTargetDose}');
+          element.evaluatedDoses.forEach((dose) {
+            print('      ${dose.validity} ${dose.preferredVaccine}');
+          });
+        });
+      });
+    }
+  });
 
   return Bundle();
 }

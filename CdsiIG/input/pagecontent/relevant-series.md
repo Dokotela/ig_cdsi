@@ -1,0 +1,4 @@
+# Create Relevant Patient Series
+
+- Correct gender, for the purposes of vaccine logic, patients are grouped into male, female, transgender or unknown. We use this value to determine if a series is appropriate for a patient.
+- The other part of a relevant series if the type of series. Series can be 'Standard', 'Evaluation Only', or 'Risk'. If it's a 'Standard' or 'Evaluation Only' series, then it applies to everyone (again, assuming the appropriate gender). A 'Risk' series is only appropriate if the patient has certain conditions. Each 'Risk' series has a list of indications that come from the list of 'Observations' (note, these are NOT the same as FHIR Observations). They are in some cases conditions, but in other cases just circumstances (like being a healthcare worker) that imparts a higher risk for certain diseases, and therefore the series will apply.

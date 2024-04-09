@@ -26,7 +26,10 @@ class PatientForAssessment extends _$PatientForAssessment {
     List<AllergyIntolerance> allergies = <AllergyIntolerance>[];
     List<VaxDose> pastDoses = <VaxDose>[];
 
+    // We loop through all the parameters to find the patient, immunizations,
+    // conditions, and allergies
     for (final parameter in parameters.parameter ?? <ParametersParameter>[]) {
+      // we first make sure that there's a valid assessment date
       if (parameter.name == 'assesmentDate' &&
           parameter.valueDate != null &&
           parameter.valueDate!.isValid) {
@@ -48,6 +51,10 @@ class PatientForAssessment extends _$PatientForAssessment {
           allergies
               .add(parameter.resource!.newIdIfNoId() as AllergyIntolerance);
         } else if (parameter.resource is Immunization) {
+          // We add all immunizations to both the immunizations list as an
+          // Immunization Resource, and as pastDoses as a VaxDose (which is
+          // a class that transforms Immunizations into something easier to
+          // work with for our purposes)
           final immunization =
               parameter.resource!.newIdIfNoId() as Immunization;
           immunizations.add(immunization);

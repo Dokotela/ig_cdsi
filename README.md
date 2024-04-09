@@ -10,132 +10,6 @@ If you have any concerns about anything in this repo, please reach out to [grey@
 
 All I've done is take all of their hard work, guidance and expertise and make it computable (well, perhaps it's already computable, I made a computer actually do it).
 
-
-## 1 Pre-Preparation
-
-### 1.1 Just some updates (and so my instructions align numerically with the CDC manual)
-
-- First thing is to download all of the [Supporting Data](https://www.cdc.gov/vaccines/programs/iis/downloads/supporting-data-4.53-508.zip) from the above site
-- You'll notice they have both XML and XLSX files. Unfortunately (at least for me) I don't like either of these formats. So to fix this, I've created a generator that runs on google sheets.
-- All of the XLSX files I've transferred into Gsheets, [the link can be found here](https://drive.google.com/drive/folders/1LUDu9y85qd0aJwFtvwv0h3fQUafqfTDq?usp=sharing)
-- The Coded Observations sheets I had to remove all of the carriage returns ("\n" in Regex) because they screw up the Gsheets TSV parser in Dart
-- I had to do the same for most of the Antigen spreadsheets as well (I replaced all ```"\n"``` with ```" "```)
-- All of the links to the spreadsheets are in the spreadsheets file, let me know if you would like access to them
-- the ```api.dart``` file are credentials for a service acccount
-- So run the pythia generator (just be in the same directory as the project and run "```./generate.sh```")
-- There is a time limit about how often you can request data from spreadsheets, so sometimes you do have to edit the sleep time in download_sheets
-- I added in test case generation as well
-- Pulls from the spreadsheets to create test cases
-- Once again, had to replace all ```"\n"``` with ```" "``` for the generation
-- TODO: copy over files
-
-## 2 Props to the folks who deserve it
-
-### 2.1 Evaluation
-
-- Because I can never find it, this is the workgroup around [Immunization Decision Support](http://hl7.org/fhir/us/immds/)
-- Again all data and logic used in this forecaster is from the CDC, their manual can be found [here](https://www.cdc.gov/vaccines/programs/iis/interop-proj/downloads/logic-spec-acip-rec-4.5.pdf)
-- While the logic is well thought-out and complete, it's complicated, and I found it difficult to decipher at times. Therefore, I've decided to go through the whole thing step by step and explain how I've interpreted it, in the hopes that maybe someday it will help someone else (although it's most likely just going to help me)
-- I may keep some notes up here for me (or whomever)
-- You will often see in the code that I parse CVX codes into ints, this is to allow comparisons, because sometimes CVX codes are represented by 2 or 3 digits, and sometimes have leading zeroes, this just saves me from having to deal with that
-
-## 3 Logical Specification Concepts
-
-### 3.1 Target Dose
-
-#### A TargetDose is said to be 'unsatisfied' until a dose matches all of its required criteria. At that time, the TargetDose is incremented by one. Below is a basic example from the CDC
-
-![How a Vaccine Dose Administered Satisfies a Target Dose](images/How%20a%20Vaccine%20Dose%20Administered%20Satisfies%20a%20Target%20Dose.png)
-
-- Target dose - this is a term that makes some intrinsic sense, and then has been used in confusing ways, at least I thought so. The target dose is the next recommended dose in a series. When we evaluate past vaccines, we check to see if the next one given meets the requirements of the target dose. If it is, that dose is considered complete, and we move onto the next target dose.
-
-#### *As a side note, anytime you see the term 'Vaccine Dose Administered' replace it with 'Dose Given', and it makes much more sense
-
-### 3.2 Statuses
-
-  TABLE 3-1 DOSE STATUS: recorded for each dose within each series
-| Status       | Meaning         |
-| ---------    |:-------------   |
-| Extraneous   | Meaning the dose doesn't count towards the series, but doesn't need to be repeated (including maximum age and extra doses)              |
-| Not Valid    | Not administered according to ACIP recommendations, does not count towards the series, will need to be repeated               |
-| Sub-standard | Dose had a condition (e.g., expired, sub-potent, and recall) making it invalid, will need to be repated |
-| Valid        | Meets ACIP requirements for that dose|
-
-  TABLE 3-2 TARGET DOSE STATUSES: recorded for each dose within each series.
-| Status | Meaning |
-|--------|:------- |
-| Not Satisfied | No dose given meets the target dose requirements|
-| Satisfied | A dose has been given that meets target dose requirements |
-| Skipped | No dose given meets requirements, but due to age/previous doses/other reasons, this target dose does not need to be satisfied and is skipped |
-
-TABLE 3-3 PATIENT SERIES STATUSES: recorded for each series within the the antigen group
-| Status          | Meaning |
-|-------          |:--------|
-| Aged Out        | Patient exceeded the maximum age prior to completing this series |
-| Complete        | Patient has met all of the ACIP recommendations for this series |
-| Contraindicated | Patient history indicates no more immunizations in this series should be given |
-| Immune          | Patient has evidence of immunity, no further immunizations are needeed for this series |
-| Not Complete    | Patient has not met all of the ACIP recommendations for this series|
-| Not Recommended | Patient's immunization history provides sufficient immunity, and further doses in this series are not recommended |
-
-### 3.3 Selecting Supporting Data
-
-TABLE 3-5 Is the Logical Component Relevant?
-| Business Rule ID | Business Rule |
-|:------|:--------------------------|
-| RELEVANT-1 | A component applies to a previously given vaccination if there is no Effective Date or Cessation Date, they are both "n/a", or the date given is between the two |
-| RELEVANT-2 | A component applies to forecasting a vaccination if there is no Effective Date or Cessation Date, they are both "n/a", or the assessment date is between the two |
-
-### 3.4 Date Calculations
-
-As anyone who has worked with dates can tell you, they're a huge pain in the ass. I've created a dedicated class for dealing with them called VaxDate. The CDC has stated how they expect for dates to be processed, I've reproduced this below.
-
-TABLE 3-6 GENERAL DATE RULES
-| Business Rule | Example |
-|:------|:--------------------------|
-| When adding only years, <br> month and days stay constant | 01/01/2000 + 3 years = 01/01/2003 |
-| When adding months, <br> day must stay constant | 01/01/2000 + 6 months = 07/01/2000 <br> 11/01/2000 + 6 months = 05/01/2001 |
-| When adding weeks or days, <br> add that total number of days <br> to the existing date | 01/01/2000 + 3 days = 01/04/2000 <br> 01/01/2000 + 3 weeks = 01/22/2000 <br> 02/01/2000 + 5 weeks = 03/07/2000 (leap year) <br> 02/01/2001 + 5 weeks = 03/08/2001 (not a leap year) |
-| Subtracting days is just subtracting <br> days from the date I've implemented <br> it as just negative addition | 01/15/2000 – 4 days = 01/11/2000 |
-| If the calculated date isn't a real date, <br> it is moved to the first of the next month | 03/31/2000 + 6 months = 10/01/2000 (September 31 does not exist) <br> 08/31/20010 + 6 months = 03/01/2001 (February 31 does not exist) |
-| Date must be calculated by first years, <br> then months, then weeks/days <br> (ToDo: not sure I completely did this) | 01/31/2000 + 6 months – 4 days = 07/27/2000 |
-
-It's important to note, and it took me a while to catch onto their wording, there are ages and age dates. They are what they say they are, but I struggled with them at first. An age (or an interval) is a string description of a period of time ('4 years', '19 years - 4 days', etc) these are supposed to be added (or subtracted) to a date (usually the DOB, although sometimes the date given of the previous dose). Also, these terms probably won't all make as much sense until you work through it some more.
-
-TABLE 3-7 LOGICAL COMPONENT DATE RULES: some of these seem repetitive and probably unnecessary to put here
-ToDo: get rid of these age dates that I don't actually use
-| Business Rule | Caclulation |
-|:------|:--------------------|
-| Maximum age date | DOB + maximum age |
-| Latest recommended age date | DOB + latest recommended age |
-| Earliest recommended age date | DOB + earliest recommended age |
-| Minimum age date | DOB + minimum age |
-| Absolute minimum age date | DOB + absolute minimum age |
-| Allowable vaccine type begin age date | DOB + vaccine type begin age (only applied for allowable vaccines) |
-| Allowable vaccine type end age date | DOB + vaccine type end age (only applied for allowable vaccines) |
-| Contraindication begin age date | DOB + contraindication begin age (for either an antigen or a vaccine) |
-| Contraindication end age date | DOB + contraindication end age (for either an antigen or a vaccine) |
-| Indication begin age date | DOB + indication begin age |
-| Indication end age date | DOB + indication end age |
-| Reference dose date: when evaluating intervals, sometimes this is from teh previous dose, soemetimes from another dose in the series (usually the first) |
-| Reference Dose Date: doses will have an interval entry/recommendation, this is calculated from the immediate previous dose if: <br> - an interval entry with "FromPrevious" dose is "Y" <br> - the dose being evaluated has status of 'Valid' or Not Valid' <br> - (ToDo: current?) vaccine dose is not an inadvertent administration |"interval": [{<br> "fromPrevious": "Y", <br> "fromTargetDose": null, <br> "minInt": "4 weeks" }] |
-| Reference dose date is calculated from a different dose in the series (and the interval is therefore calcluated from the date of that dose) if the following are true: <br> - the interval entry states immediate previous dose administered is 'N'<br> - the interval entry target dose number is not null | "interval": [{ <br> "fromPrevious": "N", <br> "fromTargetDose": "1",<br> "minInt": "6 months" }] |
-| Reference dose date is calculated from the most recent dose of the same vaccine type if the following are true: <br> - the "FromPrevious" is "N" <br> - "fromMostRecent" is not null <br> - the current dose is not an inadvertent administration| "interval": [{ <br> "fromPrevious": "N", <br> "fromTargetDose": null, <br> "fromMostRecent": "21; 94; 121", <br> "absMinInt": "0 days", <br> "minInt": "8 weeks" }] |
-| Reference dose date is calculated from an observation if: <br> - "fromPrevious" is "N" <br> - "fromRelevantObs" is not null | "interval": [{ <br> "fromPrevious": "N", <br> "fromTargetDose": null, <br> "fromMostRecent": null, <br> "fromRelevantObs": { <br> "text": "Date of hematopoietic stem cell transplant", <br> "code": "171" },<br> "earliestRecInt": "6 months", <br> "latestRecInt": "12 months" }] |
-| Absolute minimum interval date | date reference dose was given + absolute minimum interval |
-| Minimum interval | date reference dose was given + minimum interval |
-| Earliest recommended interval date | date reference dose was given + earliest recommended interval |
-| Latest recommended interval date | date reference dose was given + latest recommended interval |
-| Latest minimum interval date | if there is more than one interval specified (such as from previous and from a target dose), whichever comes later |
-| Conflict begin interval date | date given of the conflicting dose + live virus conflict begin interval |
-|Conflict end interval date | date given of the conflicting dose + live virus **MINIMUM CONFLICT** end interval if the conflicting dose **HAS** evaluation status of valid |
-| Conflict end interval date | date given of the conflicting dose + live virus **CONFLICT** end interval if the conflicting dose **DOES NOT HAVE** evaluation status of valid |
-| Latest conflict end interval date | if there is more than one interval specified (such as from previous and from an observation), whichever comes later |
-| Preferable vaccine type begin age date | DOB + vaccine type begin age of a preferable vaccine |
-| Conditional skip begin age date | DOB + begin age of the conditional skip condition |
-| Conditional skip end age date | DOB + end age of the conditional skip condition |
-| Conditional skip interval date | date given of the immediate previous dose + interval of the conditional skip condition |
-
 ## 4 - Processing Model
 
 ### A quick overview of the basic logic because I think it helps makes more sense of what is to come
@@ -146,7 +20,7 @@ ToDo: get rid of these age dates that I don't actually use
 - Multiple options exist for immunity, some through infection (e.g. varicella), others through completing a vaccine series
 - There are multiple series that are valid for inducing immunity, and may be appropriate given certain conditions, allergies, age, etc
 - Each dose that has already been received is compared against the doses in every series, to see if they match required ages, intervals, etc
-- When a historical vaccine satisies a dose in a series, the next recommended dose for each series is calculated
+- When a vaccine that has previously been administered (historical vaccine) satisies a dose in a series, that dose is considered satsifed, and the next recommended dose for each series is calculated
 - After all historical vaccines are applied to each series, the series are scored according to factors such as how many valid doses they contain, how quickly they can be completed, or if they are the default series
 - These scores are used to determine the preferred series for that particular antigen
 - The series are then grouped together in Vaccine groups (MMR, DTAP, etc) to provide final recommendations for vaccines
@@ -156,7 +30,7 @@ ToDo: get rid of these age dates that I don't actually use
 
 Many of the diagrams from the CDC manual I didn't think made sense when I first when through them, and are still not terribly helpful to understanding the process, at least for me, so I'm going to leave them out. Although this one isn't bad:
 
-![Figure ](images/Refinement%20of%20Patient%20Series.png)
+TODO - add figure
 
 ### 4.2 Organize Immunization History
 
@@ -191,15 +65,7 @@ We're going to look through all of the series we just evaluated and find the one
 
 The above series are for individual antigens, not vaccines. There are vaccine groups that go together (notably MMR and DTaP/Tdap/Td) and generally you don't give one without the others. Because of this, we have to join the individual antigens together and evaluate them as a group. It's similar to the process for individual antigens, but we'll get to that towards the end
 
-## 5 Create Relevant Patient Series
 
-### 5.1 Select Relevant Patient Series
-
-- Correct gender, for the purposes of vaccine logic, patients are grouped into male, female, transgender or unknown. We use this value to determine if a series is appropriate for a patient.
-
-#### Gender - Note that in this logic gender and sex are used synonymously for consistency in the logic. FOR THESE PURPOSES ONLY they refer to the same thing, and that is the genetic sex at birth. If you don't understand why there are be differences in sex and gender (and gender identity), please consider reading any of the following articles by the [AMA](https://journalofethics.ama-assn.org/article/sex-gender-and-why-differences-matter/2008-07), [Stanford](https://stanmed.stanford.edu/2017spring/how-sex-and-gender-which-are-not-the-same-thing-influence-our-health.html), or [Planned Parenthood](https://www.plannedparenthood.org/learn/gender-identity/sex-gender-identity)
-
-- The other part of a relevant series if the type of series. Series can be 'Standard', 'Evaluation Only', or 'Risk'. If it's a 'Standard' or 'Evaluation Only' series, then it applies to everyone (again, assuming the appropriate gender). A 'Risk' series is only appropriate if the patient has certain conditions. Each 'Risk' series has a list of indications that come from the list of 'Observations' (note, these are NOT the same as FHIR Observations). They are in some cases conditions, but in other cases just circumstances (like being a healthcare worker) that imparts a higher risk for certain diseases, and therefore the series will apply.
 
 ## 6 Evaluate Vaccine Dose Administered
 
