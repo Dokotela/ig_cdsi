@@ -1,0 +1,34 @@
+[
+  {
+    "outputFile": "Patient-PatientExample.json",
+    "fshName": "PatientExample",
+    "fshType": "Instance",
+    "fshFile": "patient.fsh",
+    "startLine": 9,
+    "endLine": 14
+  },
+  {
+    "outputFile": "StructureDefinition-CvxMap.json",
+    "fshName": "CvxMap",
+    "fshType": "Resource",
+    "fshFile": "cvx_map.fsh",
+    "startLine": 1,
+    "endLine": 12
+  },
+  {
+    "outputFile": "StructureDefinition-MyPatient.json",
+    "fshName": "MyPatient",
+    "fshType": "Profile",
+    "fshFile": "patient.fsh",
+    "startLine": 4,
+    "endLine": 7
+  },
+  {
+    "outputFile": "StructureDefinition-Vaccine.json",
+    "fshName": "Vaccine",
+    "fshType": "Resource",
+    "fshFile": "vaccine.fsh",
+    "startLine": 1,
+    "endLine": 14
+  }
+]

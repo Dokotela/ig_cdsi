@@ -43,9 +43,12 @@ publisher:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-# pages:
-#   index.md:
-#     title: Example Home
+pages:
+  index.md:
+    title: CDSI IG Home
+  preparation.md:
+    title: Preparation
+  
 #   implementation.xml:
 #   examples.xml:
 #     title: Examples Overview

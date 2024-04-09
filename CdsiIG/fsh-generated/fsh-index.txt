@@ -1,0 +1,5 @@
+Output File                         Name            Type      FSH File     Lines
+Patient-PatientExample.json         PatientExample  Instance  patient.fsh  9 - 14
+StructureDefinition-CvxMap.json     CvxMap          Resource  cvx_map.fsh  1 - 12
+StructureDefinition-MyPatient.json  MyPatient       Profile   patient.fsh  4 - 7
+StructureDefinition-Vaccine.json    Vaccine         Resource  vaccine.fsh  1 - 14

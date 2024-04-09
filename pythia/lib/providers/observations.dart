@@ -1,0 +1,13 @@
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../pythia.dart';
+
+part 'observations.g.dart';
+
+@riverpod
+class Observations extends _$Observations {
+  @override
+  VaxObservations build() => VaxObservations();
+
+  void setValue(VaxObservations newValue) => state = newValue;
+}

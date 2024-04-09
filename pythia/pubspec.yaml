@@ -1,0 +1,22 @@
+name: pythia
+description: Immunization Forecasting Engine for use with Dart and FHIR
+version: 0.0.1
+homepage: https://github.com/Dokotela/pythia/pythia
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  
+dependencies:
+  collection: ^1.18.0
+  fhir: ^0.12.0
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  riverpod: ^2.5.0
+  riverpod_annotation: ^2.3.4
+
+dev_dependencies:
+  test: ^1.25.2
+  build_runner: ^2.4.8
+  freezed: ^2.4.7
+  json_serializable: ^6.7.1
+  riverpod_generator: ^2.3.11

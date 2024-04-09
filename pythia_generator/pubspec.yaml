@@ -1,0 +1,14 @@
+name: pythia_generator
+description: Pulling the data from the cloud to make supporting data for Pythia
+publish_to: "none"
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  
+dependencies:
+  csv: ^6.0.0
+  fhir: ^0.12.0
+  gsheets: ^0.5.0
+  pythia: 
+    path: ../pythia
+  riverpod_annotation: ^2.3.4

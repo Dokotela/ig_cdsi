@@ -1,0 +1,9 @@
+*.DS_Store*
+*Thumbs.db*
+*fsh-generated*
+*input-cache*
+*CdsiIG/output*
+*CdsiIG/temp*
+*template*
+*.jar*
+*api.dart*

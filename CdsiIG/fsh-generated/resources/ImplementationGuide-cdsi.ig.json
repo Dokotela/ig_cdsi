@@ -1,0 +1,75 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "cdsi.ig",
+  "url": "http://fhirfli.dev/fhir/ig/cdsi/ImplementationGuide/cdsi.ig",
+  "version": "0.1.0",
+  "name": "CdsiIG",
+  "status": "draft",
+  "publisher": "FHIR-FLI",
+  "contact": [
+    {
+      "name": "FHIR-FLI",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://fhirfli.dev"
+        }
+      ]
+    }
+  ],
+  "packageId": "cdsi.ig",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/MyPatient"
+        },
+        "name": "MyPatient",
+        "description": "An example profile of the Patient resource.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientExample"
+        },
+        "name": "PatientExample",
+        "description": "An example of a patient with a license to krill.",
+        "exampleCanonical": "http://fhirfli.dev/fhir/ig/cdsi/StructureDefinition/MyPatient"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "CDSI IG Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "preparation.html",
+          "title": "Preparation",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2024+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      },
+      {
+        "code": "autoload-resources",
+        "value": "false"
+      }
+    ]
+  }
+}
