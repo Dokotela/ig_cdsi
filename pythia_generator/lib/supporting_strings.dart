@@ -1,5 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'supporting_strings.g.dart'; // Adjust filename accordingly
+
+// Make the abstract class json_serializable to extend this capability
+@JsonSerializable()
 abstract class SupportingStrings {}
 
+@JsonSerializable()
 class AntigenSupportingStrings extends SupportingStrings {
   AntigenSupportingStrings({
     this.antigenSeriesOverview,
@@ -16,8 +23,13 @@ class AntigenSupportingStrings extends SupportingStrings {
   String? immunity;
   String? contraindications;
   List<String>? series;
+
+  factory AntigenSupportingStrings.fromJson(Map<String, dynamic> json) =>
+      _$AntigenSupportingStringsFromJson(json);
+  Map<String, dynamic> toJson() => _$AntigenSupportingStringsToJson(this);
 }
 
+@JsonSerializable()
 class ScheduleSupportingStrings extends SupportingStrings {
   ScheduleSupportingStrings({
     this.type,
@@ -30,8 +42,13 @@ class ScheduleSupportingStrings extends SupportingStrings {
   String? data;
   String? changeHistory;
   String? overview;
+
+  factory ScheduleSupportingStrings.fromJson(Map<String, dynamic> json) =>
+      _$ScheduleSupportingStringsFromJson(json);
+  Map<String, dynamic> toJson() => _$ScheduleSupportingStringsToJson(this);
 }
 
+@JsonSerializable()
 class TestCasesStrings extends SupportingStrings {
   TestCasesStrings({
     this.isHealthy,
@@ -44,6 +61,10 @@ class TestCasesStrings extends SupportingStrings {
   String? overview;
   String? testCaseLayout;
   String? cases;
+
+  factory TestCasesStrings.fromJson(Map<String, dynamic> json) =>
+      _$TestCasesStringsFromJson(json);
+  Map<String, dynamic> toJson() => _$TestCasesStringsToJson(this);
 }
 
 enum SupportingType {

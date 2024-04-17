@@ -86,7 +86,7 @@ Future<void> createSupportingData(
       vaccineGroup: antigenSupportingData.series?[0].vaccineGroup,
     );
 
-    print(antigenSupportingData.series?[0].targetDisease);
+    print('Target Disease: ${antigenSupportingData.series?[0].targetDisease}');
     // print(
     //     antigenSupportingData.series?[0].targetDisease?.replaceAll(' ', '_'));
     // print(antigenSupportingData.series?[0].targetDisease

@@ -225,7 +225,7 @@ final rabies = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count By Date",
-                                            "startDate": "44687",
+                                            "startDate": "2022-05-06",
                                             "doseCount": "1",
                                             "doseCountLogic": "greater than",
                                             "vaccineTypes": "18; 90; 175; 176"
@@ -524,7 +524,7 @@ final rabies = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count By Date",
-                                            "startDate": "44687",
+                                            "startDate": "2022-05-06",
                                             "doseCount": "1",
                                             "doseCountLogic": "greater than",
                                             "vaccineTypes": "18; 90; 175; 176"
@@ -810,7 +810,7 @@ final rabies = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count By Date",
-                                            "startDate": "44687",
+                                            "startDate": "2022-05-06",
                                             "doseCount": "1",
                                             "doseCountLogic": "greater than",
                                             "vaccineTypes": "18; 90; 175; 176"

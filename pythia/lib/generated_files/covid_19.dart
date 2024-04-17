@@ -837,7 +837,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -859,7 +859,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -1348,7 +1348,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -1493,7 +1493,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -2111,7 +2111,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -2133,7 +2133,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -2156,7 +2156,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44903",
+                                            "startDate": "2022-12-08",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -2364,7 +2364,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -2386,7 +2386,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -2409,7 +2409,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44903",
+                                            "startDate": "2022-12-08",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -2766,7 +2766,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -2904,7 +2904,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -4123,7 +4123,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -4145,7 +4145,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -4168,7 +4168,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44903",
+                                            "startDate": "2022-12-08",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -4385,7 +4385,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -4407,7 +4407,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -4430,7 +4430,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44903",
+                                            "startDate": "2022-12-08",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -5058,7 +5058,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -5080,7 +5080,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -5276,7 +5276,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -5298,7 +5298,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -5827,7 +5827,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -5849,7 +5849,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -6045,7 +6045,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -6067,7 +6067,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -6935,7 +6935,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -6957,7 +6957,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -7154,7 +7154,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -7176,7 +7176,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -8001,7 +8001,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -8023,7 +8023,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -8046,7 +8046,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44903",
+                                            "startDate": "2022-12-08",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -8254,7 +8254,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -8276,7 +8276,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -8299,7 +8299,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44903",
+                                            "startDate": "2022-12-08",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -8873,7 +8873,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -9018,7 +9018,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -10440,7 +10440,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -10462,7 +10462,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -10485,7 +10485,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44903",
+                                            "startDate": "2022-12-08",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -10702,7 +10702,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -10724,7 +10724,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -10747,7 +10747,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44903",
+                                            "startDate": "2022-12-08",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -11605,7 +11605,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -11627,7 +11627,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -11823,7 +11823,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -11845,7 +11845,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -12602,7 +12602,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -12624,7 +12624,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -12820,7 +12820,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44806",
+                                            "startDate": "2022-09-02",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",
@@ -12842,7 +12842,7 @@ final covid19 = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44846",
+                                            "startDate": "2022-10-12",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "Greater Than",

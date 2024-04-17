@@ -29,20 +29,8 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                 earliestRecAge: valueToString(row[3]!),
                 latestRecAge: valueToString(row[4]!),
                 maxAge: valueToString(row[5]!),
-                effectiveDate: valueToString(row[6]!) == null
-                    ? null
-                    : DateTime(1899, 12, 30)
-                        .add(Duration(days: int.parse(valueToString(row[6]!)!)))
-                        .toString()
-                        .split(' ')
-                        .first,
-                cessationDate: valueToString(row[7]!) == null
-                    ? null
-                    : DateTime(1899, 12, 30)
-                        .add(Duration(days: int.parse(valueToString(row[7]!)!)))
-                        .toString()
-                        .split(' ')
-                        .first,
+                effectiveDate: dateFromNumberString(row[6]!),
+                cessationDate: dateFromNumberString(row[7]!),
               ),
             ],
           );
@@ -57,20 +45,8 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                 earliestRecAge: valueToString(row[3]!),
                 latestRecAge: valueToString(row[4]!),
                 maxAge: valueToString(row[5]!),
-                effectiveDate: valueToString(row[6]!) == null
-                    ? null
-                    : DateTime(1899, 12, 30)
-                        .add(Duration(days: int.parse(valueToString(row[6]!)!)))
-                        .toString()
-                        .split(' ')
-                        .first,
-                cessationDate: valueToString(row[7]!) == null
-                    ? null
-                    : DateTime(1899, 12, 30)
-                        .add(Duration(days: int.parse(valueToString(row[7]!)!)))
-                        .toString()
-                        .split(' ')
-                        .first,
+                effectiveDate: dateFromNumberString(row[6]!),
+                cessationDate: dateFromNumberString(row[7]!),
               ),
             ],
           );
@@ -108,20 +84,8 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
             earliestRecInt: valueToString(row[7]!),
             latestRecInt: valueToString(row[8]!),
             intervalPriority: valueToString(row[9]!),
-            effectiveDate: valueToString(row[10]!) == null
-                ? null
-                : DateTime(1899, 12, 30)
-                    .add(Duration(days: int.parse(valueToString(row[10]!)!)))
-                    .toString()
-                    .split(' ')
-                    .first,
-            cessationDate: valueToString(row[11]!) == null
-                ? null
-                : DateTime(1899, 12, 30)
-                    .add(Duration(days: int.parse(valueToString(row[11]!)!)))
-                    .toString()
-                    .split(' ')
-                    .first,
+            effectiveDate: dateFromNumberString(row[10]!),
+            cessationDate: dateFromNumberString(row[11]!),
           ),
         ],
       );
@@ -133,20 +97,8 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
         fromPrevious: row[1]!,
         fromTargetDose: int.tryParse(row[2]!.toString()),
         absMinInt: valueToString(row[3]!),
-        effectiveDate: valueToString(row[4]!) == null
-            ? null
-            : DateTime(1899, 12, 30)
-                .add(Duration(days: int.parse(valueToString(row[4]!)!)))
-                .toString()
-                .split(' ')
-                .first,
-        cessationDate: valueToString(row[5]!) == null
-            ? null
-            : DateTime(1899, 12, 30)
-                .add(Duration(days: int.parse(valueToString(row[5]!)!)))
-                .toString()
-                .split(' ')
-                .first,
+        effectiveDate: dateFromNumberString(row[4]!),
+        cessationDate: dateFromNumberString(row[5]!),
       ));
     } else if (row[0]!.toString().contains('Preferable Vaccine') &&
         !row[1]!.toString().contains('Vaccine Type (CVX)') &&
@@ -280,29 +232,15 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                       VaxSet(
                         setID: valueToString(row[3]!),
                         setDescription: row[4]!.toString().trim(),
-                        effectiveDate: valueToString(row[5]!) == null
-                            ? null
-                            : DateTime(1899, 12, 30)
-                                .add(Duration(
-                                    days: int.parse(valueToString(row[5]!)!)))
-                                .toString()
-                                .split(' ')
-                                .first,
-                        cessationDate: valueToString(row[6]!) == null
-                            ? null
-                            : DateTime(1899, 12, 30)
-                                .add(Duration(
-                                    days: int.parse(valueToString(row[6]!)!)))
-                                .toString()
-                                .split(' ')
-                                .first,
+                        effectiveDate: dateFromNumberString(row[5]!),
+                        cessationDate: dateFromNumberString(row[6]!),
                         conditionLogic: valueToString(row[7]!),
                         condition: [
                           VaxCondition(
                             conditionID: valueToString(row[8]!),
                             conditionType: row[9]!,
-                            startDate: valueToString(row[10]!),
-                            endDate: valueToString(row[11]!),
+                            startDate: dateFromNumberString(row[10]!),
+                            endDate: dateFromNumberString(row[11]!),
                             beginAge: valueToString(row[12]!),
                             endAge: valueToString(row[13]!),
                             interval: valueToString(row[14]!),
@@ -339,29 +277,15 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                       VaxSet(
                         setID: valueToString(row[3]!),
                         setDescription: row[4]!.toString().trim(),
-                        effectiveDate: valueToString(row[5]!) == null
-                            ? null
-                            : DateTime(1899, 12, 30)
-                                .add(Duration(
-                                    days: int.parse(valueToString(row[5]!)!)))
-                                .toString()
-                                .split(' ')
-                                .first,
-                        cessationDate: valueToString(row[6]!) == null
-                            ? null
-                            : DateTime(1899, 12, 30)
-                                .add(Duration(
-                                    days: int.parse(valueToString(row[6]!)!)))
-                                .toString()
-                                .split(' ')
-                                .first,
+                        effectiveDate: dateFromNumberString(row[5]!),
+                        cessationDate: dateFromNumberString(row[6]!),
                         conditionLogic: valueToString(row[7]!),
                         condition: [
                           VaxCondition(
                             conditionID: valueToString(row[8]!),
                             conditionType: row[9]!,
-                            startDate: valueToString(row[10]!),
-                            endDate: valueToString(row[11]!),
+                            startDate: dateFromNumberString(row[10]!),
+                            endDate: dateFromNumberString(row[11]!),
                             beginAge: valueToString(row[12]!),
                             endAge: valueToString(row[13]!),
                             interval: valueToString(row[14]!),
@@ -392,29 +316,15 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                 VaxSet(
                   setID: valueToString(row[3]!),
                   setDescription: row[4]!.toString().trim(),
-                  effectiveDate: valueToString(row[5]!) == null
-                      ? null
-                      : DateTime(1899, 12, 30)
-                          .add(Duration(
-                              days: int.parse(valueToString(row[5]!)!)))
-                          .toString()
-                          .split(' ')
-                          .first,
-                  cessationDate: valueToString(row[6]!) == null
-                      ? null
-                      : DateTime(1899, 12, 30)
-                          .add(Duration(
-                              days: int.parse(valueToString(row[6]!)!)))
-                          .toString()
-                          .split(' ')
-                          .first,
+                  effectiveDate: dateFromNumberString(row[5]!),
+                  cessationDate: dateFromNumberString(row[6]!),
                   conditionLogic: valueToString(row[7]!),
                   condition: [
                     VaxCondition(
                       conditionID: valueToString(row[8]!),
                       conditionType: row[9]!,
-                      startDate: valueToString(row[10]!),
-                      endDate: valueToString(row[11]!),
+                      startDate: dateFromNumberString(row[10]!),
+                      endDate: dateFromNumberString(row[11]!),
                       beginAge: valueToString(row[12]!),
                       endAge: valueToString(row[13]!),
                       interval: valueToString(row[14]!),
@@ -453,8 +363,8 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                     VaxCondition(
                       conditionID: valueToString(row[8]!),
                       conditionType: row[9]!,
-                      startDate: valueToString(row[10]!),
-                      endDate: valueToString(row[11]!),
+                      startDate: dateFromNumberString(row[10]!),
+                      endDate: dateFromNumberString(row[11]!),
                       beginAge: valueToString(row[12]!),
                       endAge: valueToString(row[13]!),
                       interval: valueToString(row[14]!),
@@ -482,16 +392,8 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
             !row[2]!.toString().contains('n/a'))) {
       seriesDose = seriesDose.copyWith(
           seasonalRecommendation: SeasonalRecommendation(
-        startDate: DateTime(1899, 12, 30)
-            .add(Duration(days: int.parse(row[1]!)))
-            .toString()
-            .split(' ')
-            .first,
-        endDate: DateTime(1899, 12, 30)
-            .add(Duration(days: int.parse(row[1]!)))
-            .toString()
-            .split(' ')
-            .first,
+        startDate: dateFromNumberString(row[1]!),
+        endDate: dateFromNumberString(row[1]!),
       ));
     }
   }
@@ -502,3 +404,12 @@ dynamic _valueToEnum(dynamic value, Map map) =>
     value.toString().trim().contains('n/a')
         ? null
         : map[value.toString().trim()];
+
+String? dateFromNumberString(dynamic rowValue) =>
+    valueToString(rowValue) == null
+        ? null
+        : DateTime(1899, 12, 30)
+            .add(Duration(days: int.parse(valueToString(rowValue)!)))
+            .toString()
+            .split(' ')
+            .first;

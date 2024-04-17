@@ -640,8 +640,8 @@ final influenza = AntigenSupportingData.fromJson({
                     ],
                     "recurringDose": "No",
                     "seasonalRecommendation": {
-                        "startDate": "44743",
-                        "endDate": "45107"
+                        "startDate": "2022-07-01",
+                        "endDate": "2022-07-01"
                     }
                 },
                 {
@@ -902,8 +902,8 @@ final influenza = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44743",
-                                            "endDate": "45107",
+                                            "startDate": "2022-07-01",
+                                            "endDate": "2023-06-30",
                                             "doseCount": "1",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
@@ -919,8 +919,8 @@ final influenza = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44743",
-                                            "endDate": "45107",
+                                            "startDate": "2022-07-01",
+                                            "endDate": "2023-06-30",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
@@ -945,8 +945,8 @@ final influenza = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "44743",
-                                            "endDate": "45107",
+                                            "startDate": "2022-07-01",
+                                            "endDate": "2023-06-30",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
@@ -955,7 +955,7 @@ final influenza = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "2",
                                             "conditionType": "Vaccine Count by Date",
-                                            "endDate": "44743",
+                                            "endDate": "2022-07-01",
                                             "doseCount": "1",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
@@ -968,8 +968,8 @@ final influenza = AntigenSupportingData.fromJson({
                     ],
                     "recurringDose": "Yes",
                     "seasonalRecommendation": {
-                        "startDate": "44743",
-                        "endDate": "45107"
+                        "startDate": "2022-07-01",
+                        "endDate": "2022-07-01"
                     }
                 }
             ]

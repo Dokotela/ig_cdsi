@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:fhir/r5.dart';
 import 'package:pythia/pythia.dart' as pythia;
-import 'package:pythia/pythia.dart';
 
 import '../supporting_strings.dart';
 
@@ -216,7 +215,7 @@ List<String> diseaseFromDescription(String description) {
   } else if (description.contains('zoster')) {
     return ['Zoster'];
   } else {
-    print(description);
+    print('Description: $description');
     return [];
   }
 }
