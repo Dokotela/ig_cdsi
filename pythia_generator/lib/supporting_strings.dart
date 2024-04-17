@@ -6,6 +6,24 @@ part 'supporting_strings.g.dart'; // Adjust filename accordingly
 @JsonSerializable()
 abstract class SupportingStrings {
   dynamic toJson();
+
+  SupportingStrings fromJson(Map<String, dynamic> json) {
+    if (json.keys.contains('antigenSeriesOverview') ||
+        json.keys.contains('faq') ||
+        json.keys.contains('immunity') ||
+        json.keys.contains('contraindications') ||
+        json.keys.contains('series')) {
+      return AntigenSupportingStrings.fromJson(json);
+    } else if (json.keys.contains('type') || json.keys.contains('data')) {
+      return ScheduleSupportingStrings.fromJson(json);
+    } else if (json.keys.contains('isHealthy') ||
+        json.keys.contains('testCaseLayout') ||
+        json.keys.contains('cases')) {
+      return TestCasesStrings.fromJson(json);
+    } else {
+      throw Exception('There was');
+    }
+  }
 }
 
 @JsonSerializable()
