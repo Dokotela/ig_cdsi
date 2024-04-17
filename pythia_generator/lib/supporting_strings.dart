@@ -7,7 +7,7 @@ part 'supporting_strings.g.dart'; // Adjust filename accordingly
 abstract class SupportingStrings {
   dynamic toJson();
 
-  SupportingStrings fromJson(Map<String, dynamic> json) {
+  static SupportingStrings fromJson(Map<String, dynamic> json) {
     if (json.keys.contains('antigenSeriesOverview') ||
         json.keys.contains('faq') ||
         json.keys.contains('immunity') ||
@@ -21,7 +21,7 @@ abstract class SupportingStrings {
         json.keys.contains('cases')) {
       return TestCasesStrings.fromJson(json);
     } else {
-      throw Exception('There was');
+      throw Exception('There was an error reading the json strings');
     }
   }
 }
