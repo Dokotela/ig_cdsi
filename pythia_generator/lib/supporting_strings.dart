@@ -4,7 +4,9 @@ part 'supporting_strings.g.dart'; // Adjust filename accordingly
 
 // Make the abstract class json_serializable to extend this capability
 @JsonSerializable()
-abstract class SupportingStrings {}
+abstract class SupportingStrings {
+  dynamic toJson();
+}
 
 @JsonSerializable()
 class AntigenSupportingStrings extends SupportingStrings {

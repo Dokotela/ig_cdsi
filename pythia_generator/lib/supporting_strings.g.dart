@@ -6,12 +6,6 @@ part of 'supporting_strings.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SupportingStrings _$SupportingStringsFromJson(Map<String, dynamic> json) =>
-    SupportingStrings();
-
-Map<String, dynamic> _$SupportingStringsToJson(SupportingStrings instance) =>
-    <String, dynamic>{};
-
 AntigenSupportingStrings _$AntigenSupportingStringsFromJson(
         Map<String, dynamic> json) =>
     AntigenSupportingStrings(
