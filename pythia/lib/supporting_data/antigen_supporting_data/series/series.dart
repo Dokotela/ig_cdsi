@@ -22,4 +22,7 @@ class Series with _$Series {
   }) = _Series;
 
   factory Series.fromJson(Map<String, dynamic> json) => _$SeriesFromJson(json);
+
+  VaxDate maxAgeDate(VaxDate date) =>
+      seriesDose?.last.maxAgeDate(date) ?? VaxDate.max();
 }

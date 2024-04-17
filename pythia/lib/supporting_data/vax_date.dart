@@ -141,6 +141,9 @@ class VaxDate extends DateTime {
   VaxDate changeIfNotNullElse(String? howMuch, VaxDate otherwise) =>
       howMuch == null || howMuch == '' ? otherwise : change(howMuch);
 
+  VaxDate? changeIfNotNullElseNull(String? howMuch) =>
+      howMuch == null || howMuch == '' ? null : change(howMuch);
+
   VaxDate changeIfNotNullElseMax(String? howMuch) =>
       changeIfNotNullElse(howMuch, VaxDate.max());
 

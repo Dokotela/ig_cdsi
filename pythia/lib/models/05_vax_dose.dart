@@ -92,7 +92,7 @@ class VaxDose {
     int? index,
     bool? inadvertent,
     bool? validAge,
-    String? validAgeReason,
+    ValidAgeReason? validAgeReason,
     bool? preferredInterval,
     String? preferredIntervalReason,
     bool? allowedInterval,
@@ -145,11 +145,7 @@ class VaxDose {
     /// Next check if it's an inadvertent vaccine, which just means
     /// check if one of the listed inadvertent vaccines has a CVX code
     /// that matches the CVX code of the dose being evaluated
-    final inadvertentIndex = seriesDose.inadvertentVaccine?.indexWhere(
-        (element) =>
-            element.cvx != null &&
-            int.tryParse(element.cvx!) != null &&
-            int.parse(element.cvx!) == int.parse(cvx));
+    final inadvertentIndex = seriesDose.inadvertentVaccineIndex(cvxAsInt);
 
     /// If it is, we mark it as inadvertent, and remove it from the
     /// list of doses to evaluate, and we'll then move onto the
@@ -162,6 +158,12 @@ class VaxDose {
     } else {
       return true;
     }
+  }
+
+  void setValidAge(bool valid, ValidAgeReason reason, [EvalStatus? status]) {
+    validAge = valid;
+    validAgeReason = reason;
+    evalStatus = status ?? evalStatus;
   }
 
   bool validByAge(
@@ -190,9 +192,7 @@ class VaxDose {
         /// If the date administered is less than the absolute minimum age, this
         /// dose is not valid, it was given too young
         if (dateGiven < absoluteMinimumAgeDate) {
-          validAge = false;
-          validAgeReason = 'Too Young';
-          evalStatus = EvalStatus.not_valid;
+          setValidAge(false, ValidAgeReason.tooYoung, EvalStatus.not_valid);
           return false;
         } else {
           final minimumAgeDate = age.minAge == null
@@ -207,8 +207,7 @@ class VaxDose {
             // TODO(Dokotela) - they say first targetDose, but I think they mean
             // if any doses have been given previously
             if (targetDose == 0 || previousDose == null) {
-              validAge = true;
-              validAgeReason = 'Grace Period';
+              setValidAge(true, ValidAgeReason.gracePeriod);
               return true;
             }
 
@@ -218,12 +217,10 @@ class VaxDose {
                 (!(previousDose.validAge ?? false) ||
                     !(previousDose.allowedInterval ?? false)) &&
                 previousDose.dateGiven.change('1 year') > dateGiven) {
-              validAge = false;
-              validAgeReason = 'Too Young';
-              evalStatus = EvalStatus.not_valid;
+              setValidAge(false, ValidAgeReason.tooYoung, EvalStatus.not_valid);
               return false;
             } else {
-              validAgeReason = 'Grace Period';
+              setValidAge(true, ValidAgeReason.gracePeriod);
               return true;
             }
           } else {
@@ -231,13 +228,10 @@ class VaxDose {
                 ? VaxDate(2999, 12, 31)
                 : dob.change(age.maxAge!);
             if (dateGiven < maximumAgeDate) {
-              validAge = true;
-              validAgeReason = 'Grace Period';
+              setValidAge(true, ValidAgeReason.gracePeriod);
               return true;
             } else {
-              validAge = false;
-              validAgeReason = 'Too Old';
-              evalStatus = EvalStatus.extraneous;
+              setValidAge(false, ValidAgeReason.tooOld, EvalStatus.extraneous);
               return false;
             }
           }
@@ -615,7 +609,7 @@ class VaxDose {
   int? index;
   bool inadvertent = false;
   bool? validAge;
-  String? validAgeReason;
+  ValidAgeReason? validAgeReason;
   bool? preferredInterval;
   String? preferredIntervalReason;
   bool? allowedInterval;

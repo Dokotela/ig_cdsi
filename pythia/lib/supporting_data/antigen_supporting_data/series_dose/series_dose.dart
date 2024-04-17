@@ -23,4 +23,24 @@ class SeriesDose with _$SeriesDose {
 
   factory SeriesDose.fromJson(Map<String, dynamic> json) =>
       _$SeriesDoseFromJson(json);
+
+  VaxDate maxAgeDate(VaxDate date) {
+    List<String>? maxAgeList =
+        age?.map((e) => e.maxAge).whereType<String>().toList();
+    if (maxAgeList == null || maxAgeList.isEmpty) {
+      return VaxDate.max();
+    } else {
+      for (final String maxAge in maxAgeList) {
+        final VaxDate newDate = date.change(maxAge);
+        date = newDate > date ? newDate : date;
+      }
+      return date;
+    }
+  }
+
+  int? inadvertentVaccineIndex(int cvx) =>
+      inadvertentVaccine?.indexWhere((element) =>
+          element.cvx != null &&
+          int.tryParse(element.cvx!) != null &&
+          int.parse(element.cvx!) == cvx);
 }

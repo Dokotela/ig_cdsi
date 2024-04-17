@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:fhir/r5.dart';
 import 'package:pythia/pythia.dart' as pythia;
+import 'package:pythia/pythia.dart';
 
 import '../supporting_strings.dart';
 
@@ -45,6 +46,8 @@ Future<void> createPatients(
 
       final immunizationList = <Immunization>[];
       final conditionList = <Condition>[];
+      final description = v.last.toString().toLowerCase();
+      final disease = diseaseFromDescription(description);
       for (var i = 0; i < doseIndexes.length; i++) {
         final index = doseIndexes[i];
         if (v[index] != null && v[index] != '' && v[index] != '-') {
@@ -158,5 +161,62 @@ Future<void> createPatients(
     await File(
             'pythia_generator/lib/generated_files/underlyingConditionTestCases.ndjson')
         .writeAsString(writeString);
+  }
+}
+
+List<String> diseaseFromDescription(String description) {
+  if (description.contains('cholera')) {
+    return ['Cholera'];
+  } else if (description.contains('covid')) {
+    return ['Covid-19'];
+  } else if (description.contains('dengue')) {
+    return ['Dengue'];
+  } else if (description.contains('ebola')) {
+    return ['Ebola'];
+  } else if (description.contains('hep a') || description.contains('hepa')) {
+    return ['Hepatitis A'];
+  } else if (description.contains('hep b') || description.contains('hepb')) {
+    return ['Hepatitis B'];
+  } else if (description.contains('hib')) {
+    return ['Hib'];
+  } else if (description.contains('hpv')) {
+    return ['HPV'];
+  } else if (description.contains('japan') ||
+      description.contains('encephalitis')) {
+    return ['Japanese Encephalitis'];
+  } else if (description.contains('measles') ||
+      description.contains('mump') ||
+      description.contains('rubella') ||
+      description.contains('mmr')) {
+    return ['Measles', 'Mumps', 'Rubella'];
+  } else if (description.contains('mening')) {
+    return ['Meningococcal B', 'Meningococcal'];
+  } else if (description.contains('ortho')) {
+    return ['Orthopoxvirus'];
+  } else if (description.contains('pertussis') ||
+      description.contains('diphth') ||
+      description.contains('tetanus') ||
+      description.contains('dtap') ||
+      description.contains('tdap')) {
+    return ['Tetanus', 'Diphtheria', 'Pertussis'];
+  } else if (description.contains('pneumo')) {
+    return ['Pneumococcal'];
+  } else if (description.contains('polio')) {
+    return ['Polio'];
+  } else if (description.contains('rabies')) {
+    return ['Rabies'];
+  } else if (description.contains('rota')) {
+    return ['Rotavirus'];
+  } else if (description.contains('typhoid')) {
+    return ['Typhoid'];
+  } else if (description.contains('varicella')) {
+    return ['Varicella'];
+  } else if (description.contains('yellow')) {
+    return ['Yellow Fever'];
+  } else if (description.contains('zoster')) {
+    return ['Zoster'];
+  } else {
+    print(description);
+    return [];
   }
 }

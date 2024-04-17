@@ -482,8 +482,16 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
             !row[2]!.toString().contains('n/a'))) {
       seriesDose = seriesDose.copyWith(
           seasonalRecommendation: SeasonalRecommendation(
-        startDate: valueToString(row[1]!),
-        endDate: valueToString(row[2]!),
+        startDate: DateTime(1899, 12, 30)
+            .add(Duration(days: int.parse(row[1]!)))
+            .toString()
+            .split(' ')
+            .first,
+        endDate: DateTime(1899, 12, 30)
+            .add(Duration(days: int.parse(row[1]!)))
+            .toString()
+            .split(' ')
+            .first,
       ));
     }
   }

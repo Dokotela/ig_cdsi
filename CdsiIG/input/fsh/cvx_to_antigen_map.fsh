@@ -1,5 +1,5 @@
-Resource: CvxMap
-Id: CvxMap
+Resource: CvxToAntigenMap
+Id: CvxToAntigenMap
 Parent: Resource
 Title: "CVX Map"
 Description: "Maps CVX Codes to Antigens and Ages"

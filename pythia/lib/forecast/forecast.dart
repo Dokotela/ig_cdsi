@@ -31,6 +31,9 @@ Bundle forecastFromParameters(Parameters parameters) {
   /// Evaluate
   agMap.forEach((k, v) => v.evaluate());
 
+  /// Forecast
+  agMap.forEach((k, v) => v.forecast());
+
   agMap.forEach((k, v) {
     if (k.toLowerCase().contains('hep')) {
       print(k);

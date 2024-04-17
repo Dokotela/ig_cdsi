@@ -62,7 +62,7 @@ class VaxAntigen {
 
   void forecast() {
     /// We do these slightly out of order because they don't impact each other
-    /// and it lets me pass the immunity and contraindication during the forcast
+    /// and it lets me pass the immunity and contraindication during the forecast
     immunity();
     contraindicated();
     if (!contraindication)
