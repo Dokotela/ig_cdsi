@@ -1,5 +1,6 @@
 Profile: VaccineGroupMap
 Id: vaccine-group-map
+Parent: Resource
 Title: "Vaccine Group Map"
 Description: "This profile maps vaccine groups to their specific attributes such as whether the entire group should be administered."
 * ^baseDefinition = "http://hl7.org/fhir/StructureDefinition/Element"

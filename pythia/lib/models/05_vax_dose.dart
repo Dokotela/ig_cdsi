@@ -611,30 +611,35 @@ class VaxDose {
 
   Map<String, dynamic> toJson() => {
         'doseId': doseId,
-        'volume': volume,
+        if (volume != null) 'volume': volume,
         'dateGiven': dateGiven.toJson(),
         'cvx': cvx,
-        'mvx': mvx,
+        if (mvx != null) 'mvx': mvx,
         'antigens': antigens,
         'dob': dob.toJson(),
-        'targetDisease': targetDisease,
+        if (targetDisease != null) 'targetDisease': targetDisease,
         'targetDoseSatisfied': targetDoseSatisfied,
-        'index': index,
+        if (index != null) 'index': index,
         'inadvertent': inadvertent,
-        'validAge': validAge,
-        'validAgeReason': validAgeReason.toString(),
-        'preferredInterval': preferredInterval,
-        'preferredIntervalReason': preferredIntervalReason,
-        'allowedInterval': allowedInterval,
-        'allowedIntervalReason': allowedIntervalReason,
-        'conflict': conflict,
-        'conflictReason': conflictReason,
-        'preferredVaccine': preferredVaccine,
-        'preferredVaccineReason': preferredVaccineReason,
-        'allowedVaccine': allowedVaccine,
-        'allowedVaccineReason': allowedVaccineReason,
-        'evalStatus': evalStatus?.toString(),
-        'evalReason': evalReason?.toString(),
+        if (validAge != null) 'validAge': validAge,
+        if (validAgeReason != null)
+          'validAgeReason': validAgeReason?.toString(),
+        if (preferredInterval != null) 'preferredInterval': preferredInterval,
+        if (preferredIntervalReason != null)
+          'preferredIntervalReason': preferredIntervalReason,
+        if (allowedInterval != null) 'allowedInterval': allowedInterval,
+        if (allowedIntervalReason != null)
+          'allowedIntervalReason': allowedIntervalReason,
+        if (conflict != null) 'conflict': conflict,
+        if (conflictReason != null) 'conflictReason': conflictReason,
+        if (preferredVaccine != null) 'preferredVaccine': preferredVaccine,
+        if (preferredVaccineReason != null)
+          'preferredVaccineReason': preferredVaccineReason,
+        if (allowedVaccine != null) 'allowedVaccine': allowedVaccine,
+        if (allowedVaccineReason != null)
+          'allowedVaccineReason': allowedVaccineReason,
+        if (evalStatus != null) 'evalStatus': evalStatus?.toString(),
+        if (evalReason != null) 'evalReason': evalReason?.toString(),
       };
 
   factory VaxDose.fromJson(Map<String, dynamic> json) => VaxDose(

@@ -8,10 +8,10 @@
     "endLine": 14
   },
   {
-    "outputFile": "StructureDefinition-CvxMap.json",
-    "fshName": "CvxMap",
+    "outputFile": "StructureDefinition-CvxToAntigenMap.json",
+    "fshName": "CvxToAntigenMap",
     "fshType": "Resource",
-    "fshFile": "cvx_map.fsh",
+    "fshFile": "cvx_to_antigen_map.fsh",
     "startLine": 1,
     "endLine": 12
   },
@@ -30,5 +30,13 @@
     "fshFile": "vaccine.fsh",
     "startLine": 1,
     "endLine": 14
+  },
+  {
+    "outputFile": "StructureDefinition-antigen-supporting-data.json",
+    "fshName": "AntigenSupportingData",
+    "fshType": "Profile",
+    "fshFile": "antigen_supporting_data.fsh",
+    "startLine": 1,
+    "endLine": 9
   }
 ]

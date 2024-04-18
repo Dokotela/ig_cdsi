@@ -94,4 +94,10 @@ final gSheetsList = [
 
   /// coded observations https://docs.google.com/spreadsheets/d/1QzKsu7nUxaKJmihG0v3CHCYy4GV5fcTjbvxryryWCik/edit#gid=2008901421
   '1QzKsu7nUxaKJmihG0v3CHCYy4GV5fcTjbvxryryWCik',
+
+  /// healthy test cases https://docs.google.com/spreadsheets/d/1-yMFkARH5AYn414IEbVxcI_a4_J6hNPeAgHPlhACRk0/edit#gid=424077766
+  '1-yMFkARH5AYn414IEbVxcI_a4_J6hNPeAgHPlhACRk0',
+
+  /// cases with conditions https://docs.google.com/spreadsheets/d/1buV_DDwZYeRI_TRL9VGeNxeFW10AXNxEWv5g11m36q0/edit#gid=921784841
+  '1buV_DDwZYeRI_TRL9VGeNxeFW10AXNxEWv5g11m36q0',
 ];

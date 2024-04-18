@@ -1,5 +1,6 @@
 Profile: VaccineGroupToAntigenMap
 Id: vaccine-group-to-antigen-map
+Parent: Resource
 Title: "Vaccine Group to Antigen Map"
 Description: "This resource maps vaccine groups to their associated antigens."
 * ^baseDefinition = "http://hl7.org/fhir/StructureDefinition/Element"

@@ -25,6 +25,14 @@
     "resource": [
       {
         "reference": {
+          "reference": "StructureDefinition/antigen-supporting-data"
+        },
+        "name": "Antigen Supporting Data",
+        "description": "A resource to store supporting data for antigens including target disease, vaccine groups, immunity criteria, contraindications, and vaccination series.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/MyPatient"
         },
         "name": "MyPatient",
@@ -56,6 +64,16 @@
           "generation": "markdown"
         },
         {
+          "nameUrl": "evaluate-vaccine-dose-administered.html",
+          "title": "Evaluate Vaccine Dose Administered",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "forecast-dates-and-reasons.html",
+          "title": "Forecast Dates and Reasons",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "logical-specification-concepts.html",
           "title": "Logical Specification Concepts",
           "generation": "markdown"
@@ -63,6 +81,16 @@
         {
           "nameUrl": "preparation.html",
           "title": "Preparation",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "processing-model.html",
+          "title": "Processing Model",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "relevant-series.html",
+          "title": "Relevant Series",
           "generation": "markdown"
         }
       ]

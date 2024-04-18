@@ -1,8 +1,9 @@
 Profile: AntigenSupportingData
-Parent: Resource
 Id: antigen-supporting-data
+Parent: Resource
 Title: "Antigen Supporting Data"
 Description: "A resource to store supporting data for antigens including target disease, vaccine groups, immunity criteria, contraindications, and vaccination series."
+* ^baseDefinition = "http://hl7.org/fhir/StructureDefinition/Element"
 
 // Define the elements specific to each disease
 * targetDisease 0..1 CodeableConcept "The disease that the vaccine targets."

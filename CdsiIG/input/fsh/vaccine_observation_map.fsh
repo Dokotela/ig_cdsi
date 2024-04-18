@@ -1,5 +1,6 @@
 Profile: VaccinationObservationMap
 Id: vaccination-observation-map
+Parent: Resource
 Title: "Vaccination Observation Map"
 Description: "This profile describes the observation rules for vaccination based on specific patient conditions."
 * ^baseDefinition = "http://hl7.org/fhir/StructureDefinition/Element"

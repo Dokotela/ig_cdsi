@@ -1,5 +1,6 @@
 Profile: LiveVirusConflict
 Id: live-virus-conflict
+Parent: Resource
 Title: "Live Virus Conflict"
 Description: "This profile captures potential conflicts between live virus vaccines based on previous and current vaccinations and the required time intervals to avoid interference."
 * ^baseDefinition = "http://hl7.org/fhir/StructureDefinition/Element"

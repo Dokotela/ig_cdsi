@@ -85,7 +85,7 @@ Future<void> createPatients(
           vaxDoses.add(vaxDose);
         }
       }
-      testDoses[patient.fhirId!.value!] =
+      testDoses[patient.fhirId!.toString()] =
           vaxDoses.map((e) => e.toJson()).toList();
       for (var i = 0; i < cdsiObservationIndexes.length; i++) {
         final index = cdsiObservationIndexes[i];
