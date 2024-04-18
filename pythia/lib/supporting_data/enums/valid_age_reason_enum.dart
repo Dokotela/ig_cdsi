@@ -14,4 +14,17 @@ enum ValidAgeReason {
         return 'Too old';
     }
   }
+
+  static ValidAgeReason? fromJson(String json) {
+    switch (json) {
+      case 'Grace Period':
+        return ValidAgeReason.gracePeriod;
+      case 'Too young':
+        return ValidAgeReason.tooYoung;
+      case 'Too old':
+        return ValidAgeReason.tooOld;
+      default:
+        return null;
+    }
+  }
 }

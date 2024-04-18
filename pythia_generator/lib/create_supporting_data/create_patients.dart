@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:fhir/r5.dart';
 import 'package:pythia/pythia.dart' as pythia;
+import 'package:pythia/pythia.dart';
 
 import '../supporting_strings.dart';
 
@@ -14,6 +15,8 @@ Future<void> createPatients(
   final values = const CsvToListConverter()
       .convert(string.cases, fieldDelimiter: '\t', eol: '\n');
   final parametersList = <Parameters>[];
+  final Map<String, List<Map<String, dynamic>>> testDoses =
+      <String, List<Map<String, dynamic>>>{};
 
   /// Because gsheets changes dates to ints and starts all epochs at this date
   /// https://stackoverflow.com/questions/65700906/google-sheets-get-date-value-as-number-problem
@@ -45,12 +48,11 @@ Future<void> createPatients(
 
       final immunizationList = <Immunization>[];
       final conditionList = <Condition>[];
-      final description = v.last.toString().toLowerCase();
-      final disease = diseaseFromDescription(description);
+      final vaxDoses = <VaxDose>[];
       for (var i = 0; i < doseIndexes.length; i++) {
         final index = doseIndexes[i];
         if (v[index] != null && v[index] != '' && v[index] != '-') {
-          immunizationList.add(Immunization(
+          final immunization = Immunization(
             fhirId: FhirId('${patient.fhirId}_dose${i + 1}'),
             patient: patient.thisReference,
             vaccineCode: CodeableConcept(
@@ -70,9 +72,21 @@ Future<void> createPatients(
             ),
             occurrenceDateTime:
                 FhirDateTime(epoch.add(Duration(days: v[index]))),
-          ));
+          );
+          immunizationList.add(immunization);
+          final vaxDose = VaxDose.fromImmunization(
+              immunization, VaxDate.fromDateTime(patient.birthDate!.value));
+          if (v[index + 4] != null) {
+            vaxDose.evalStatus = EvalStatus.fromJson(v[index + 4]);
+          }
+          if (v[index + 5] != null) {
+            vaxDose.evalReason = EvalReason.fromJson(v[index + 5]);
+          }
+          vaxDoses.add(vaxDose);
         }
       }
+      testDoses[patient.fhirId!.value!] =
+          vaxDoses.map((e) => e.toJson()).toList();
       for (var i = 0; i < cdsiObservationIndexes.length; i++) {
         final index = cdsiObservationIndexes[i];
         if (v[index] != null && v[index] != '') {
@@ -161,6 +175,8 @@ Future<void> createPatients(
             'pythia_generator/lib/generated_files/underlyingConditionTestCases.ndjson')
         .writeAsString(writeString);
   }
+  await File('pythia_generator/lib/generated_files/test_doses.json')
+      .writeAsString(jsonEncode(testDoses));
 }
 
 List<String> diseaseFromDescription(String description) {

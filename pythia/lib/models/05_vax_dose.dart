@@ -68,11 +68,11 @@ class VaxDose {
                       ? EvalStatus.sub_standard
                       : null,
       evalReason: dateGiven == null
-          ? 'No Date Given'
+          ? EvalReason.noDateGiven
           : cvx == null
-              ? 'No Cvx'
+              ? EvalReason.noCvx
               : expired
-                  ? 'Expired'
+                  ? EvalReason.expired
                   : immunization.isSubpotent?.value ?? false
                       ? subpotentReason(immunization)
                       : null,
@@ -104,7 +104,7 @@ class VaxDose {
     bool? allowedVaccine,
     String? allowedVaccineReason,
     EvalStatus? evalStatus,
-    String? evalReason,
+    EvalReason? evalReason,
   }) {
     return VaxDose(
       doseId: doseId ?? this.doseId,
@@ -153,17 +153,19 @@ class VaxDose {
     if (inadvertentIndex != null && inadvertentIndex != -1) {
       inadvertent = true;
       evalStatus = EvalStatus.not_valid;
-      evalReason = 'Inadvertent Administration';
+      evalReason = EvalReason.inadvertentVaccine;
       return false;
     } else {
       return true;
     }
   }
 
-  void setValidAge(bool valid, ValidAgeReason reason, [EvalStatus? status]) {
+  void setValidAge(bool valid, ValidAgeReason reason,
+      [EvalStatus? status, EvalReason? newEvalReason]) {
     validAge = valid;
     validAgeReason = reason;
     evalStatus = status ?? evalStatus;
+    evalReason = newEvalReason ?? evalReason;
   }
 
   bool validByAge(
@@ -217,7 +219,12 @@ class VaxDose {
                 (!(previousDose.validAge ?? false) ||
                     !(previousDose.allowedInterval ?? false)) &&
                 previousDose.dateGiven.change('1 year') > dateGiven) {
-              setValidAge(false, ValidAgeReason.tooYoung, EvalStatus.not_valid);
+              setValidAge(
+                false,
+                ValidAgeReason.tooYoung,
+                EvalStatus.not_valid,
+                EvalReason.ageTooYoung,
+              );
               return false;
             } else {
               setValidAge(true, ValidAgeReason.gracePeriod);
@@ -378,6 +385,7 @@ class VaxDose {
             updatePreferredInterval(valid: false, status: 'Too Soon');
             updateAllowedInterval(valid: false, status: 'Too Soon');
             evalStatus = EvalStatus.not_valid;
+            evalReason = EvalReason.intervalTooShort;
             return false;
 
             /// If it's between the absoluteMinimumIntervalDate and the
@@ -471,6 +479,7 @@ class VaxDose {
           conflict = true;
           conflictReason = 'Live Virus Conflict';
           evalStatus = EvalStatus.not_valid;
+          evalReason = EvalReason.liveVirusConflict;
           return true;
         } else {
           conflict = false;
@@ -549,6 +558,7 @@ class VaxDose {
       allowedVaccine = false;
       allowedVaccineReason = 'No allowed types';
       evalStatus = EvalStatus.not_valid;
+      evalReason = EvalReason.notPreferableOrAllowable;
       return false;
     } else {
       final allowedList = vaccines.toList();
@@ -558,6 +568,7 @@ class VaxDose {
         allowedVaccine = false;
         allowedVaccineReason = 'Not allowed type';
         evalStatus = EvalStatus.not_valid;
+        evalReason = EvalReason.notPreferableOrAllowable;
         return false;
       } else {
         final allowedVax = allowedList.first;
@@ -575,6 +586,7 @@ class VaxDose {
           allowedVaccine = false;
           allowedVaccineReason = 'Not allowed type';
           evalStatus = EvalStatus.not_valid;
+          evalReason = EvalReason.notPreferableOrAllowable;
           return false;
         }
       }
@@ -596,6 +608,62 @@ class VaxDose {
       'allowedVaccineReason $allowedVaccineReason\n'
       'evalStatus $evalStatus\n'
       'evalReason $evalReason';
+
+  Map<String, dynamic> toJson() => {
+        'doseId': doseId,
+        'volume': volume,
+        'dateGiven': dateGiven.toJson(),
+        'cvx': cvx,
+        'mvx': mvx,
+        'antigens': antigens,
+        'dob': dob.toJson(),
+        'targetDisease': targetDisease,
+        'targetDoseSatisfied': targetDoseSatisfied,
+        'index': index,
+        'inadvertent': inadvertent,
+        'validAge': validAge,
+        'validAgeReason': validAgeReason.toString(),
+        'preferredInterval': preferredInterval,
+        'preferredIntervalReason': preferredIntervalReason,
+        'allowedInterval': allowedInterval,
+        'allowedIntervalReason': allowedIntervalReason,
+        'conflict': conflict,
+        'conflictReason': conflictReason,
+        'preferredVaccine': preferredVaccine,
+        'preferredVaccineReason': preferredVaccineReason,
+        'allowedVaccine': allowedVaccine,
+        'allowedVaccineReason': allowedVaccineReason,
+        'evalStatus': evalStatus?.toString(),
+        'evalReason': evalReason?.toString(),
+      };
+
+  factory VaxDose.fromJson(Map<String, dynamic> json) => VaxDose(
+        doseId: json['doseId'],
+        volume: json['volume'],
+        dateGiven: VaxDate.fromJson(json['dateGiven']),
+        cvx: json['cvx'],
+        mvx: json['mvx'],
+        antigens: List<String>.from(json['antigens']),
+        dob: VaxDate.fromJson(json['dob']),
+        targetDisease: json['targetDisease'],
+      )
+        ..targetDoseSatisfied = json['targetDoseSatisfied']
+        ..index = json['index']
+        ..inadvertent = json['inadvertent'] ?? false
+        ..validAge = json['validAge']
+        ..validAgeReason = ValidAgeReason.fromJson(json['validAgeReason'])
+        ..preferredInterval = json['preferredInterval']
+        ..preferredIntervalReason = json['preferredIntervalReason']
+        ..allowedInterval = json['allowedInterval']
+        ..allowedIntervalReason = json['allowedIntervalReason']
+        ..conflict = json['conflict']
+        ..conflictReason = json['conflictReason']
+        ..preferredVaccine = json['preferredVaccine']
+        ..preferredVaccineReason = json['preferredVaccineReason']
+        ..allowedVaccine = json['allowedVaccine']
+        ..allowedVaccineReason = json['allowedVaccineReason']
+        ..evalStatus = EvalStatus.fromJson(json['evalStatus'])
+        ..evalReason = EvalReason.fromJson(json['evalReason']);
 
   final String doseId;
   final double? volume;
@@ -621,5 +689,5 @@ class VaxDose {
   bool? allowedVaccine;
   String? allowedVaccineReason;
   EvalStatus? evalStatus;
-  String? evalReason;
+  EvalReason? evalReason;
 }

@@ -1,4 +1,5 @@
 import 'package:fhir/r5.dart';
+import '../pythia.dart';
 
 String? cvxFromImmunization(Immunization immunization) =>
     codeFromImmunization(immunization, FhirUri('http://hl7.org/fhir/sid/cvx'));
@@ -16,7 +17,7 @@ String? codeFromImmunization(Immunization immunization, FhirUri url) {
   }
 }
 
-String? subpotentReason(Immunization immunization) {
+EvalReason? subpotentReason(Immunization immunization) {
   int? codingIndex;
   final subpotentIndex =
       immunization.subpotentReason?.indexWhere((codeableConcept) {
@@ -33,9 +34,19 @@ String? subpotentReason(Immunization immunization) {
       codingIndex == -1) {
     return null;
   } else {
-    return immunization
-            .subpotentReason![subpotentIndex].coding![codingIndex!].display ??
-        immunization.subpotentReason![subpotentIndex].coding![codingIndex!].code
-            .toString();
+    if (immunization
+            .subpotentReason![subpotentIndex].coding![codingIndex!].code !=
+        null) {
+      EvalReason? evalReason = EvalReason.fromCode(immunization
+          .subpotentReason![subpotentIndex].coding![codingIndex!].code?.value);
+      if (evalReason != null) {
+        return evalReason;
+      } else {
+        return EvalReason.fromJson(immunization
+            .subpotentReason![subpotentIndex].coding![codingIndex!].display);
+      }
+    } else {
+      return null;
+    }
   }
 }

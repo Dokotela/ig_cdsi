@@ -335,7 +335,7 @@ class VaxSeries {
                 /// doses and this is a Valid dose
                 if (condition.doseType == DoseType.total ||
                     (condition.doseType == DoseType.valid &&
-                        dose.evalStatus == 'Valid')) {
+                        dose.evalStatus == EvalStatus.valid)) {
                   /// If on or after the conditional skip begin age date and
                   /// before the conditional skip end age date OR on or after
                   /// the conditional skip start date and before conditional
@@ -402,7 +402,7 @@ class VaxSeries {
                 /// doses and this is a Valid dose
                 if (condition.doseType == DoseType.total ||
                     (condition.doseType == DoseType.valid &&
-                        dose.evalStatus == 'Valid')) {
+                        dose.evalStatus == EvalStatus.valid)) {
                   /// If on or after the conditional skip begin age date and
                   /// before the conditional skip end age date OR on or after
                   /// the conditional skip start date and before conditional
@@ -597,7 +597,7 @@ class VaxSeries {
               /// TODO(Dokotela) - unclear logic
               final lastDateInadvertentAdministered = evaluatedDoses
                       .lastWhereOrNull((element) =>
-                          element.evalReason == 'Inadvertent Administration')
+                          element.evalReason == EvalReason.inadvertentVaccine)
                       ?.dateGiven ??
                   VaxDate.min();
 
