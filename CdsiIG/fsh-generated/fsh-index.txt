@@ -1,6 +1,10 @@
-Output File                                       Name                   Type      FSH File                     Lines
-Patient-PatientExample.json                       PatientExample         Instance  patient.fsh                  9 - 14
-StructureDefinition-CvxToAntigenMap.json          CvxToAntigenMap        Resource  cvx_to_antigen_map.fsh       1 - 12
-StructureDefinition-MyPatient.json                MyPatient              Profile   patient.fsh                  4 - 7
-StructureDefinition-Vaccine.json                  Vaccine                Resource  vaccine.fsh                  1 - 14
-StructureDefinition-antigen-supporting-data.json  AntigenSupportingData  Profile   antigen_supporting_data.fsh  1 - 9
+Output File                                            Name                       Type      FSH File                          Lines
+Patient-PatientExample.json                            PatientExample             Instance  patient.fsh                       9 - 14
+StructureDefinition-CvxToAntigenMap.json               CvxToAntigenMap            Resource  cvx_to_antigen_map.fsh            1 - 12
+StructureDefinition-MyPatient.json                     MyPatient                  Profile   patient.fsh                       4 - 7
+StructureDefinition-Vaccine.json                       Vaccine                    Resource  vaccine.fsh                       1 - 14
+StructureDefinition-antigen-supporting-data.json       AntigenSupportingData      Resource  antigen_supporting_data.fsh       1 - 75
+StructureDefinition-live-virus-conflict.json           LiveVirusConflict          Resource  live_virus_conflicts.fsh          1 - 15
+StructureDefinition-vaccination-observation-map.json   VaccinationObservationMap  Resource  vaccine_observation_map.fsh       1 - 15
+StructureDefinition-vaccine-group-map.json             VaccineGroupMap            Resource  vaccine_group_map.fsh             1 - 8
+StructureDefinition-vaccine-group-to-antigen-map.json  VaccineGroupToAntigenMap   Resource  vaccine_group_to_antigen_map.fsh  1 - 8

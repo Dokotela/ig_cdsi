@@ -34,9 +34,41 @@
   {
     "outputFile": "StructureDefinition-antigen-supporting-data.json",
     "fshName": "AntigenSupportingData",
-    "fshType": "Profile",
+    "fshType": "Resource",
     "fshFile": "antigen_supporting_data.fsh",
     "startLine": 1,
-    "endLine": 9
+    "endLine": 75
+  },
+  {
+    "outputFile": "StructureDefinition-live-virus-conflict.json",
+    "fshName": "LiveVirusConflict",
+    "fshType": "Resource",
+    "fshFile": "live_virus_conflicts.fsh",
+    "startLine": 1,
+    "endLine": 15
+  },
+  {
+    "outputFile": "StructureDefinition-vaccination-observation-map.json",
+    "fshName": "VaccinationObservationMap",
+    "fshType": "Resource",
+    "fshFile": "vaccine_observation_map.fsh",
+    "startLine": 1,
+    "endLine": 15
+  },
+  {
+    "outputFile": "StructureDefinition-vaccine-group-map.json",
+    "fshName": "VaccineGroupMap",
+    "fshType": "Resource",
+    "fshFile": "vaccine_group_map.fsh",
+    "startLine": 1,
+    "endLine": 8
+  },
+  {
+    "outputFile": "StructureDefinition-vaccine-group-to-antigen-map.json",
+    "fshName": "VaccineGroupToAntigenMap",
+    "fshType": "Resource",
+    "fshFile": "vaccine_group_to_antigen_map.fsh",
+    "startLine": 1,
+    "endLine": 8
   }
 ]

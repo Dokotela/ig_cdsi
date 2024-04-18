@@ -1,4 +1,4 @@
-Profile: LiveVirusConflict
+Resource: LiveVirusConflict
 Id: live-virus-conflict
 Parent: Resource
 Title: "Live Virus Conflict"

@@ -1,4 +1,4 @@
-Profile: VaccinationObservationMap
+Resource: VaccinationObservationMap
 Id: vaccination-observation-map
 Parent: Resource
 Title: "Vaccination Observation Map"

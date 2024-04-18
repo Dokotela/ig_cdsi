@@ -1,4 +1,4 @@
-Profile: VaccineGroupMap
+Resource: VaccineGroupMap
 Id: vaccine-group-map
 Parent: Resource
 Title: "Vaccine Group Map"

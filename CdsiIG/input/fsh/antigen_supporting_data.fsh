@@ -1,4 +1,4 @@
-Profile: AntigenSupportingData
+Resource: AntigenSupportingData
 Id: antigen-supporting-data
 Parent: Resource
 Title: "Antigen Supporting Data"
@@ -73,6 +73,3 @@ Description: "A resource to store supporting data for antigens including target 
 * series.seriesDose.seasonalRecommendation 0..1 BackboneElement "Seasonal recommendation for the vaccine dose."
 * series.seriesDose.seasonalRecommendation.startDate 1..1 string "Start date for the seasonal recommendation."
 * series.seriesDose.seasonalRecommendation.endDate 1..1 string "End date for the seasonal recommendation."
-
-
-This profile effectively encapsulates all data relevant to vaccine guidance, tailored to suit any potential immunization program needs by accommodating varying diseases, vaccine types, age-related recommendations, and medical contraindications.
