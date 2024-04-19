@@ -712,7 +712,8 @@ class VaxSeries {
       administrativeGuidance += series.seriesAdminGuidance?.join('\n') ?? '';
 
       /// A recommended series dose, must be a preferable vaccine
-      final List<Vaccine>? preferableVaccines = seriesDose.preferableVaccine;
+      final List<Vaccine>? preferableVaccines =
+          seriesDose.preferableVaccine?.toList();
       preferableVaccines?.retainWhere((element) {
         /// The forecast vaccine type of the dose is 'Y'
         if (element.forecastVaccineType != 'Y') {

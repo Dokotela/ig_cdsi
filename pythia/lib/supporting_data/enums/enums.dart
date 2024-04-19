@@ -6,6 +6,8 @@ export 'eval_status_enum.dart';
 export 'eval_reason_enum.dart';
 export 'forecast_reason_enum.dart';
 export 'gender_enum.dart';
+export 'interval_reason_enum.dart';
+export 'preferred_allowed_reason_enum.dart';
 export 'series_preference_enum.dart';
 export 'series_priority_enum.dart';
 export 'series_status_enum.dart';

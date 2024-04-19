@@ -1,9 +1,21 @@
+import 'package:collection/collection.dart';
 import 'package:fhir/r5.dart';
+import 'package:fhir_bulk/r5/fhir_bulk.dart';
 import 'package:pythia/forecast/forecast.dart';
 
-void main() {
-  forecastFromParameters(simpleTest);
+Future<void> main() async {
+  // forecastFromParameters(simpleTest);
   // forecastFromParameters(complexTest);
+  final parameters =
+      await FhirBulk.fromFile('./lib/generated_files/healthyTestCases.ndjson');
+  for (int i = 0; i < 10; i++) {
+    final Patient? patient = (parameters[i] as Parameters)
+        .parameter
+        ?.firstWhereOrNull((e) => e.resource is Patient)
+        ?.resource as Patient?;
+    print('ID: ${patient?.fhirId}');
+    forecastFromParameters(parameters[i] as Parameters);
+  }
 }
 
 final simpleTest = Parameters.fromJson({

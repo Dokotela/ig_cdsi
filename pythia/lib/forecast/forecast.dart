@@ -1,4 +1,6 @@
+import 'package:collection/collection.dart';
 import 'package:fhir/r5.dart';
+import '../generated_files/test_doses.dart';
 import 'package:pythia/pythia.dart';
 import 'package:riverpod/riverpod.dart';
 
@@ -34,17 +36,43 @@ Bundle forecastFromParameters(Parameters parameters) {
   /// Forecast
   agMap.forEach((k, v) => v.forecast());
 
+  final evaluatedDoses = testDoses[patient.patient.fhirId.toString()]
+      ?.map((e) => VaxDose.fromJson(e))
+      .toList();
+
   agMap.forEach((k, v) {
-    if (k.toLowerCase().contains('hep')) {
+    if (evaluatedDoses != null &&
+        evaluatedDoses.isNotEmpty &&
+        evaluatedDoses.first.antigens
+            .map((e) => e.toLowerCase())
+            .toList()
+            .contains(k.toLowerCase())) {
       print(k);
       v.groups.forEach((key, value) {
-        print('  $key');
-        value.series.forEach((element) {
+        final List<VaxSeries>? bestSeries;
+        if (value.bestSeries != null) {
+          bestSeries = [value.bestSeries!];
+        } else {
+          bestSeries = value.prioritizedSeries;
+        }
+
+        bestSeries.forEach((element) {
           print('    ${element.series.seriesName}');
-          print('    ${element.evaluatedTargetDose}');
-          element.evaluatedDoses.forEach((dose) {
-            print('      ${dose.validity} ${dose.preferredVaccine}');
-          });
+          for (int i = 0; i < element.evaluatedDoses.length; i++) {
+            if (evaluatedDoses[i].validity !=
+                element.evaluatedDoses[i].validity) {
+              bestSeries?.forEach((element) {
+                for (int i = 0; i < element.evaluatedDoses.length; i++) {
+                  print('Official: ${evaluatedDoses[i].validity}\n'
+                      'Pythia: ${element.evaluatedDoses[i].validity}');
+                }
+              });
+              throw Exception(
+                  'Mismatch on patient ${patient.patient.fhirId} - Dose: ${i + 1}\n'
+                  'Official: ${evaluatedDoses[i].validity}\n'
+                  'Pythia: ${element.evaluatedDoses[i].validity}');
+            }
+          }
         });
       });
     }

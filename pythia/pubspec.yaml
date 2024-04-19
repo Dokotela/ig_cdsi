@@ -9,6 +9,7 @@ environment:
 dependencies:
   collection: ^1.18.0
   fhir: ^0.12.0
+  fhir_bulk: ^0.12.0
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
   riverpod: ^2.5.0

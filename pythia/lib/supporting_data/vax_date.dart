@@ -21,10 +21,19 @@ class VaxDate extends DateTime {
         );
 
   VaxDate.fromJson(String date)
-      : super(
-          DateTime.parse(date).year,
-          DateTime.parse(date).month,
-          DateTime.parse(date).day,
+      : assert((int.tryParse(date.split('/')[2]) ??
+                int.tryParse(date.split('-')[2])) !=
+            null),
+        assert((int.tryParse(date.split('/')[0]) ??
+                int.tryParse(date.split('-')[0])) !=
+            null),
+        assert((int.tryParse(date.split('/')[1]) ??
+                int.tryParse(date.split('-')[1])) !=
+            null),
+        super(
+          int.tryParse(date.split('/')[2]) ?? int.parse(date.split('-')[2]),
+          int.tryParse(date.split('/')[0]) ?? int.parse(date.split('-')[0]),
+          int.tryParse(date.split('/')[1]) ?? int.parse(date.split('-')[1]),
         );
 
   VaxDate.fromMMDDYYYYMax(String date)
@@ -151,7 +160,6 @@ class VaxDate extends DateTime {
       changeIfNotNullElse(howMuch, VaxDate.min());
 
   VaxDate _parseDateString(String change) {
-    print('$this $change');
     var years = 0, months = 0, weeks = 0, days = 0, posNeg = 1;
     var time = change.split(' ');
     for (var i = 0; i < time.length; i++) {
@@ -163,16 +171,16 @@ class VaxDate extends DateTime {
         }
       }
       if (time[i].contains('year')) {
-        years += int.tryParse(time[i - 1]) ?? 0 * posNeg;
+        years += (int.tryParse(time[i - 1]) ?? 0) * posNeg;
       }
       if (time[i].contains('month')) {
-        months += int.tryParse(time[i - 1]) ?? 0 * posNeg;
+        months += (int.tryParse(time[i - 1]) ?? 0) * posNeg;
       }
       if (time[i].contains('week')) {
-        weeks += int.tryParse(time[i - 1]) ?? 0 * posNeg;
+        weeks += (int.tryParse(time[i - 1]) ?? 0) * posNeg;
       }
       if (time[i].contains('day')) {
-        days += int.tryParse(time[i - 1]) ?? 0 * posNeg;
+        days += (int.tryParse(time[i - 1]) ?? 0) * posNeg;
       }
     }
     return _calculateTime(years, months, 7 * weeks + days);
@@ -193,7 +201,7 @@ class VaxDate extends DateTime {
     if (newDate.day < day) {
       newDate = DateTime(newDate.year, newDate.month, 1);
     } else {
-      newDate = DateTime(newDate.year, newDate.month - 1, day);
+      newDate = DateTime(newDate.year, month + months, day);
     }
     return VaxDate(newDate.year, newDate.month, newDate.day + days);
   }

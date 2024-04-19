@@ -91,18 +91,17 @@ class VaxDose {
     String? targetDisease,
     int? index,
     bool? inadvertent,
-    bool? validAge,
     ValidAgeReason? validAgeReason,
     bool? preferredInterval,
-    String? preferredIntervalReason,
+    IntervalReason? preferredIntervalReason,
     bool? allowedInterval,
-    String? allowedIntervalReason,
+    IntervalReason? allowedIntervalReason,
     bool? conflict,
     String? conflictReason,
     bool? preferredVaccine,
-    String? preferredVaccineReason,
+    PreferredAllowedReason? preferredVaccineReason,
     bool? allowedVaccine,
-    String? allowedVaccineReason,
+    PreferredAllowedReason? allowedVaccineReason,
     EvalStatus? evalStatus,
     EvalReason? evalReason,
   }) {
@@ -133,7 +132,6 @@ class VaxDose {
       ..preferredVaccine = preferredVaccine ?? this.preferredVaccine
       ..preferredVaccineReason =
           preferredVaccineReason ?? this.preferredVaccineReason
-      ..validAge = validAge ?? this.validAge
       ..validAgeReason = validAgeReason ?? this.validAgeReason
       ..evalStatus = evalStatus ?? this.evalStatus
       ..evalReason = evalReason ?? this.evalReason;
@@ -160,9 +158,11 @@ class VaxDose {
     }
   }
 
-  void setValidAge(bool valid, ValidAgeReason reason,
-      [EvalStatus? status, EvalReason? newEvalReason]) {
-    validAge = valid;
+  void setAgeReason(
+    ValidAgeReason reason, [
+    EvalStatus? status,
+    EvalReason? newEvalReason,
+  ]) {
     validAgeReason = reason;
     evalStatus = status ?? evalStatus;
     evalReason = newEvalReason ?? evalReason;
@@ -174,7 +174,6 @@ class VaxDose {
     int targetDose,
   ) {
     if (vaxAge == null || vaxAge.isEmpty) {
-      validAge = true;
       return true;
     } else {
       final ageIndex = vaxAge.length == 1
@@ -194,7 +193,7 @@ class VaxDose {
         /// If the date administered is less than the absolute minimum age, this
         /// dose is not valid, it was given too young
         if (dateGiven < absoluteMinimumAgeDate) {
-          setValidAge(false, ValidAgeReason.tooYoung, EvalStatus.not_valid);
+          setAgeReason(ValidAgeReason.tooYoung, EvalStatus.not_valid);
           return false;
         } else {
           final minimumAgeDate = age.minAge == null
@@ -209,25 +208,25 @@ class VaxDose {
             // TODO(Dokotela) - they say first targetDose, but I think they mean
             // if any doses have been given previously
             if (targetDose == 0 || previousDose == null) {
-              setValidAge(true, ValidAgeReason.gracePeriod);
+              setAgeReason(ValidAgeReason.gracePeriod);
               return true;
             }
 
             /// If the previous dose is invalid due to age or interval concerns,
             /// and given less than a year before the current dose
-            else if (!(previousDose.evalStatus == EvalStatus.not_valid) &&
-                (!(previousDose.validAge ?? false) ||
-                    !(previousDose.allowedInterval ?? false)) &&
+            else if (previousDose.evalStatus == EvalStatus.not_valid &&
+                ((previousDose.validAgeReason == ValidAgeReason.tooYoung ||
+                        previousDose.validAgeReason == ValidAgeReason.tooOld) ||
+                    previousDose.allowedIntervalReason != null) &&
                 previousDose.dateGiven.change('1 year') > dateGiven) {
-              setValidAge(
-                false,
+              setAgeReason(
                 ValidAgeReason.tooYoung,
                 EvalStatus.not_valid,
                 EvalReason.ageTooYoung,
               );
               return false;
             } else {
-              setValidAge(true, ValidAgeReason.gracePeriod);
+              setAgeReason(ValidAgeReason.gracePeriod);
               return true;
             }
           } else {
@@ -235,10 +234,10 @@ class VaxDose {
                 ? VaxDate(2999, 12, 31)
                 : dob.change(age.maxAge!);
             if (dateGiven < maximumAgeDate) {
-              setValidAge(true, ValidAgeReason.gracePeriod);
+              setAgeReason(ValidAgeReason.gracePeriod);
               return true;
             } else {
-              setValidAge(false, ValidAgeReason.tooOld, EvalStatus.extraneous);
+              setAgeReason(ValidAgeReason.tooOld, EvalStatus.extraneous);
               return false;
             }
           }
@@ -247,24 +246,14 @@ class VaxDose {
     }
   }
 
-  updatePreferredInterval({required bool valid, String? status}) {
+  updatePreferredInterval({required bool valid, IntervalReason? reason}) {
     preferredInterval = preferredInterval == false ? false : valid;
-    if (status != null) {
-      preferredIntervalReason =
-          preferredIntervalReason == null || preferredIntervalReason == ''
-              ? status
-              : '$preferredIntervalReason, $status';
-    }
+    preferredIntervalReason = reason ?? preferredIntervalReason;
   }
 
-  updateAllowedInterval({required bool valid, String? status}) {
+  updateAllowedInterval({required bool valid, IntervalReason? reason}) {
     allowedInterval = allowedInterval == false ? false : valid;
-    if (status != null) {
-      allowedIntervalReason =
-          allowedIntervalReason == null || allowedIntervalReason == ''
-              ? status
-              : '$allowedIntervalReason, $status';
-    }
+    allowedIntervalReason = reason ?? allowedIntervalReason;
   }
 
   bool isAllowedInterval(
@@ -382,8 +371,10 @@ class VaxDose {
           if (dateGiven < absoluteMinimumIntervalDate) {
             /// if this is the case, we can stop evaluation, this dose is not
             /// valid
-            updatePreferredInterval(valid: false, status: 'Too Soon');
-            updateAllowedInterval(valid: false, status: 'Too Soon');
+            updatePreferredInterval(
+                valid: false, reason: IntervalReason.tooShort);
+            updateAllowedInterval(
+                valid: false, reason: IntervalReason.tooShort);
             evalStatus = EvalStatus.not_valid;
             evalReason = EvalReason.intervalTooShort;
             return false;
@@ -395,7 +386,8 @@ class VaxDose {
             /// If it's the first targetDose, then it's valid due to the
             /// Grace Period
             if (targetDose == 0) {
-              updatePreferredInterval(valid: true, status: 'Grace Period');
+              updatePreferredInterval(
+                  valid: true, reason: IntervalReason.gracePeriod);
             }
 
             /// Otherwise, Is the evaluation status of the previous dose given
@@ -403,25 +395,32 @@ class VaxDose {
             /// from the vaccine dose administered being evaluated?
             else if (doses.isNotEmpty && index != null) {
               final previousDose = doses[index! - 1];
-              if ((!(previousDose.validAge ?? true) ||
-                      !(previousDose.allowedInterval ?? true)) &&
+              if (previousDose.evalStatus == EvalStatus.not_valid &&
+                  ((previousDose.validAgeReason == ValidAgeReason.tooYoung ||
+                          previousDose.validAgeReason ==
+                              ValidAgeReason.tooOld) ||
+                      previousDose.allowedIntervalReason != null) &&
                   previousDose.dateGiven.change('1 year') > dateGiven) {
-                updatePreferredInterval(valid: false, status: 'Too Soon');
+                updatePreferredInterval(
+                    valid: false, reason: IntervalReason.tooShort);
               } else {
-                updatePreferredInterval(valid: true, status: 'Grace Period');
+                updatePreferredInterval(
+                    valid: true, reason: IntervalReason.gracePeriod);
               }
             }
 
             /// If there are no previous doses to compare to, then this is
             /// not a valid interval, it was given too soon
             else {
-              updatePreferredInterval(valid: false, status: 'Too Soon');
+              updatePreferredInterval(
+                  valid: false, reason: IntervalReason.tooShort);
             }
           }
 
           /// If it's given after the minimumIntervalDate then it's not valid
           else if (dateGiven > minimumIntervaldate) {
-            updatePreferredInterval(valid: false, status: 'Too Late');
+            updatePreferredInterval(
+                valid: false, reason: IntervalReason.tooLate);
           }
         }
       }
@@ -495,7 +494,7 @@ class VaxDose {
   ) {
     if (vaccines == null || vaccines.isEmpty) {
       preferredVaccine = false;
-      preferredVaccineReason = 'No preferred types';
+      preferredVaccineReason = PreferredAllowedReason.noPreferredTypes;
       return false;
     } else {
       final preferredList = vaccines.toList();
@@ -503,14 +502,15 @@ class VaxDose {
           .retainWhere((element) => element.cvxAsInt == int.tryParse(cvx));
       if (preferredList.isEmpty) {
         preferredVaccine = false;
-        preferredVaccineReason = 'Not preferred type';
+        preferredVaccineReason =
+            PreferredAllowedReason.notAPreferableOrAllowableVaccine;
         return false;
       } else {
         preferredList.retainWhere(
             (element) => element.mvx?.toLowerCase() == mvx?.toLowerCase());
         if (preferredList.isEmpty) {
           preferredVaccine = false;
-          preferredVaccineReason = 'Wrong trade name';
+          preferredVaccineReason = PreferredAllowedReason.wrongTradeName;
           return false;
         } else if (preferredList.length != 1) {
           throw 'Something wrong with the preferred list';
@@ -536,13 +536,14 @@ class VaxDose {
               return true;
             } else {
               preferredVaccine = true;
-              preferredVaccineReason = 'Less Than Recommended Volume';
+              preferredVaccineReason =
+                  PreferredAllowedReason.lessThanRecommendedVolume;
               return true;
             }
           } else {
             preferredVaccine = false;
             preferredVaccineReason =
-                'Administered outside of preferred age range';
+                PreferredAllowedReason.administeredOutsideOfPreferredAgeRange;
             return false;
           }
         }
@@ -556,7 +557,7 @@ class VaxDose {
   ) {
     if (vaccines == null || vaccines.isEmpty) {
       allowedVaccine = false;
-      allowedVaccineReason = 'No allowed types';
+      allowedVaccineReason = PreferredAllowedReason.noAllowedTypes;
       evalStatus = EvalStatus.not_valid;
       evalReason = EvalReason.notPreferableOrAllowable;
       return false;
@@ -566,7 +567,8 @@ class VaxDose {
           .retainWhere((element) => element.cvxAsInt == int.tryParse(cvx));
       if (allowedList.isEmpty) {
         allowedVaccine = false;
-        allowedVaccineReason = 'Not allowed type';
+        allowedVaccineReason =
+            PreferredAllowedReason.notAPreferableOrAllowableVaccine;
         evalStatus = EvalStatus.not_valid;
         evalReason = EvalReason.notPreferableOrAllowable;
         return false;
@@ -584,7 +586,8 @@ class VaxDose {
           return true;
         } else {
           allowedVaccine = false;
-          allowedVaccineReason = 'Not allowed type';
+          allowedVaccineReason =
+              PreferredAllowedReason.notAPreferableOrAllowableVaccine;
           evalStatus = EvalStatus.not_valid;
           evalReason = EvalReason.notPreferableOrAllowable;
           return false;
@@ -593,21 +596,54 @@ class VaxDose {
     }
   }
 
-  String get validity => 'inadvertent $inadvertent\n'
-      'validAge $validAge\n'
-      'validAgeReason $validAgeReason\n'
-      'preferredInterval $preferredInterval\n'
-      'preferredIntervalReason $preferredIntervalReason\n'
-      'allowedInterval $allowedInterval\n'
-      'allowedIntervalReason $allowedIntervalReason\n'
-      'conflict $conflict\n'
-      'conflictReason $conflictReason\n'
-      'preferredVaccine $preferredVaccine\n'
-      'preferredVaccineReason $preferredVaccineReason\n'
-      'allowedVaccine $allowedVaccine\n'
-      'allowedVaccineReason $allowedVaccineReason\n'
-      'evalStatus $evalStatus\n'
-      'evalReason $evalReason';
+  String get validity {
+    String _validity = 'Status: $evalStatus ';
+    if (evalStatus == EvalStatus.valid) {
+      return _validity;
+    }
+    bool reason = false;
+
+    if (evalReason != null) {
+      _validity += 'Reason: $evalReason, ';
+      reason = true;
+    }
+
+    if (inadvertent) {
+      _validity += 'Inadvertent, ';
+    }
+
+    if (validAgeReason != null) {
+      _validity += '${reason ? "" : "Reason: "}$validAgeReason, ';
+      reason = true;
+    }
+
+    if (preferredIntervalReason != null) {
+      _validity += '${reason ? "" : "Reason: "}$preferredIntervalReason, ';
+      reason = true;
+    }
+
+    if (allowedIntervalReason != null) {
+      _validity += '${reason ? "" : "Reason: "}$allowedIntervalReason, ';
+      reason = true;
+    }
+
+    if (conflictReason != null) {
+      _validity += '${reason ? "" : "Reason: "}$conflictReason, ';
+      reason = true;
+    }
+
+    if (preferredVaccineReason != null) {
+      _validity += '${reason ? "" : "Reason: "}$preferredVaccineReason, ';
+      reason = true;
+    }
+
+    if (allowedVaccineReason != null) {
+      _validity += '${reason ? "" : "Reason: "}$allowedVaccineReason, ';
+      reason = true;
+    }
+
+    return reason ? _validity.substring(0, _validity.length - 2) : _validity;
+  }
 
   Map<String, dynamic> toJson() => {
         'doseId': doseId,
@@ -621,23 +657,22 @@ class VaxDose {
         'targetDoseSatisfied': targetDoseSatisfied,
         if (index != null) 'index': index,
         'inadvertent': inadvertent,
-        if (validAge != null) 'validAge': validAge,
         if (validAgeReason != null)
           'validAgeReason': validAgeReason?.toString(),
         if (preferredInterval != null) 'preferredInterval': preferredInterval,
         if (preferredIntervalReason != null)
-          'preferredIntervalReason': preferredIntervalReason,
+          'preferredIntervalReason': preferredIntervalReason.toString(),
         if (allowedInterval != null) 'allowedInterval': allowedInterval,
         if (allowedIntervalReason != null)
-          'allowedIntervalReason': allowedIntervalReason,
+          'allowedIntervalReason': allowedIntervalReason.toString(),
         if (conflict != null) 'conflict': conflict,
         if (conflictReason != null) 'conflictReason': conflictReason,
         if (preferredVaccine != null) 'preferredVaccine': preferredVaccine,
         if (preferredVaccineReason != null)
-          'preferredVaccineReason': preferredVaccineReason,
+          'preferredVaccineReason': preferredVaccineReason.toString(),
         if (allowedVaccine != null) 'allowedVaccine': allowedVaccine,
         if (allowedVaccineReason != null)
-          'allowedVaccineReason': allowedVaccineReason,
+          'allowedVaccineReason': allowedVaccineReason.toString(),
         if (evalStatus != null) 'evalStatus': evalStatus?.toString(),
         if (evalReason != null) 'evalReason': evalReason?.toString(),
       };
@@ -655,18 +690,21 @@ class VaxDose {
         ..targetDoseSatisfied = json['targetDoseSatisfied']
         ..index = json['index']
         ..inadvertent = json['inadvertent'] ?? false
-        ..validAge = json['validAge']
         ..validAgeReason = ValidAgeReason.fromJson(json['validAgeReason'])
         ..preferredInterval = json['preferredInterval']
-        ..preferredIntervalReason = json['preferredIntervalReason']
+        ..preferredIntervalReason =
+            IntervalReason.fromJson(json['preferredIntervalReason'])
         ..allowedInterval = json['allowedInterval']
-        ..allowedIntervalReason = json['allowedIntervalReason']
+        ..allowedIntervalReason =
+            IntervalReason.fromJson(json['allowedIntervalReason'])
         ..conflict = json['conflict']
         ..conflictReason = json['conflictReason']
         ..preferredVaccine = json['preferredVaccine']
-        ..preferredVaccineReason = json['preferredVaccineReason']
+        ..preferredVaccineReason =
+            PreferredAllowedReason.fromJson(json['preferredVaccineReason'])
         ..allowedVaccine = json['allowedVaccine']
-        ..allowedVaccineReason = json['allowedVaccineReason']
+        ..allowedVaccineReason =
+            PreferredAllowedReason.fromJson(json['allowedVaccineReason'])
         ..evalStatus = EvalStatus.fromJson(json['evalStatus'])
         ..evalReason = EvalReason.fromJson(json['evalReason']);
 
@@ -681,18 +719,17 @@ class VaxDose {
   int targetDoseSatisfied = -1;
   int? index;
   bool inadvertent = false;
-  bool? validAge;
   ValidAgeReason? validAgeReason;
   bool? preferredInterval;
-  String? preferredIntervalReason;
+  IntervalReason? preferredIntervalReason;
   bool? allowedInterval;
-  String? allowedIntervalReason;
+  IntervalReason? allowedIntervalReason;
   bool? conflict;
   String? conflictReason;
   bool? preferredVaccine;
-  String? preferredVaccineReason;
+  PreferredAllowedReason? preferredVaccineReason;
   bool? allowedVaccine;
-  String? allowedVaccineReason;
+  PreferredAllowedReason? allowedVaccineReason;
   EvalStatus? evalStatus;
   EvalReason? evalReason;
 }

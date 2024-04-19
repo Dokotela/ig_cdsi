@@ -7,21 +7,21 @@ enum ValidAgeReason {
   String toString() {
     switch (this) {
       case ValidAgeReason.gracePeriod:
-        return 'Grace Period';
+        return 'Age: Grace Period';
       case ValidAgeReason.tooYoung:
-        return 'Too young';
+        return 'Age: Too Young';
       case ValidAgeReason.tooOld:
-        return 'Too old';
+        return 'Age: Too Old';
     }
   }
 
-  static ValidAgeReason? fromJson(String json) {
-    switch (json) {
-      case 'Grace Period':
+  static ValidAgeReason? fromJson(String? json) {
+    switch (json?.toString()) {
+      case 'age: grace period':
         return ValidAgeReason.gracePeriod;
-      case 'Too young':
+      case 'age: too young':
         return ValidAgeReason.tooYoung;
-      case 'Too old':
+      case 'age: too old':
         return ValidAgeReason.tooOld;
       default:
         return null;
