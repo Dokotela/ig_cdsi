@@ -179,8 +179,10 @@ class VaxDose {
       final ageIndex = vaxAge.length == 1
           ? 0
           : vaxAge.indexWhere((element) =>
-              VaxDate.maxIfNullString(element.effectiveDate) <= dateGiven &&
-              VaxDate.maxIfNullString(element.cessationDate) >= dateGiven);
+              VaxDate.fromNullableString(element.effectiveDate, false) <=
+                  dateGiven &&
+              VaxDate.fromNullableString(element.cessationDate, true) >=
+                  dateGiven);
       if (ageIndex == -1) {
         throw 'More than 1 age restriction, but no appropriate effective or '
             'cessation dates found';
@@ -362,9 +364,9 @@ class VaxDose {
           updatePreferredInterval(valid: false);
         } else {
           final absoluteMinimumIntervalDate =
-              referenceDate.changeIfNotNullElseMin(interval.absMinInt);
+              referenceDate.changeNullable(interval.absMinInt, false)!;
           final minimumIntervaldate =
-              referenceDate.changeIfNotNullElseMin(interval.minInt);
+              referenceDate.changeNullable(interval.minInt, false)!;
 
           /// If it's prior to the absoluteMinimumIntervalDate then it's not
           /// a valid inteval
@@ -438,7 +440,7 @@ class VaxDose {
     List<VaxDose> doses,
   ) {
     /// If there are no previous doses to look at, there can be no conflicts
-    if (doses.isEmpty) {
+    if (doses.isEmpty || index == 0) {
       conflict = false;
       return false;
     }
@@ -467,12 +469,10 @@ class VaxDose {
         conflict = false;
         return false;
       } else {
-        final conflictBeginIntervalDate = previousDose.dateGiven
-            .changeIfNotNullElseMin(
-                liveVirusConflicts[previousIndex].conflictBeginInterval);
-        final conflictEndIntervalDate = previousDose.dateGiven
-            .changeIfNotNullElseMax(
-                liveVirusConflicts[previousIndex].conflictEndInterval);
+        final conflictBeginIntervalDate = previousDose.dateGiven.changeNullable(
+            liveVirusConflicts[previousIndex].conflictBeginInterval, false)!;
+        final conflictEndIntervalDate = previousDose.dateGiven.changeNullable(
+            liveVirusConflicts[previousIndex].conflictEndInterval, true)!;
         if (conflictBeginIntervalDate <= dateGiven &&
             dateGiven < conflictEndIntervalDate) {
           conflict = true;
@@ -519,10 +519,10 @@ class VaxDose {
           final preferableVaccineTypeBeginAgeDate =
               preferredVax.beginAge == null
                   ? VaxDate.min()
-                  : birthdate.changeIfNotNullElseMin(preferredVax.beginAge);
+                  : birthdate.changeNullable(preferredVax.beginAge, false)!;
           final preferableVaccineTypeEndAgeDate = preferredVax.endAge == null
               ? VaxDate.max()
-              : birthdate.changeIfNotNullElseMax(preferredVax.endAge);
+              : birthdate.changeNullable(preferredVax.endAge, true)!;
           final preferableVaccineVolume = preferredVax.volume == null
               ? null
               : double.tryParse(preferredVax.volume!);
@@ -576,10 +576,10 @@ class VaxDose {
         final allowedVax = allowedList.first;
         final allowableVaccineTypeBeginAgeDate = allowedVax.beginAge == null
             ? VaxDate.min()
-            : birthdate.changeIfNotNullElseMin(allowedVax.beginAge);
+            : birthdate.changeNullable(allowedVax.beginAge, false)!;
         final allowableVaccineTypeEndAgeDate = allowedVax.endAge == null
             ? VaxDate.max()
-            : birthdate.changeIfNotNullElseMax(allowedVax.endAge);
+            : birthdate.changeNullable(allowedVax.endAge, true)!;
         if (allowableVaccineTypeBeginAgeDate <= dateGiven &&
             dateGiven < allowableVaccineTypeEndAgeDate) {
           allowedVaccine = true;

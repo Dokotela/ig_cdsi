@@ -58,7 +58,9 @@ class VaxSeries {
             /// because we are no longer trying to satisfy that target dose
             if (canSkip(seriesDose, SkipContext.evaluation, dose.dateGiven)) {
               evaluatedTargetDose[targetDose] = TargetDoseStatus.skipped;
-              targetDose++;
+              if (seriesDose.recurringDose != Binary.yes) {
+                targetDose++;
+              }
               break;
             } else {
               /// Check if it's an Inadvertent vaccine, as long as it IS NOT
@@ -80,7 +82,9 @@ class VaxSeries {
                         evaluatedDoses.add(dose);
                         evaluatedTargetDose[targetDose] =
                             TargetDoseStatus.satisfied;
-                        targetDose++;
+                        if (seriesDose.recurringDose != Binary.yes) {
+                          targetDose++;
+                        }
                         break;
                       }
                     }
@@ -121,7 +125,9 @@ class VaxSeries {
       /// Normal skip check, except this time for forecast
       if (canSkip(seriesDose, SkipContext.forecast, assessmentDate)) {
         evaluatedTargetDose[targetDose] = TargetDoseStatus.skipped;
-        targetDose++;
+        if (seriesDose.recurringDose != Binary.yes) {
+          targetDose++;
+        }
       } else {
         break;
       }
@@ -132,49 +138,53 @@ class VaxSeries {
     VaxDate? assessmentDate,
     required List<VaccineContraindication> vaccineContraindications,
   }) {
-    assessmentDate ??= VaxDate.now();
-    final preferableVaccines =
-        series.seriesDose?[targetDose].preferableVaccine ?? <Vaccine>[];
+    if (targetDose != series.seriesDose?.length) {
+      assessmentDate ??= VaxDate.now();
+      final preferableVaccines =
+          series.seriesDose?[targetDose].preferableVaccine ?? <Vaccine>[];
 
-    /// Check each of the contraindications (we already ensured they apply
-    /// to the patient in a previous step)
-    final container = ProviderContainer();
-    final currentObservations =
-        container.read(observationsProvider).observation?.toList() ??
-            <VaxObservation>[];
-    // TODO(Dokotela): if there's no date associated with an observation, do
-    // we assume it's active and apply it? Currently, we do.
-    /// We check and see which of the patient's observations are applicable for
-    /// the given assessmentDate
-    currentObservations.retainWhere((element) =>
-        VaxDate.minIfNullDateTime(element.period?.start?.value) <=
-            assessmentDate! &&
-        assessmentDate < VaxDate.maxIfNullDateTime(element.period?.end?.value));
-
-    /// Get the list of the ints associated with the observations
-    final obsInts = currentObservations.map((e) => e.codeAsInt ?? -1).toList();
-    obsInts.removeWhere((element) => element == -1);
-
-    /// We remove any contraindications that are not applicable, by ensuring that
-    /// their code appears in the list of current observations of the patient
-    final currentContraindications = vaccineContraindications
-        .where((element) => obsInts.contains(element.codeAsInt));
-    final contraindicatedVaccines = currentContraindications
-        .expand((element) => element.contraindicatedVaccine ?? <Vaccine>[])
-        .toSet();
-
-    for (final vaccineContraindication in contraindicatedVaccines) {
-      /// If the dates are appropriate to apply to a patient, we note that
-      /// this dose is contraindicated, and stop checking
-      if (dob.changeIfNotNullElseMin(vaccineContraindication.beginAge) <=
-              assessmentDate &&
+      /// Check each of the contraindications (we already ensured they apply
+      /// to the patient in a previous step)
+      final container = ProviderContainer();
+      final currentObservations =
+          container.read(observationsProvider).observation?.toList() ??
+              <VaxObservation>[];
+      // TODO(Dokotela): if there's no date associated with an observation, do
+      // we assume it's active and apply it? Currently, we do.
+      /// We check and see which of the patient's observations are applicable for
+      /// the given assessmentDate
+      currentObservations.retainWhere((element) =>
+          VaxDate.fromNullableDateTime(element.period?.start?.value, false) <=
+              assessmentDate! &&
           assessmentDate <
-              dob.changeIfNotNullElseMax(vaccineContraindication.endAge)) {
-        preferableVaccines.removeWhere(
-            (element) => element.cvxAsInt == vaccineContraindication.cvxAsInt);
-        if (preferableVaccines.isEmpty) {
-          isContraindicated = true;
-          break;
+              VaxDate.fromNullableDateTime(element.period?.end?.value, true));
+
+      /// Get the list of the ints associated with the observations
+      final obsInts =
+          currentObservations.map((e) => e.codeAsInt ?? -1).toList();
+      obsInts.removeWhere((element) => element == -1);
+
+      /// We remove any contraindications that are not applicable, by ensuring that
+      /// their code appears in the list of current observations of the patient
+      final currentContraindications = vaccineContraindications
+          .where((element) => obsInts.contains(element.codeAsInt));
+      final contraindicatedVaccines = currentContraindications
+          .expand((element) => element.contraindicatedVaccine ?? <Vaccine>[])
+          .toSet();
+
+      for (final vaccineContraindication in contraindicatedVaccines) {
+        /// If the dates are appropriate to apply to a patient, we note that
+        /// this dose is contraindicated, and stop checking
+        if (dob.changeNullable(vaccineContraindication.beginAge, false)! <=
+                assessmentDate &&
+            assessmentDate <
+                dob.changeNullable(vaccineContraindication.endAge, true)!) {
+          preferableVaccines.removeWhere((element) =>
+              element.cvxAsInt == vaccineContraindication.cvxAsInt);
+          if (preferableVaccines.isEmpty) {
+            isContraindicated = true;
+            break;
+          }
         }
       }
     }
@@ -254,12 +264,12 @@ class VaxSeries {
             /// The first date the patient was at an appropriate age for this skip
             /// condition to possibly apply
             final conditionalSkipBeginAgeDate =
-                dob.changeIfNotNullElseMin(condition.beginAge);
+                dob.changeNullable(condition.beginAge, false)!;
 
             /// The last date the patient was at an appropriate age for this skip
             /// condition to possibly apply
             final conditionalSkipEndAgeDate =
-                dob.changeIfNotNullElseMax(condition.beginAge);
+                dob.changeNullable(condition.beginAge, true)!;
 
             /// The reference date we're going to use to check if this skip
             /// condition actually DOES apply
@@ -291,7 +301,7 @@ class VaxSeries {
               /// skip condition doesn't apply, and we set the compare date
               /// to maximum
               final conditionalSkipIntervalDate = lastCompleted!.dateGiven
-                  .changeIfNotNullElseMax(condition.interval);
+                  .changeNullable(condition.interval, true)!;
 
               /// The reference date we're going to use to check if this skip condition
               /// actually DOES apply
@@ -307,9 +317,9 @@ class VaxSeries {
           {
             /// Dates we need for calculations
             final conditionalSkipBeginAgeDate =
-                dob.changeIfNotNullElseMin(condition.beginAge);
+                dob.changeNullable(condition.beginAge, false)!;
             final conditionalSkipEndAgeDate =
-                dob.changeIfNotNullElseMax(condition.beginAge);
+                dob.changeNullable(condition.beginAge, true)!;
 
             /// Total count
             int totalCount = 0;
@@ -373,10 +383,10 @@ class VaxSeries {
           {
             final conditionalSkipStartDate = condition.startDate == null
                 ? null
-                : VaxDate.fromStringMax(condition.startDate!);
+                : VaxDate.fromString(condition.startDate!, true);
             final conditionalSkipEndDate = condition.endDate == null
                 ? null
-                : VaxDate.fromStringMin(condition.endDate!);
+                : VaxDate.fromString(condition.endDate!, false);
 
             /// Total count
             int totalCount = 0;
@@ -508,8 +518,8 @@ class VaxSeries {
       /// If the patient DOES have at least one does that is 'Not Satisfied'
       else {
         final SeriesDose? seriesDose = series.seriesDose?[targetDose];
-        final seasonalRecommendationEndDate = VaxDate.maxIfNullString(
-            seriesDose?.seasonalRecommendation?.endDate!);
+        final seasonalRecommendationEndDate = VaxDate.fromNullableString(
+            seriesDose?.seasonalRecommendation?.endDate!, true);
 
         /// If the assessment date is after seasonal recommendation end date
         if (assessmentDate > seasonalRecommendationEndDate) {
@@ -536,9 +546,9 @@ class VaxSeries {
             final orderedIntervals = seriesDose?.interval?.sortedByCompare(
                 (element) => element.minInt,
                 (a, b) => evaluatedDoses.last.dateGiven
-                    .changeIfNotNullElse(a, evaluatedDoses.last.dateGiven)
+                    .changeNullableOrElse(a, evaluatedDoses.last.dateGiven)
                     .compareTo(evaluatedDoses.last.dateGiven
-                        .changeIfNotNullElse(
+                        .changeNullableOrElse(
                             b, evaluatedDoses.last.dateGiven)));
             final latestInterval = (orderedIntervals?.isEmpty ?? true)
                 ? null
@@ -583,8 +593,9 @@ class VaxSeries {
               }
 
               /// • Seasonal recommendation start date
-              final seasonalRecommendationStartDate = VaxDate.minIfNullString(
-                  seriesDose?.seasonalRecommendation?.startDate);
+              final seasonalRecommendationStartDate =
+                  VaxDate.fromNullableString(
+                      seriesDose?.seasonalRecommendation?.startDate, false);
               candidateEarliestDate =
                   candidateEarliestDate! > seasonalRecommendationStartDate
                       ? candidateEarliestDate
@@ -618,8 +629,8 @@ class VaxSeries {
                       : lastDateAdministered;
 
               /// • Minimum age date
-              final minimumAgeDate = dob
-                  .changeIfNotNullElseMin(seriesDose?.age?.firstOrNull?.minAge);
+              final minimumAgeDate = dob.changeNullable(
+                  seriesDose?.age?.firstOrNull?.minAge, false)!;
               candidateEarliestDate = candidateEarliestDate! > minimumAgeDate
                   ? candidateEarliestDate
                   : minimumAgeDate;
@@ -646,16 +657,17 @@ class VaxSeries {
     final seriesDose = series.seriesDose?[targetDose];
     if (seriesDose != null) {
       final age = seriesDose.age?.firstWhereOrNull((element) =>
-          VaxDate.minIfNullString(element.effectiveDate) <= assessmentDate &&
-          assessmentDate <= VaxDate.maxIfNullString(element.cessationDate));
-      minimumAgeDate = dob.changeIfNotNullElseNull(age?.minAge);
-      earliestRecommendedAgeDate =
-          dob.changeIfNotNullElseNull(age?.earliestRecAge);
-      latestRecommendedAgeDate = dob.changeIfNotNullElseNull(age?.latestRecAge);
-      maximumAgeDate = dob.changeIfNotNullElseNull(age?.maxAge);
+          VaxDate.fromNullableString(element.effectiveDate, false) <=
+              assessmentDate &&
+          assessmentDate <=
+              VaxDate.fromNullableString(element.cessationDate, true));
+      minimumAgeDate = dob.changeNullable(age?.minAge);
+      earliestRecommendedAgeDate = dob.changeNullable(age?.earliestRecAge);
+      latestRecommendedAgeDate = dob.changeNullable(age?.latestRecAge);
+      maximumAgeDate = dob.changeNullable(age?.maxAge);
       final List<VaxDate>? earliestRecommendedIntervalDates = seriesDose
           .interval
-          ?.map((e) => dob.changeIfNotNullElseNull(e.earliestRecInt))
+          ?.map((e) => dob.changeNullable(e.earliestRecInt))
           .whereType<VaxDate>()
           .toList()
           .sortedByCompare((element) => element, (a, b) => a.compareTo(b));
@@ -665,7 +677,7 @@ class VaxSeries {
               ? null
               : earliestRecommendedIntervalDates.first;
       final List<VaxDate>? latestRecommendedIntervalDates = seriesDose.interval
-          ?.map((e) => dob.changeIfNotNullElseNull(e.latestRecInt))
+          ?.map((e) => dob.changeNullable(e.latestRecInt))
           .whereType<VaxDate>()
           .toList()
           .sortedByCompare((element) => element, (a, b) => b.compareTo(a));
@@ -674,8 +686,8 @@ class VaxSeries {
           ? null
           : latestRecommendedIntervalDates.first;
       // TODO(Dokotela) Latest Conflict End Interval Date
-      seasonalRecommendationStartDate =
-          VaxDate.minIfNullString(seriesDose.seasonalRecommendation?.startDate);
+      seasonalRecommendationStartDate = VaxDate.fromNullableString(
+          seriesDose.seasonalRecommendation?.startDate, false);
       VaxDate? earliestDate = candidateEarliestDate;
       final VaxDate? unadjustedRecommendedDate = earliestRecommendedAgeDate ??
           earliestRecommendedIntervalDate ??
@@ -725,8 +737,8 @@ class VaxSeries {
         /// preferable vaccine type begin age date and before the preferable
         /// vaccine type end age date of the series dose vaccine.
         else if (earliestDate != null &&
-            earliestDate >= dob.changeIfNotNullElseMin(element.beginAge) &&
-            earliestDate < dob.changeIfNotNullElseMax(element.endAge)) {
+            earliestDate >= dob.changeNullable(element.beginAge, false)! &&
+            earliestDate < dob.changeNullable(element.endAge, true)!) {
           return true;
         } else {
           /// The adjusted recommended date of the patient series forecast is on
@@ -734,9 +746,9 @@ class VaxSeries {
           /// preferable vaccine type end age date of the series dose vaccine.
           return adjustedRecommendedDate != null &&
               adjustedRecommendedDate! >=
-                  dob.changeIfNotNullElseMin(element.beginAge) &&
+                  dob.changeNullable(element.beginAge, false)! &&
               adjustedRecommendedDate! <
-                  dob.changeIfNotNullElseMax(element.endAge);
+                  dob.changeNullable(element.endAge, true)!;
         }
       });
     }

@@ -49,12 +49,13 @@ List<Series> relevantSeries(
             if (indicationIndex == -1) {
               return false;
             } else {
-              return patient.birthdate.changeIfNotNullElseMin(
-                          series.indication![indicationIndex].beginAge) <=
+              return patient.birthdate.changeNullable(
+                          series.indication![indicationIndex].beginAge,
+                          false)! <=
                       patient.assessmentDate &&
                   patient.assessmentDate <
-                      patient.birthdate.changeIfNotNullElseMax(
-                          series.indication![indicationIndex].endAge);
+                      patient.birthdate.changeNullable(
+                          series.indication![indicationIndex].endAge, true)!;
             }
           });
           return obsIndex != -1;

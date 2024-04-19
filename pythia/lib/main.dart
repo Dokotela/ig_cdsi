@@ -8,14 +8,17 @@ Future<void> main() async {
   // forecastFromParameters(complexTest);
   final parameters =
       await FhirBulk.fromFile('./lib/generated_files/healthyTestCases.ndjson');
-  for (int i = 0; i < 10; i++) {
+  int totalDisagreements = 0;
+  for (int i = 0; i < parameters.length; i++) {
     final Patient? patient = (parameters[i] as Parameters)
         .parameter
         ?.firstWhereOrNull((e) => e.resource is Patient)
         ?.resource as Patient?;
     print('ID: ${patient?.fhirId}');
-    forecastFromParameters(parameters[i] as Parameters);
+    final bundle = forecastFromParameters(parameters[i] as Parameters);
+    totalDisagreements += int.parse(bundle.fhirId?.toString() ?? '0');
   }
+  print('Total Disagreements: $totalDisagreements');
 }
 
 final simpleTest = Parameters.fromJson({

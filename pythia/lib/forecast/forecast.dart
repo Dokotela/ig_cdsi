@@ -40,6 +40,7 @@ Bundle forecastFromParameters(Parameters parameters) {
       ?.map((e) => VaxDose.fromJson(e))
       .toList();
 
+  bool disagree = false;
   agMap.forEach((k, v) {
     if (evaluatedDoses != null &&
         evaluatedDoses.isNotEmpty &&
@@ -47,7 +48,7 @@ Bundle forecastFromParameters(Parameters parameters) {
             .map((e) => e.toLowerCase())
             .toList()
             .contains(k.toLowerCase())) {
-      print(k);
+      // print(k);
       v.groups.forEach((key, value) {
         final List<VaxSeries>? bestSeries;
         if (value.bestSeries != null) {
@@ -57,20 +58,21 @@ Bundle forecastFromParameters(Parameters parameters) {
         }
 
         bestSeries.forEach((element) {
-          print('    ${element.series.seriesName}');
           for (int i = 0; i < element.evaluatedDoses.length; i++) {
             if (evaluatedDoses[i].validity !=
                 element.evaluatedDoses[i].validity) {
-              bestSeries?.forEach((element) {
-                for (int i = 0; i < element.evaluatedDoses.length; i++) {
-                  print('Official: ${evaluatedDoses[i].validity}\n'
-                      'Pythia: ${element.evaluatedDoses[i].validity}');
-                }
-              });
-              throw Exception(
+              // bestSeries?.forEach((element) {
+              //   for (int i = 0; i < element.evaluatedDoses.length; i++) {
+              //     print('Official: ${evaluatedDoses[i].validity}\n'
+              //         'Pythia: ${element.evaluatedDoses[i].validity}');
+              //   }
+              // });
+              disagree = true;
+              print('${element.series.seriesName}\n'
                   'Mismatch on patient ${patient.patient.fhirId} - Dose: ${i + 1}\n'
                   'Official: ${evaluatedDoses[i].validity}\n'
-                  'Pythia: ${element.evaluatedDoses[i].validity}');
+                  'Pythia: ${element.evaluatedDoses[i].validity}\n');
+              break;
             }
           }
         });
@@ -78,5 +80,5 @@ Bundle forecastFromParameters(Parameters parameters) {
     }
   });
 
-  return Bundle();
+  return Bundle(fhirId: FhirId(disagree ? '1' : '0'));
 }

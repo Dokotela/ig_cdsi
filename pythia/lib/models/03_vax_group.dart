@@ -84,8 +84,8 @@ class VaxGroup {
                 .firstWhere(
                     (VaxDose dose) => dose.evalStatus == EvalStatus.valid)
                 .dateGiven <
-            dob.changeIfNotNullElseMax(
-                series.series.selectSeries?.maxAgeToStart));
+            dob.changeNullable(
+                series.series.selectSeries?.maxAgeToStart, true)!);
         scorableSeries.addAll(validDosesSeries);
       } else {
         /// o The number of valid doses is 0 for each relevant patient series

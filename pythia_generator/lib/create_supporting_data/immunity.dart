@@ -52,7 +52,7 @@ Immunity? immunity(String? immunityString) {
         !i[1]!.contains('n/a')) {
       /// Checks if the data field is the max date (which means it was blank, null or
       /// incorrectly formatted)
-      if (VaxDate.fromYYYYMMDDMax(i[1]!.toString()) != VaxDate.max()) {
+      if (VaxDate.fromYYYYMMDD(i[1]!.toString(), true) != VaxDate.max()) {
         if (date != i[1]!.toString()) {
           date = valueToString(i[1]!);
           // print(date);

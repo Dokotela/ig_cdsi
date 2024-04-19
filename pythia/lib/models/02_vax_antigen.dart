@@ -77,10 +77,9 @@ class VaxAntigen {
     for (final contraindication in groupContraindications) {
       /// If the dates are appropriate to apply to a patient, we note that
       /// this dose is contraindicated, and stop checking
-      if (dob.changeIfNotNullElseMin(contraindication.beginAge) <=
+      if (dob.changeNullable(contraindication.beginAge, false)! <=
               assessmentDate &&
-          assessmentDate <
-              dob.changeIfNotNullElseMax(contraindication.endAge)) {
+          assessmentDate < dob.changeNullable(contraindication.endAge, true)!) {
         this.contraindication = true;
         break;
       }
@@ -114,8 +113,8 @@ class VaxAntigen {
       if (dob <
           (immunityBirthdate == null
               ? VaxDate.max()
-              : VaxDate.fromStringMax(
-                  ag!.immunity!.dateOfBirth!.immunityBirthDate!))) {
+              : VaxDate.fromString(
+                  ag!.immunity!.dateOfBirth!.immunityBirthDate!, true))) {
         /// If it does, then we have to check and see if they have
         /// any exclusion criteria
         final index =

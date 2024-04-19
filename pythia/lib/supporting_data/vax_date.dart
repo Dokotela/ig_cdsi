@@ -6,227 +6,174 @@ class VaxDate extends DateTime {
   VaxDate.fromDateTime(DateTime dateTime)
       : super(dateTime.year, dateTime.month, dateTime.day);
 
-  VaxDate.fromStringMax(String date)
+  VaxDate.fromNullableDateTime(DateTime? dateTime, bool useMax)
       : super(
-          DateTime.tryParse(date)?.year ?? 2999,
-          DateTime.tryParse(date)?.month ?? 12,
-          DateTime.tryParse(date)?.day ?? 31,
+            dateTime?.year ?? (useMax ? 2999 : 1900),
+            dateTime?.month ?? (useMax ? 12 : 1),
+            dateTime?.day ?? (useMax ? 31 : 1));
+
+  // Constructors for creating VaxDate with maximum or minimum values based on a string input
+  VaxDate.fromString(String date, [bool useMax = false])
+      : super(
+          DateTime.tryParse(date)?.year ?? (useMax ? 2999 : 1900),
+          DateTime.tryParse(date)?.month ?? (useMax ? 12 : 1),
+          DateTime.tryParse(date)?.day ?? (useMax ? 31 : 1),
         );
 
-  VaxDate.fromStringMin(String date)
-      : super(
-          DateTime.tryParse(date)?.year ?? 1900,
-          DateTime.tryParse(date)?.month ?? 01,
-          DateTime.tryParse(date)?.day ?? 01,
-        );
-
+  // JSON constructor with format validation and error handling
   VaxDate.fromJson(String date)
-      : assert((int.tryParse(date.split('/')[2]) ??
-                int.tryParse(date.split('-')[2])) !=
-            null),
-        assert((int.tryParse(date.split('/')[0]) ??
-                int.tryParse(date.split('-')[0])) !=
-            null),
-        assert((int.tryParse(date.split('/')[1]) ??
-                int.tryParse(date.split('-')[1])) !=
-            null),
-        super(
-          int.tryParse(date.split('/')[2]) ?? int.parse(date.split('-')[2]),
-          int.tryParse(date.split('/')[0]) ?? int.parse(date.split('-')[0]),
-          int.tryParse(date.split('/')[1]) ?? int.parse(date.split('-')[1]),
-        );
+      : this.fromDateTime(DateTime.tryParse(date) ?? fromYYYYMMDD(date));
 
-  VaxDate.fromMMDDYYYYMax(String date)
-      : super(
-          int.tryParse(date.split('/')[2]) ??
-              int.tryParse(date.split('-')[2]) ??
-              2999,
-          int.tryParse(date.split('/')[0]) ??
-              int.tryParse(date.split('-')[0]) ??
-              12,
-          int.tryParse(date.split('/')[1]) ??
-              int.tryParse(date.split('-')[1]) ??
-              31,
-        );
+  // Creating a VaxDate from a nullable string with default min or max dates
+  VaxDate.fromNullableString(String? date, [bool useMax = false])
+      : this.fromString(date ?? (useMax ? '2999-12-31' : '1900-01-01'), useMax);
 
-  VaxDate.fromMMDDYYYYMin(String date)
-      : super(
-          int.tryParse(date.split('/')[2]) ??
-              int.tryParse(date.split('-')[2]) ??
-              1900,
-          int.tryParse(date.split('/')[0]) ??
-              int.tryParse(date.split('-')[0]) ??
-              01,
-          int.tryParse(date.split('/')[1]) ??
-              int.tryParse(date.split('-')[1]) ??
-              01,
-        );
+  static VaxDate fromYYYYMMDD(String date, [bool useMax = false]) {
+    List<String> dateList = date.split('/');
+    if (dateList.length != 3) {
+      dateList = date.split('-');
+    }
+    if (dateList.length >= 1) {
+      int year = int.tryParse(date.substring(0, 4)) ?? (useMax ? 2999 : 1900);
+      if (dateList.length >= 2) {
+        int month = int.tryParse(date.substring(4, 6)) ?? (useMax ? 12 : 1);
+        if (dateList.length == 3) {
+          int day = int.tryParse(date.substring(6, 8)) ?? (useMax ? 31 : 1);
+          return VaxDate(year, month, day);
+        } else {
+          return VaxDate(year, month, (useMax ? 31 : 1));
+        }
+      } else {
+        return VaxDate(year, (useMax ? 12 : 1), (useMax ? 31 : 1));
+      }
+    } else if (useMax) {
+      return VaxDate.max();
+    } else {
+      return VaxDate.min();
+    }
+  }
 
-  VaxDate.fromYYYYMMDDMax(String date)
-      : super(
-          int.tryParse(date.substring(0, 4)) ?? 2999,
-          int.tryParse(date.substring(4, 6)) ?? 12,
-          int.tryParse(date.substring(6, 8)) ?? 31,
-        );
-
-  VaxDate.fromYYYYMMDDMin(String date)
-      : super(
-          int.tryParse(date.substring(0, 4)) ?? 1900,
-          int.tryParse(date.substring(4, 6)) ?? 01,
-          int.tryParse(date.substring(6, 8)) ?? 01,
-        );
-
-  // VaxDate.fromNullableString(String? date) :
-  //     date == null || date == '' ?
-  //     super(
-  //       this.year,
-  //       this.month, this.day,) :  VaxDate.fromYYYYMMDD(date);
-
+  // Now and boundary dates constructors
   VaxDate.now() : super.now();
-
   VaxDate.min() : super(1900, 1, 1);
-
   VaxDate.max() : super(2999, 12, 31);
 
-  String toString() => '$year/$month/$day';
-
+  // Overriding toString and toJson methods
+  @override
+  String toString() =>
+      '${year.toString().padLeft(4, '0')}/${month.toString().padLeft(2, '0')}/${day.toString().padLeft(2, '0')}';
   String toJson() => this.toString();
 
-  DateTime toDateTime() => DateTime.parse(toString());
-
+  // Conversion to DateTime and FHIR types
+  DateTime toDateTime() => DateTime(year, month, day);
   FhirDateTime toFhirDateTime() => FhirDateTime(toDateTime());
-
   FhirDate toFhirDate() => FhirDate(toDateTime());
 
-  VaxDate.minIfNullString(String? date)
-      : super(
-          date == null ? 1900 : DateTime.tryParse(date)?.year ?? 1900,
-          date == null ? 01 : DateTime.tryParse(date)?.month ?? 01,
-          date == null ? 01 : DateTime.tryParse(date)?.day ?? 01,
-        );
+  // Operators for comparison
+  bool operator <(VaxDate other) =>
+      this.toDateTime().isBefore(other.toDateTime());
+  bool operator >(VaxDate other) =>
+      this.toDateTime().isAfter(other.toDateTime());
+  bool operator <=(VaxDate other) => !(this > (other));
+  bool operator >=(VaxDate other) => !(this < (other));
+  bool isEqualTo(VaxDate other) =>
+      this.toDateTime().isAtSameMomentAs(other.toDateTime());
 
-  VaxDate.minIfNullDateTime(DateTime? date)
-      : super(
-          date == null ? 1900 : date.year,
-          date == null ? 01 : date.month,
-          date == null ? 01 : date.day,
-        );
+  // Method for modifying date with textual descriptions of changes
+  VaxDate change(String description) {
+    int years = 0, months = 0, days = 0;
+    int sign = 1; // Positive by default
+    List<String> parts = description.split(' ');
 
-  VaxDate.maxIfNullString(String? date)
-      : super(
-          date == null ? 2999 : DateTime.tryParse(date)?.year ?? 2999,
-          date == null ? 12 : DateTime.tryParse(date)?.month ?? 12,
-          date == null ? 31 : DateTime.tryParse(date)?.day ?? 31,
-        );
+    for (int i = 0; i < parts.length; i++) {
+      if (parts[i] == '-' || parts[i] == '+') {
+        sign = (parts[i] == '-') ? -1 : 1;
+        continue; // Adjust sign and skip to next part
+      }
 
-  VaxDate.maxIfNullDateTime(DateTime? date)
-      : super(
-          date == null ? 2999 : date.year,
-          date == null ? 12 : date.month,
-          date == null ? 31 : date.day,
-        );
-  bool operator <(VaxDate vaxDate) => (DateTime(year, month, day)
-      .isBefore(DateTime(vaxDate.year, vaxDate.month, vaxDate.day)));
+      if (i < parts.length - 1 && int.tryParse(parts[i]) != null) {
+        int value = int.parse(parts[i]) * sign;
+        String unit = parts[i + 1].toLowerCase();
 
-  bool operator >(VaxDate vaxDate) => (DateTime(year, month, day)
-      .isAfter(DateTime(vaxDate.year, vaxDate.month, vaxDate.day)));
-
-  bool operator <=(VaxDate vaxDate) => (DateTime(year, month, day)
-          .isBefore(DateTime(vaxDate.year, vaxDate.month, vaxDate.day)) ||
-      DateTime(year, month, day).isAtSameMomentAs(
-          DateTime(vaxDate.year, vaxDate.month, vaxDate.day)));
-
-  bool operator >=(VaxDate vaxDate) => (DateTime(year, month, day)
-          .isAfter(DateTime(vaxDate.year, vaxDate.month, vaxDate.day)) ||
-      DateTime(year, month, day).isAtSameMomentAs(
-          DateTime(vaxDate.year, vaxDate.month, vaxDate.day)));
-
-  bool isEqualTo(VaxDate vaxDate) => (DateTime(year, month, day)
-      .isAtSameMomentAs(DateTime(vaxDate.year, vaxDate.month, vaxDate.day)));
-
-  VaxDate change(String howMuch) =>
-      howMuch == '' ? this : _parseDateString(howMuch);
-
-  VaxDate changeIfNotNullElse(String? howMuch, VaxDate otherwise) =>
-      howMuch == null || howMuch == '' ? otherwise : change(howMuch);
-
-  VaxDate? changeIfNotNullElseNull(String? howMuch) =>
-      howMuch == null || howMuch == '' ? null : change(howMuch);
-
-  VaxDate changeIfNotNullElseMax(String? howMuch) =>
-      changeIfNotNullElse(howMuch, VaxDate.max());
-
-  VaxDate changeIfNotNullElseMin(String? howMuch) =>
-      changeIfNotNullElse(howMuch, VaxDate.min());
-
-  VaxDate _parseDateString(String change) {
-    var years = 0, months = 0, weeks = 0, days = 0, posNeg = 1;
-    var time = change.split(' ');
-    for (var i = 0; i < time.length; i++) {
-      if (i > 1) {
-        if (time[i - 2] == '-') {
-          posNeg = -1;
-        } else {
-          posNeg = 1;
+        if (unit.contains('year')) {
+          years += value;
+        } else if (unit.contains('month')) {
+          months += value;
+        } else if (unit.contains('day') || unit.contains('week')) {
+          int multiplier = unit.contains('week') ? 7 : 1;
+          days += value * multiplier;
         }
-      }
-      if (time[i].contains('year')) {
-        years += (int.tryParse(time[i - 1]) ?? 0) * posNeg;
-      }
-      if (time[i].contains('month')) {
-        months += (int.tryParse(time[i - 1]) ?? 0) * posNeg;
-      }
-      if (time[i].contains('week')) {
-        weeks += (int.tryParse(time[i - 1]) ?? 0) * posNeg;
-      }
-      if (time[i].contains('day')) {
-        days += (int.tryParse(time[i - 1]) ?? 0) * posNeg;
+
+        i++; // Move past the unit
       }
     }
-    return _calculateTime(years, months, 7 * weeks + days);
+
+    // Apply the changes in the specified order: years, months, then days
+    DateTime newDate = DateTime(year + years, month + months, day);
+    // Correct for day overflow (e.g., September 31 -> October 1)
+    newDate = DateTime(
+        newDate.year,
+        newDate.month + (newDate.day < day ? 1 : 0),
+        newDate.day < day ? 1 : newDate.day + days);
+
+    return VaxDate.fromDateTime(newDate);
   }
 
-  /// We add the years and months to the current date, and by adding 1 to the
-  /// month and then 0 to the day, we get the last day of the month. If that's
-  /// less than the current day, then that's the month, and we set the day
-  /// to 1.
-  ///
-  /// January 31 + 1 month
-  /// February 28/29th (depending on the year) is the last day of the month
-  /// Because that's less than 31, we set the day to 1, and the Month
-  /// to March
-  ///
-  VaxDate _calculateTime(int years, int months, int days) {
-    var newDate = DateTime(year + years, month + months + 1, 0);
-    if (newDate.day < day) {
-      newDate = DateTime(newDate.year, newDate.month, 1);
+  VaxDate changeNullableOrElse(String? description, VaxDate orElse) {
+    if (description == null) {
+      return orElse;
     } else {
-      newDate = DateTime(newDate.year, month + months, day);
+      return change(description);
     }
-    return VaxDate(newDate.year, newDate.month, newDate.day + days);
+  }
+
+  VaxDate? changeNullable(String? description, [bool? useMax]) {
+    if (description == null) {
+      return useMax == true
+          ? VaxDate.max()
+          : (useMax == false ? VaxDate.min() : null);
+    }
+
+    int years = 0, months = 0, days = 0;
+    int sign = 1; // Positive by default
+    List<String> parts = description.split(' ');
+
+    for (int i = 0; i < parts.length; i++) {
+      if (parts[i] == '-' || parts[i] == '+') {
+        sign = (parts[i] == '-') ? -1 : 1;
+        continue; // Adjust sign and skip to next part
+      }
+
+      if (i < parts.length - 1 && int.tryParse(parts[i]) != null) {
+        int value = int.parse(parts[i]) * sign;
+        String unit = parts[i + 1].toLowerCase();
+
+        if (unit.contains('year')) {
+          years += value;
+        } else if (unit.contains('month')) {
+          months += value;
+        } else if (unit.contains('day') || unit.contains('week')) {
+          int multiplier = unit.contains('week') ? 7 : 1;
+          days += value * multiplier;
+        }
+
+        i++; // Move past the unit
+      }
+    }
+
+    // Apply the changes in the specified order: years, months, then days
+    DateTime newDate = DateTime(year + years, month + months, day);
+    // Correct for day overflow (e.g., September 31 -> October 1)
+    newDate = DateTime(
+        newDate.year,
+        newDate.month + (newDate.day < day ? 1 : 0),
+        newDate.day < day ? 1 : newDate.day + days);
+
+    return VaxDate.fromDateTime(newDate);
   }
 }
 
-VaxDate latestOf(List<VaxDate> dates) {
-  VaxDate? latest = null;
-  for (final date in dates) {
-    latest == null
-        ? date
-        : latest > date
-            ? latest
-            : date;
-  }
-  return latest!;
-}
-
-VaxDate earliestOf(List<VaxDate> dates) {
-  var earliest;
-  for (final date in dates) {
-    if (earliest == null) {
-      earliest = date;
-    } else {
-      earliest = earliest < date ? earliest : date;
-    }
-  }
-  return earliest;
-}
+// Utility functions for finding the latest and earliest dates in a list
+VaxDate latestOf(List<VaxDate> dates) => dates.reduce((a, b) => a > b ? a : b);
+VaxDate earliestOf(List<VaxDate> dates) =>
+    dates.reduce((a, b) => a < b ? a : b);
