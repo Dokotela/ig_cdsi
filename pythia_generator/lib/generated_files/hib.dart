@@ -65,25 +65,6 @@ final hib = AntigenSupportingData.fromJson({
                     ]
                 },
                 {
-                    "observationCode": "104",
-                    "observationTitle": "Allergic reaction to latex",
-                    "contraindicationText": "Do not vaccinate if the patient has an allergy to latex.",
-                    "contraindicatedVaccine": [
-                        {
-                            "vaccineType": "PRP-T",
-                            "cvx": "48"
-                        },
-                        {
-                            "vaccineType": "PRP-OMP",
-                            "cvx": "49"
-                        },
-                        {
-                            "vaccineType": "Hib-Hep B",
-                            "cvx": "51"
-                        }
-                    ]
-                },
-                {
                     "observationCode": "110",
                     "observationTitle": "Hypersensitivity to yeast",
                     "contraindicationText": "Do not vaccinate if the patient has a hypersensitivity to yeast.",
@@ -741,6 +722,13 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
+                    "preferableInterval": [
+                        {
+                            "fromPrevious": "Y",
+                            "absMinInt": "4 weeks - 4 days",
+                            "minInt": "4 weeks"
+                        }
+                    ],
                     "preferableVaccine": [
                         {
                             "vaccineType": "PRP-T",
@@ -1188,6 +1176,13 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
+                    "preferableInterval": [
+                        {
+                            "fromPrevious": "Y",
+                            "absMinInt": "4 weeks - 4 days",
+                            "minInt": "4 weeks"
+                        }
+                    ],
                     "preferableVaccine": [
                         {
                             "vaccineType": "PRP-T",
@@ -1446,6 +1441,13 @@ final hib = AntigenSupportingData.fromJson({
                             "absMinAge": "15 months - 4 days",
                             "minAge": "15 months",
                             "maxAge": "5 years"
+                        }
+                    ],
+                    "preferableInterval": [
+                        {
+                            "fromPrevious": "Y",
+                            "absMinInt": "8 weeks - 4 days",
+                            "minInt": "8 weeks"
                         }
                     ],
                     "preferableVaccine": [
@@ -1815,6 +1817,33 @@ final hib = AntigenSupportingData.fromJson({
                     "description": "Administer to persons with anatomic or functional asplenia, including sickle cell disease.",
                     "beginAge": "12 months",
                     "endAge": "5 years"
+                },
+                {
+                    "observationCode": {
+                        "text": "Radiation therapy",
+                        "code": "159"
+                    },
+                    "description": "Administer to persons who are undergoing radiation therapy.",
+                    "beginAge": "12 months",
+                    "endAge": "5 years"
+                },
+                {
+                    "observationCode": {
+                        "text": "Chemotherapy",
+                        "code": "168"
+                    },
+                    "description": "Administer to persons who are undergoing chemotherapy.",
+                    "beginAge": "12 months",
+                    "endAge": "5 years"
+                },
+                {
+                    "observationCode": {
+                        "text": "HIV Infection",
+                        "code": "186"
+                    },
+                    "description": "Administer to persons with HIV Infection",
+                    "beginAge": "12 months",
+                    "endAge": "5 years"
                 }
             ],
             "seriesDose": [
@@ -1939,13 +1968,14 @@ final hib = AntigenSupportingData.fromJson({
                             "set": [
                                 {
                                     "setID": "1",
-                                    "setDescription": "Dose is not required if the patient has received 1 or more doses on or after the age of 12 months",
+                                    "setDescription": "Dose is not required if the patient has received 2 or more doses before the age of 12 months",
                                     "condition": [
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "12 months",
-                                            "doseCount": "0",
+                                            "beginAge": "6 weeks - 4 days",
+                                            "endAge": "12 months",
+                                            "doseCount": "1",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than"
                                         }
@@ -2062,43 +2092,6 @@ final hib = AntigenSupportingData.fromJson({
                             "vaccineType": "DTP-hepB-Hib Pentavalent Non-US",
                             "cvx": "198",
                             "beginAge": "6 weeks - 4 days"
-                        }
-                    ],
-                    "conditionalSkip": [
-                        {
-                            "context": "Both",
-                            "setLogic": "OR",
-                            "set": [
-                                {
-                                    "setID": "1",
-                                    "setDescription": "Dose is not required if the patient has received 2 or more doses before the age of 12 months",
-                                    "condition": [
-                                        {
-                                            "conditionID": "1",
-                                            "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
-                                            "endAge": "12 months",
-                                            "doseCount": "1",
-                                            "doseType": "Total",
-                                            "doseCountLogic": "greater than"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "setID": "2",
-                                    "setDescription": "Dose is not required if the patient has received 2 or more doses on or after the age of 12 months",
-                                    "condition": [
-                                        {
-                                            "conditionID": "1",
-                                            "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "12 months",
-                                            "doseCount": "1",
-                                            "doseType": "Total",
-                                            "doseCountLogic": "greater than"
-                                        }
-                                    ]
-                                }
-                            ]
                         }
                     ],
                     "recurringDose": "No"

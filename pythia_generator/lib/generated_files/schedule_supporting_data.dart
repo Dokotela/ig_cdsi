@@ -6944,6 +6944,12 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
                 "name": "Rotavirus"
             },
             {
+                "name": "RSV"
+            },
+            {
+                "name": "TBE"
+            },
+            {
                 "name": "Typhoid"
             },
             {
@@ -7075,6 +7081,18 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
                 "name": "Rotavirus",
                 "antigen": [
                     "Rotavirus"
+                ]
+            },
+            {
+                "name": "RSV",
+                "antigen": [
+                    "RSV"
+                ]
+            },
+            {
+                "name": "TBE",
+                "antigen": [
+                    "TBE"
                 ]
             },
             {
@@ -7567,6 +7585,15 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
                 "association": [
                     {
                         "antigen": "Orthopoxvirus"
+                    }
+                ]
+            },
+            {
+                "cvx": "77",
+                "shortDescription": "Tick-borne encephalitis vaccine (non-US)",
+                "association": [
+                    {
+                        "antigen": "TBE"
                     }
                 ]
             },
@@ -8598,7 +8625,7 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             },
             {
                 "cvx": "206",
-                "shortDescription": "vaccinia - smallpox monkeypox vaccine live, PF",
+                "shortDescription": "vaccinia - smallpox mpox vaccine live, PF",
                 "association": [
                     {
                         "antigen": "Orthopoxvirus"
@@ -8732,6 +8759,33 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
                 ]
             },
             {
+                "cvx": "222",
+                "shortDescription": "Tick-borne encephalitis, unspecified",
+                "association": [
+                    {
+                        "antigen": "TBE"
+                    }
+                ]
+            },
+            {
+                "cvx": "223",
+                "shortDescription": "Tick-borne encephalitis, inactivated, PF, 0.25mL",
+                "association": [
+                    {
+                        "antigen": "TBE"
+                    }
+                ]
+            },
+            {
+                "cvx": "224",
+                "shortDescription": "Tick-borne encephalitis, inactivated, PF, 0.5mL",
+                "association": [
+                    {
+                        "antigen": "TBE"
+                    }
+                ]
+            },
+            {
                 "cvx": "227",
                 "shortDescription": "COVID-19, mRNA, LNP-S, PF, pediatric 50 mcg/0.5 mL dose",
                 "association": [
@@ -8751,7 +8805,7 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             },
             {
                 "cvx": "229",
-                "shortDescription": "COVID-19, mRNA, LNP-S, bivalent booster, PF, 50 mcg/0.5 mL or 25 mcg/0.25 mL dose",
+                "shortDescription": "COVID-19, mRNA, LNP-S, bivalent, PF, 50 mcg/0.5 mL or 25 mcg/0.25 mL dose",
                 "association": [
                     {
                         "antigen": "COVID-19"
@@ -8760,7 +8814,7 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             },
             {
                 "cvx": "230",
-                "shortDescription": "COVID-19, mRNA, LNP-S, bivalent booster, PF, 10 mcg/0.2 mL",
+                "shortDescription": "COVID-19, mRNA, LNP-S, bivalent, PF, 10 mcg/0.2 mL",
                 "association": [
                     {
                         "antigen": "COVID-19"
@@ -8768,8 +8822,17 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
                 ]
             },
             {
+                "cvx": "231",
+                "shortDescription": "influenza, Southern Hemisphere, high-dose, quadrivalent",
+                "association": [
+                    {
+                        "antigen": "Influenza"
+                    }
+                ]
+            },
+            {
                 "cvx": "300",
-                "shortDescription": "COVID-19, mRNA, LNP-S, bivalent booster, PF, 30 mcg/0.3 mL dose",
+                "shortDescription": "COVID-19, mRNA, LNP-S, bivalent, PF, 30 mcg/0.3 mL dose",
                 "association": [
                     {
                         "antigen": "COVID-19"
@@ -8778,7 +8841,7 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             },
             {
                 "cvx": "301",
-                "shortDescription": "COVID-19, mRNA, LNP-S, bivalent booster, PF, 10 mcg/0.2 mL dose",
+                "shortDescription": "COVID-19, mRNA, LNP-S, bivalent, PF, 10 mcg/0.2 mL dose",
                 "association": [
                     {
                         "antigen": "COVID-19"
@@ -8791,6 +8854,135 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
                 "association": [
                     {
                         "antigen": "COVID-19"
+                    }
+                ]
+            },
+            {
+                "cvx": "303",
+                "shortDescription": "RSV, recombinant, protein subunit RSVpreF, adjuvant reconstituted, 0.5 mL, PF",
+                "association": [
+                    {
+                        "antigen": "RSV"
+                    }
+                ]
+            },
+            {
+                "cvx": "304",
+                "shortDescription": "Respiratory syncytial virus (RSV), unspecified",
+                "association": [
+                    {
+                        "antigen": "RSV"
+                    }
+                ]
+            },
+            {
+                "cvx": "305",
+                "shortDescription": "RSV, bivalent, protein subunit RSVpreF, diluent reconstituted, 0.5 mL, PF",
+                "association": [
+                    {
+                        "antigen": "RSV"
+                    }
+                ]
+            },
+            {
+                "cvx": "306",
+                "shortDescription": "RSV, mAb, nirsevimab-alip, 0.5 mL, neonate to 24 months",
+                "association": [
+                    {
+                        "antigen": "RSV"
+                    }
+                ]
+            },
+            {
+                "cvx": "307",
+                "shortDescription": "RSV, mAb, nirsevimab-alip, 1.0 mL, neonate to 24 months",
+                "association": [
+                    {
+                        "antigen": "RSV"
+                    }
+                ]
+            },
+            {
+                "cvx": "308",
+                "shortDescription": "COVID-19, mRNA, LNP-S, PF, tris-sucrose, 3 mcg/0.3 mL",
+                "association": [
+                    {
+                        "antigen": "COVID-19"
+                    }
+                ]
+            },
+            {
+                "cvx": "309",
+                "shortDescription": "COVID-19, mRNA, LNP-S, PF, tris-sucrose, 30 mcg/0.3 mL",
+                "association": [
+                    {
+                        "antigen": "COVID-19"
+                    }
+                ]
+            },
+            {
+                "cvx": "310",
+                "shortDescription": "COVID-19, mRNA, LNP-S, PF, tris-sucrose, 10 mcg/0.3 mL",
+                "association": [
+                    {
+                        "antigen": "COVID-19"
+                    }
+                ]
+            },
+            {
+                "cvx": "311",
+                "shortDescription": "COVID-19, mRNA, LNP-S, PF, 25 mcg/0.25 mL",
+                "association": [
+                    {
+                        "antigen": "COVID-19"
+                    }
+                ]
+            },
+            {
+                "cvx": "312",
+                "shortDescription": "COVID-19, mRNA, LNP-S, PF, 50 mcg/0.5 mL",
+                "association": [
+                    {
+                        "antigen": "COVID-19"
+                    }
+                ]
+            },
+            {
+                "cvx": "313",
+                "shortDescription": "COVID-19, subunit, rS-nanoparticle, adjuvanted, PF, 5 mcg/0.5 mL",
+                "association": [
+                    {
+                        "antigen": "COVID-19"
+                    }
+                ]
+            },
+            {
+                "cvx": "314",
+                "shortDescription": "Respiratory syncytial virus (RSV) vaccine, unspecified",
+                "association": [
+                    {
+                        "antigen": "RSV"
+                    }
+                ]
+            },
+            {
+                "cvx": "315",
+                "shortDescription": "Respiratory syncytial virus (RSV) monoclonal antibody (MAB), unspecified ",
+                "association": [
+                    {
+                        "antigen": "RSV"
+                    }
+                ]
+            },
+            {
+                "cvx": "316",
+                "shortDescription": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                "association": [
+                    {
+                        "antigen": "Meningococcal"
+                    },
+                    {
+                        "antigen": "Meningococcal B"
                     }
                 ]
             },
@@ -8859,7 +9051,7 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             },
             {
                 "cvx": "507",
-                "shortDescription": "COVID-19 PS Non-US Vaccine (Anhui Zhifei Longcom Biopharmaceutical + Institute of Microbology Chinese academy of Sciences)",
+                "shortDescription": "COVID-19 PS Non-US Vaccine (Anhui Zhifei Longcom Biopharmaceutical + Institute of Microbiology Chinese academy of Sciences)",
                 "association": [
                     {
                         "antigen": "COVID-19"
@@ -8977,6 +9169,15 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             {
                 "cvx": "520",
                 "shortDescription": "COVID-19 mRNA, bivalent, original/Omicron BA.1 Non-US Vaccine Product (Comirnaty Bivalent), Pfizer-BioNTech",
+                "association": [
+                    {
+                        "antigen": "COVID-19"
+                    }
+                ]
+            },
+            {
+                "cvx": "521",
+                "shortDescription": "COVID-19 SP, protein-based, adjuvanted (VidPrevtyn Beta), Sanofi-GSK",
                 "association": [
                     {
                         "antigen": "COVID-19"
@@ -9213,7 +9414,7 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
                         {
                             "code": "12770006",
                             "codeSystem": "SNOMED",
-                            "text": "Cyanotic congentical heart disease [disorder]"
+                            "text": "Cyanotic congenital heart disease [disorder]"
                         }
                     ]
                 }
@@ -12266,9 +12467,9 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             },
             {
                 "observationCode": "161",
-                "observationTitle": "Chronic renal disease",
-                "indicationText": "Administer to persons with chronic renal disease.",
-                "contraindicationText": "Do not vaccinate if the patient has chronic renal disease.",
+                "observationTitle": "Chronic kidney disease",
+                "indicationText": "Administer to persons with chronic kidney disease.",
+                "contraindicationText": "Do not vaccinate if the patient has chronic kidney disease.",
                 "codedValues": {
                     "codedValue": [
                         {
@@ -12323,7 +12524,17 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             {
                 "observationCode": "168",
                 "observationTitle": "Chemotherapy",
-                "contraindicationText": "Do not vaccinate if the patient is undergoing chemotherapy, including 14 days before the start of therapy and 3 months after the completion of therapy."
+                "indicationText": "Administer to persons who are undergoing chemotherapy.",
+                "contraindicationText": "Do not vaccinate if the patient is undergoing chemotherapy, including 14 days before the start of therapy and 3 months after the completion of therapy.",
+                "codedValues": {
+                    "codedValue": [
+                        {
+                            "code": "367336001",
+                            "codeSystem": "SNOMED",
+                            "text": "Chemotherapy [procedure]"
+                        }
+                    ]
+                }
             },
             {
                 "observationCode": "169",
@@ -12844,23 +13055,23 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             },
             {
                 "observationCode": "232",
-                "observationTitle": "Research laboratory personnel working with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
-                "indicationText": "Administer to research laboratory personnel working with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)"
+                "observationTitle": "Research laboratory personnel working with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
+                "indicationText": "Administer to research laboratory personnel working with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)"
             },
             {
                 "observationCode": "233",
-                "observationTitle": "Clinical laboratory personnel performing diagnostic testing for more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
-                "indicationText": "Administer to clinical laboratory personnel performing diagnostic testing for more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)"
+                "observationTitle": "Clinical laboratory personnel performing diagnostic testing for more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
+                "indicationText": "Administer to clinical laboratory personnel performing diagnostic testing for more virulent orthopoxviruses (e.g., Variola virus or mpox virus)"
             },
             {
                 "observationCode": "234",
-                "observationTitle": "Designated response team members working with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
-                "indicationText": "Administer to designated response team members working with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)"
+                "observationTitle": "Designated response team members working with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
+                "indicationText": "Administer to designated response team members working with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)"
             },
             {
                 "observationCode": "235",
-                "observationTitle": "Healthcare personnel who care for patients infected with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
-                "indicationText": "Administer to healthcare personnel who care for patients infected with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)"
+                "observationTitle": "Healthcare personnel who care for patients infected with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
+                "indicationText": "Administer to healthcare personnel who care for patients infected with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)"
             },
             {
                 "observationCode": "236",
@@ -12889,15 +13100,109 @@ final scheduleSupportingData = ScheduleSupportingData.fromJson({
             },
             {
                 "observationCode": "241",
-                "observationTitle": "Known exposure to monkeypox",
-                "indicationText": "Administer to persons who are known contacts to someone with monkeypox who are identified by public health authorities",
-                "clarifyingText": "People who are known contacts to someone with monkeypox who are identified by public health authorities, for example via case investigation, contact tracing, or risk exposure assessment"
+                "observationTitle": "Known exposure to mpox",
+                "indicationText": "Administer to persons who are known contacts to someone with mpox who are identified by public health authorities",
+                "clarifyingText": "People who are known contacts to someone with mpox who are identified by public health authorities, for example via case investigation, contact tracing, or risk exposure assessment"
             },
             {
                 "observationCode": "242",
-                "observationTitle": "Presumed exposure to monkeypox",
-                "indicationText": "Administer to persons who have presumed exposure to monkeypox",
-                "clarifyingText": "People who are aware that a recent sex partner within the  past 14 days was diagnosed with monkeypox. Certain gay, bisexual, or other men who have sex with men, or transgender people who have had any of following within the past 14 days: sex with multiple partners (or group sex); sex at a commercial sex venue; or sex in association with an event, venue, or defined geographic area where monkeypox transmission is occurring."
+                "observationTitle": "Presumed exposure to mpox",
+                "indicationText": "Administer to persons who have presumed exposure to mpox",
+                "clarifyingText": "People who are aware that a recent sex partner within the  past 14 days was diagnosed with mpox. Certain gay, bisexual, or other men who have sex with men, or transgender people who have had any of following within the past 14 days: sex with multiple partners (or group sex); sex at a commercial sex venue; or sex in association with an event, venue, or defined geographic area where mpox transmission is occurring."
+            },
+            {
+                "observationCode": "243",
+                "observationTitle": "Lack of laboratory confirmation of a previous Dengue infection",
+                "contraindicationText": "Do not vaccinate if the patient lacks laboratory confirmation of a previous Dengue infection."
+            },
+            {
+                "observationCode": "244",
+                "observationTitle": "Severe allergic reaction after previous dose of RSV vaccine",
+                "contraindicationText": "Do not vaccinate if the patient has had a severe allergic reaction after a previous dose of RSV vaccine."
+            },
+            {
+                "observationCode": "245",
+                "observationTitle": "American Indian or Alaskan Native",
+                "indicationText": "Administer to American Indian or Alaskan Native children",
+                "codedValues": {
+                    "codedValue": [
+                        {
+                            "code": "413490006",
+                            "codeSystem": "SNOMED",
+                            "text": "American Indian or Alaska Native [racial group]"
+                        }
+                    ]
+                }
+            },
+            {
+                "observationCode": "246",
+                "observationTitle": "Severe immunocompromise",
+                "indicationText": "Administer to persons with severe immunocompromise.",
+                "contraindicationText": "Do not vaccinate persons with severe immunocompromise."
+            },
+            {
+                "observationCode": "247",
+                "observationTitle": "Gay, bisexual, and other men who have sex with men, transgender or nonbinary peope who in the past 6 months have had one of the following:  1) A new diagnosis of ≥ 1 sexually transmitted disease 2)  More than one sex partner 3)  Sex at a commercial sex venue 4)   Sex in association with a large public event in a geographic area where mpox transmission is occurring",
+                "indicationText": "Administer to gay, bisexual, and other men who have sex with men, transgender or nonbinary peope who in the past 6 months have had one of the following:  1) A new diagnosis of ≥ 1 sexually transmitted disease 2)  More than one sex partner 3)  Sex at a commercial sex venue 4)   Sex in association with a large public event in a geographic area where mpox transmission is occurring",
+                "clarifyingText": "Includes persons who anticipate experiencing any of the risk factors."
+            },
+            {
+                "observationCode": "248",
+                "observationTitle": "Sexual partners of gay, bisexual, and other men who have sex with men, transgender or nonbinary peope who in the past 6 months have had one of the following:  1) A new diagnosis of ≥ 1 sexually transmitted disease 2)  More than one sex partner 3)  Sex at a commercial sex venue 4)   Sex in association with a large public event in a geographic area where mpox transmission is occurring",
+                "indicationText": "Administer to sexual partners of gay, bisexual, and other men who have sex with men, transgender or nonbinary peope who in the past 6 months have had one of the following:  1) A new diagnosis of ≥ 1 sexually transmitted disease 2)  More than one sex partner 3)  Sex at a commercial sex venue 4)   Sex in association with a large public event in a geographic area where mpox transmission is occurring",
+                "clarifyingText": "Includes persons who anticipate experiencing any of the risk factors."
+            },
+            {
+                "observationCode": "249",
+                "observationTitle": "Moving or traveling to an area where TBE is endemic and will have extensive exposure to ticks because of their planned outdoor activities and itinerary",
+                "indicationText": "Administer to persons moving or traveling to an area where TBE is endemic and will have extensive exposure to ticks because of their planned outdoor activities and itinerary",
+                "clarifyingText": "Endemic Area and transmission season is determined by country.  Refer to the yellow book for a definition of the transmission season: https://wwwnc.cdc.gov/travel/yellowbook/2024/infections-diseases/tick-borne-encephalitis "
+            },
+            {
+                "observationCode": "250",
+                "observationTitle": "Moving or traveling to an area where TBE is endemic who might engage in outdoor activities in areas where ticks are likely to be found",
+                "indicationText": "TBE vaccine may be considered for persons moving or traveling to an area where TBE is endemic who might engage in outdoor activities in areas where ticks are likely to be found",
+                "clarifyingText": "Endemic Area and transmission season is determined by country.  Refer to the yellow book for a definition of the transmission season: https://wwwnc.cdc.gov/travel/yellowbook/2024/infections-diseases/tick-borne-encephalitis "
+            },
+            {
+                "observationCode": "251",
+                "observationTitle": "Laboratory workers with a potential for exposure to TBE virus",
+                "indicationText": "Administer to laboratory workers with a potential for exposure to TBE virus",
+                "clarifyingText": "n/a "
+            },
+            {
+                "observationCode": "252",
+                "observationTitle": "Severe allergic reaction after previous dose of Tick-borne Encephalitis vaccine",
+                "contraindicationText": "Do not vaccinate if the patient has had a severe allergic reaction after a previous dose of Tick-borne Encephalitis vaccine.",
+                "codedValues": {
+                    "codedValue": [
+                        {
+                            "code": "non-US",
+                            "codeSystem": "CVX",
+                            "text": "Tick-borne encephalitis vaccine"
+                        },
+                        {
+                            "code": "222",
+                            "codeSystem": "CVX",
+                            "text": "Tick-borne encephalitis, unspecified"
+                        },
+                        {
+                            "code": "223",
+                            "codeSystem": "CVX",
+                            "text": "Tick-borne encephalitis, inactivated, PF, 0.25mL"
+                        },
+                        {
+                            "code": "224",
+                            "codeSystem": "CVX",
+                            "text": "Tick-borne encephalitis, inactivated, PF, 0.5mL"
+                        },
+                        {
+                            "code": "VXC20",
+                            "codeSystem": "CDCPHINVS",
+                            "text": "Allergy to previous dose of this vaccine or to any of its unlisted vaccine components [anaphylactic]"
+                        }
+                    ]
+                }
             }
         ]
     }

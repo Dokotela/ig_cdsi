@@ -12,4 +12,4 @@ All I've done is take all of their hard work, guidance and expertise and make it
 
 ## [Implementation Guide](CdsiIG/output/index.html)
 
-In an attempt to practice my FSH, I've created an IG based on CDSI
+In an attempt to practice my FSH, I've created an IG based on CDSI.

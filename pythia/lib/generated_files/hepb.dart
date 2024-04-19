@@ -41,6 +41,10 @@ final hepb = AntigenSupportingData.fromJson({
                         {
                             "vaccineType": "Hep B, adjuvanted",
                             "cvx": "189"
+                        },
+                        {
+                            "vaccineType": "HepB recombinant, 3-antigen, Al(OH)3",
+                            "cvx": "220"
                         }
                     ]
                 },
@@ -577,7 +581,8 @@ final hepb = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A"
+                "seriesPriority": "A",
+                "maxAgeToStart": "19 years"
             },
             "seriesDose": [
                 {
@@ -2501,7 +2506,7 @@ final hepb = AntigenSupportingData.fromJson({
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
-                            "absMinInt": "6 months",
+                            "absMinInt": "6 months - 4 days",
                             "minInt": "6 months",
                             "earliestRecInt": "6 months"
                         }
@@ -2691,12 +2696,37 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "observationCode": {
+                        "text": "Hepatitis C virus infection",
+                        "code": "005"
+                    },
+                    "description": "Administer to persons with a hepatitis C virus infection.",
+                    "beginAge": "60 years"
+                },
+                {
+                    "observationCode": {
+                        "text": "Diabetes",
+                        "code": "014"
+                    },
+                    "description": "Administer to persons who have diabetes.",
+                    "beginAge": "60 years",
+                    "guidance": "Administer to persons who have diabetes at the discretion of the treating clinician."
+                },
+                {
+                    "observationCode": {
                         "text": "Chronic liver disease",
                         "code": "015"
                     },
                     "description": "Administer to persons who have chronic liver disease.",
                     "beginAge": "60 years",
                     "guidance": "Includes, but is not limited to persons with hepatitis C virus (HCV) infection, cirrhosis, fatty liver disease, alcoholic liver disease, autoimmune hepatitis, or an alanine aminotransferase (ALT) or aspartate aminotransferase (AST) level persistently greater than twice the upper limit of normal"
+                },
+                {
+                    "observationCode": {
+                        "text": "Dialysis patient",
+                        "code": "032"
+                    },
+                    "description": "Administer to persons on maintenance dialysis, including incenter or home hemodialysis and peritoneal dialysis, and persons who are predialysis",
+                    "beginAge": "60 years"
                 },
                 {
                     "observationCode": {
@@ -3149,12 +3179,37 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "observationCode": {
+                        "text": "Hepatitis C virus infection",
+                        "code": "005"
+                    },
+                    "description": "Administer to persons with a hepatitis C virus infection.",
+                    "beginAge": "60 years"
+                },
+                {
+                    "observationCode": {
+                        "text": "Diabetes",
+                        "code": "014"
+                    },
+                    "description": "Administer to persons who have diabetes.",
+                    "beginAge": "60 years",
+                    "guidance": "Administer to persons who have diabetes at the discretion of the treating clinician."
+                },
+                {
+                    "observationCode": {
                         "text": "Chronic liver disease",
                         "code": "015"
                     },
                     "description": "Administer to persons who have chronic liver disease.",
                     "beginAge": "60 years",
                     "guidance": "Includes, but is not limited to persons with hepatitis C virus (HCV) infection, cirrhosis, fatty liver disease, alcoholic liver disease, autoimmune hepatitis, or an alanine aminotransferase (ALT) or aspartate aminotransferase (AST) level persistently greater than twice the upper limit of normal"
+                },
+                {
+                    "observationCode": {
+                        "text": "Dialysis patient",
+                        "code": "032"
+                    },
+                    "description": "Administer to persons on maintenance dialysis, including incenter or home hemodialysis and peritoneal dialysis, and persons who are predialysis",
+                    "beginAge": "60 years"
                 },
                 {
                     "observationCode": {
@@ -3360,12 +3415,37 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "observationCode": {
+                        "text": "Hepatitis C virus infection",
+                        "code": "005"
+                    },
+                    "description": "Administer to persons with a hepatitis C virus infection.",
+                    "beginAge": "60 years"
+                },
+                {
+                    "observationCode": {
+                        "text": "Diabetes",
+                        "code": "014"
+                    },
+                    "description": "Administer to persons who have diabetes.",
+                    "beginAge": "60 years",
+                    "guidance": "Administer to persons who have diabetes at the discretion of the treating clinician."
+                },
+                {
+                    "observationCode": {
                         "text": "Chronic liver disease",
                         "code": "015"
                     },
                     "description": "Administer to persons who have chronic liver disease.",
                     "beginAge": "60 years",
                     "guidance": "Includes, but is not limited to persons with hepatitis C virus (HCV) infection, cirrhosis, fatty liver disease, alcoholic liver disease, autoimmune hepatitis, or an alanine aminotransferase (ALT) or aspartate aminotransferase (AST) level persistently greater than twice the upper limit of normal"
+                },
+                {
+                    "observationCode": {
+                        "text": "Dialysis patient",
+                        "code": "032"
+                    },
+                    "description": "Administer to persons on maintenance dialysis, including incenter or home hemodialysis and peritoneal dialysis, and persons who are predialysis",
+                    "beginAge": "60 years"
                 },
                 {
                     "observationCode": {
@@ -3838,12 +3918,37 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "observationCode": {
+                        "text": "Hepatitis C virus infection",
+                        "code": "005"
+                    },
+                    "description": "Administer to persons with a hepatitis C virus infection.",
+                    "beginAge": "60 years"
+                },
+                {
+                    "observationCode": {
+                        "text": "Diabetes",
+                        "code": "014"
+                    },
+                    "description": "Administer to persons who have diabetes.",
+                    "beginAge": "60 years",
+                    "guidance": "Administer to persons who have diabetes at the discretion of the treating clinician."
+                },
+                {
+                    "observationCode": {
                         "text": "Chronic liver disease",
                         "code": "015"
                     },
                     "description": "Administer to persons who have chronic liver disease.",
                     "beginAge": "60 years",
                     "guidance": "Includes, but is not limited to persons with hepatitis C virus (HCV) infection, cirrhosis, fatty liver disease, alcoholic liver disease, autoimmune hepatitis, or an alanine aminotransferase (ALT) or aspartate aminotransferase (AST) level persistently greater than twice the upper limit of normal"
+                },
+                {
+                    "observationCode": {
+                        "text": "Dialysis patient",
+                        "code": "032"
+                    },
+                    "description": "Administer to persons on maintenance dialysis, including incenter or home hemodialysis and peritoneal dialysis, and persons who are predialysis",
+                    "beginAge": "60 years"
                 },
                 {
                     "observationCode": {
@@ -4311,12 +4416,37 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "observationCode": {
+                        "text": "Hepatitis C virus infection",
+                        "code": "005"
+                    },
+                    "description": "Administer to persons with a hepatitis C virus infection.",
+                    "beginAge": "60 years"
+                },
+                {
+                    "observationCode": {
+                        "text": "Diabetes",
+                        "code": "014"
+                    },
+                    "description": "Administer to persons who have diabetes.",
+                    "beginAge": "60 years",
+                    "guidance": "Administer to persons who have diabetes at the discretion of the treating clinician."
+                },
+                {
+                    "observationCode": {
                         "text": "Chronic liver disease",
                         "code": "015"
                     },
                     "description": "Administer to persons who have chronic liver disease.",
                     "beginAge": "60 years",
                     "guidance": "Includes, but is not limited to persons with hepatitis C virus (HCV) infection, cirrhosis, fatty liver disease, alcoholic liver disease, autoimmune hepatitis, or an alanine aminotransferase (ALT) or aspartate aminotransferase (AST) level persistently greater than twice the upper limit of normal"
+                },
+                {
+                    "observationCode": {
+                        "text": "Dialysis patient",
+                        "code": "032"
+                    },
+                    "description": "Administer to persons on maintenance dialysis, including incenter or home hemodialysis and peritoneal dialysis, and persons who are predialysis",
+                    "beginAge": "60 years"
                 },
                 {
                     "observationCode": {
@@ -4504,7 +4634,7 @@ final hepb = AntigenSupportingData.fromJson({
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
-                            "absMinInt": "6 months",
+                            "absMinInt": "6 months - 4 days",
                             "minInt": "6 months",
                             "earliestRecInt": "6 months"
                         }
@@ -4561,12 +4691,37 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "observationCode": {
+                        "text": "Hepatitis C virus infection",
+                        "code": "005"
+                    },
+                    "description": "Administer to persons with a hepatitis C virus infection.",
+                    "beginAge": "60 years"
+                },
+                {
+                    "observationCode": {
+                        "text": "Diabetes",
+                        "code": "014"
+                    },
+                    "description": "Administer to persons who have diabetes.",
+                    "beginAge": "60 years",
+                    "guidance": "Administer to persons who have diabetes at the discretion of the treating clinician."
+                },
+                {
+                    "observationCode": {
                         "text": "Chronic liver disease",
                         "code": "015"
                     },
                     "description": "Administer to persons who have chronic liver disease.",
                     "beginAge": "60 years",
                     "guidance": "Includes, but is not limited to persons with hepatitis C virus (HCV) infection, cirrhosis, fatty liver disease, alcoholic liver disease, autoimmune hepatitis, or an alanine aminotransferase (ALT) or aspartate aminotransferase (AST) level persistently greater than twice the upper limit of normal"
+                },
+                {
+                    "observationCode": {
+                        "text": "Dialysis patient",
+                        "code": "032"
+                    },
+                    "description": "Administer to persons on maintenance dialysis, including incenter or home hemodialysis and peritoneal dialysis, and persons who are predialysis",
+                    "beginAge": "60 years"
                 },
                 {
                     "observationCode": {
@@ -4798,240 +4953,6 @@ final hepb = AntigenSupportingData.fromJson({
             ]
         },
         {
-            "seriesName": "HepB risk Recombivax 3-dose series",
-            "targetDisease": "HepB",
-            "vaccineGroup": "HepB",
-            "seriesAdminGuidance": [
-                "Test all vaccinees for anti-HBs 1-2 months after the last primary vaccine dose, to determine their response to the vaccine (adequate response is defined as at least 10 mIU/mL). Patients and staff members who do not respond to the primary vaccine series should be revaccinated with three additional doses and retested for response. No additional series should be administered (i.e., a 3rd full series). The patient should receive yearly boosters starting 1 year after completion of the second series.",
-                "Retest patients who respond to the vaccine annually for anti-HBs. If anti-HBs declines to less than 10 mIU/mL, administer a booster dose of hepatitis B vaccine and continue to retest annually. Retesting immediately after the booster dose is not necessary. For staff members who respond to the vaccine, booster doses of vaccine are not necessary, and periodic serologic testing to monitor antibody concentrations is not recommended",
-                "Routine childhood vaccination against hepatitis B has been recommended since 1991 and routine adolescent vaccination since 1995. Thus, many persons who develop end-stage renal failure will have a history of vaccination against hepatitis B. These persons should have responded to the vaccine when their immune status was normal, but if their anti-HBs levels are less than 10 mIU/mL when they begin dialysis, they should be revaccinated with a complete primary series."
-            ],
-            "seriesType": "Risk",
-            "selectSeries": {
-                "defaultSeries": "No",
-                "productPath": "Yes",
-                "seriesGroupName": "Increased Risk",
-                "seriesGroup": "2",
-                "seriesPriority": "A",
-                "minAgeToStart": "20 years"
-            },
-            "indication": [
-                {
-                    "observationCode": {
-                        "text": "Dialysis patient",
-                        "code": "032"
-                    },
-                    "description": "Administer to hemodialysis patients and predialysis, peritoneal dialysis, and home dialysis patients",
-                    "beginAge": "20 years"
-                }
-            ],
-            "seriesDose": [
-                {
-                    "doseNumber": "Dose 1",
-                    "age": [
-                        {
-                            "absMinAge": "0 days",
-                            "minAge": "20 years",
-                            "earliestRecAge": "20 years"
-                        }
-                    ],
-                    "preferableVaccine": [
-                        {
-                            "vaccineType": "Hep B, Dialysis",
-                            "cvx": "44",
-                            "beginAge": "20 years",
-                            "volume": "1",
-                            "forecastVaccineType": "N"
-                        }
-                    ],
-                    "allowableVaccine": [
-                        {
-                            "vaccineType": "Hep B, Dialysis",
-                            "cvx": "44",
-                            "beginAge": "0 days"
-                        }
-                    ],
-                    "conditionalSkip": [
-                        {
-                            "context": "Both",
-                            "setLogic": "n/a",
-                            "set": [
-                                {
-                                    "setID": "1",
-                                    "setDescription": "Dose is not required if the patient has received a complete standard series of vaccinations",
-                                    "condition": [
-                                        {
-                                            "conditionID": "1",
-                                            "conditionType": "Completed Series",
-                                            "doseCountLogic": "n/a",
-                                            "seriesGroups": "1"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "recurringDose": "No"
-                },
-                {
-                    "doseNumber": "Dose 2",
-                    "preferableInterval": [
-                        {
-                            "fromPrevious": "Y",
-                            "absMinInt": "4 weeks - 4 days",
-                            "minInt": "4 weeks",
-                            "earliestRecInt": "4 weeks"
-                        }
-                    ],
-                    "preferableVaccine": [
-                        {
-                            "vaccineType": "Hep B, Dialysis",
-                            "cvx": "44",
-                            "beginAge": "20 years",
-                            "volume": "1",
-                            "forecastVaccineType": "N"
-                        }
-                    ],
-                    "allowableVaccine": [
-                        {
-                            "vaccineType": "Hep B, Dialysis",
-                            "cvx": "44",
-                            "beginAge": "0 days"
-                        }
-                    ],
-                    "conditionalSkip": [
-                        {
-                            "context": "Both",
-                            "setLogic": "n/a",
-                            "set": [
-                                {
-                                    "setID": "1",
-                                    "setDescription": "Dose is not required if the patient has received a complete standard series of vaccinations",
-                                    "condition": [
-                                        {
-                                            "conditionID": "1",
-                                            "conditionType": "Completed Series",
-                                            "doseCountLogic": "n/a",
-                                            "seriesGroups": "1"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "recurringDose": "No"
-                },
-                {
-                    "doseNumber": "Dose 3",
-                    "preferableInterval": [
-                        {
-                            "fromPrevious": "Y",
-                            "absMinInt": "8 weeks - 4 days",
-                            "minInt": "8 weeks"
-                        },
-                        {
-                            "fromPrevious": "N",
-                            "fromTargetDose": 1,
-                            "absMinInt": "16 weeks - 4 days",
-                            "minInt": "16 weeks",
-                            "earliestRecInt": "6 months"
-                        }
-                    ],
-                    "preferableVaccine": [
-                        {
-                            "vaccineType": "Hep B, Dialysis",
-                            "cvx": "44",
-                            "beginAge": "20 years",
-                            "volume": "1",
-                            "forecastVaccineType": "Y"
-                        }
-                    ],
-                    "allowableVaccine": [
-                        {
-                            "vaccineType": "Hep B, Dialysis",
-                            "cvx": "44",
-                            "beginAge": "0 days"
-                        }
-                    ],
-                    "conditionalSkip": [
-                        {
-                            "context": "Both",
-                            "setLogic": "n/a",
-                            "set": [
-                                {
-                                    "setID": "1",
-                                    "setDescription": "Dose is not required if the patient has received a complete standard series of vaccinations",
-                                    "condition": [
-                                        {
-                                            "conditionID": "1",
-                                            "conditionType": "Completed Series",
-                                            "doseCountLogic": "n/a",
-                                            "seriesGroups": "1"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "recurringDose": "No"
-                },
-                {
-                    "doseNumber": "Dose 4",
-                    "preferableInterval": [
-                        {
-                            "fromPrevious": "Y",
-                            "absMinInt": "0 days",
-                            "minInt": "1 year",
-                            "earliestRecInt": "1 year"
-                        }
-                    ],
-                    "preferableVaccine": [
-                        {
-                            "vaccineType": "Hep B, Adult",
-                            "cvx": "43",
-                            "beginAge": "20 years",
-                            "tradeName": "ENGERIX-B ADULT",
-                            "mvx": "SKB",
-                            "volume": "2",
-                            "forecastVaccineType": "N"
-                        },
-                        {
-                            "vaccineType": "Hep B, Dialysis",
-                            "cvx": "44",
-                            "beginAge": "20 years",
-                            "volume": "1",
-                            "forecastVaccineType": "N"
-                        },
-                        {
-                            "vaccineType": "HepB-CpG",
-                            "cvx": "189",
-                            "beginAge": "18 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        }
-                    ],
-                    "allowableVaccine": [
-                        {
-                            "vaccineType": "Hep B, Adult",
-                            "cvx": "43",
-                            "beginAge": "0 days"
-                        },
-                        {
-                            "vaccineType": "Hep B, Dialysis",
-                            "cvx": "44",
-                            "beginAge": "0 days"
-                        },
-                        {
-                            "vaccineType": "HepB-CpG",
-                            "cvx": "189",
-                            "beginAge": "18 years - 4 days"
-                        }
-                    ],
-                    "recurringDose": "Yes"
-                }
-            ]
-        },
-        {
             "seriesName": "HepB risk Dialysis 4-dose series",
             "targetDisease": "HepB",
             "vaccineGroup": "HepB",
@@ -5042,7 +4963,7 @@ final hepb = AntigenSupportingData.fromJson({
             ],
             "seriesType": "Risk",
             "selectSeries": {
-                "defaultSeries": "No",
+                "defaultSeries": "Yes",
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
@@ -5568,6 +5489,240 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 5",
+                    "preferableInterval": [
+                        {
+                            "fromPrevious": "Y",
+                            "absMinInt": "0 days",
+                            "minInt": "1 year",
+                            "earliestRecInt": "1 year"
+                        }
+                    ],
+                    "preferableVaccine": [
+                        {
+                            "vaccineType": "Hep B, Adult",
+                            "cvx": "43",
+                            "beginAge": "20 years",
+                            "tradeName": "ENGERIX-B ADULT",
+                            "mvx": "SKB",
+                            "volume": "2",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "Hep B, Dialysis",
+                            "cvx": "44",
+                            "beginAge": "20 years",
+                            "volume": "1",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "HepB-CpG",
+                            "cvx": "189",
+                            "beginAge": "18 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        }
+                    ],
+                    "allowableVaccine": [
+                        {
+                            "vaccineType": "Hep B, Adult",
+                            "cvx": "43",
+                            "beginAge": "0 days"
+                        },
+                        {
+                            "vaccineType": "Hep B, Dialysis",
+                            "cvx": "44",
+                            "beginAge": "0 days"
+                        },
+                        {
+                            "vaccineType": "HepB-CpG",
+                            "cvx": "189",
+                            "beginAge": "18 years - 4 days"
+                        }
+                    ],
+                    "recurringDose": "Yes"
+                }
+            ]
+        },
+        {
+            "seriesName": "HepB risk Recombivax 3-dose series",
+            "targetDisease": "HepB",
+            "vaccineGroup": "HepB",
+            "seriesAdminGuidance": [
+                "Test all vaccinees for anti-HBs 1-2 months after the last primary vaccine dose, to determine their response to the vaccine (adequate response is defined as at least 10 mIU/mL). Patients and staff members who do not respond to the primary vaccine series should be revaccinated with three additional doses and retested for response. No additional series should be administered (i.e., a 3rd full series). The patient should receive yearly boosters starting 1 year after completion of the second series.",
+                "Retest patients who respond to the vaccine annually for anti-HBs. If anti-HBs declines to less than 10 mIU/mL, administer a booster dose of hepatitis B vaccine and continue to retest annually. Retesting immediately after the booster dose is not necessary. For staff members who respond to the vaccine, booster doses of vaccine are not necessary, and periodic serologic testing to monitor antibody concentrations is not recommended",
+                "Routine childhood vaccination against hepatitis B has been recommended since 1991 and routine adolescent vaccination since 1995. Thus, many persons who develop end-stage renal failure will have a history of vaccination against hepatitis B. These persons should have responded to the vaccine when their immune status was normal, but if their anti-HBs levels are less than 10 mIU/mL when they begin dialysis, they should be revaccinated with a complete primary series."
+            ],
+            "seriesType": "Risk",
+            "selectSeries": {
+                "defaultSeries": "No",
+                "productPath": "Yes",
+                "seriesGroupName": "Increased Risk",
+                "seriesGroup": "2",
+                "seriesPriority": "A",
+                "minAgeToStart": "20 years"
+            },
+            "indication": [
+                {
+                    "observationCode": {
+                        "text": "Dialysis patient",
+                        "code": "032"
+                    },
+                    "description": "Administer to hemodialysis patients and predialysis, peritoneal dialysis, and home dialysis patients",
+                    "beginAge": "20 years"
+                }
+            ],
+            "seriesDose": [
+                {
+                    "doseNumber": "Dose 1",
+                    "age": [
+                        {
+                            "absMinAge": "0 days",
+                            "minAge": "20 years",
+                            "earliestRecAge": "20 years"
+                        }
+                    ],
+                    "preferableVaccine": [
+                        {
+                            "vaccineType": "Hep B, Dialysis",
+                            "cvx": "44",
+                            "beginAge": "20 years",
+                            "volume": "1",
+                            "forecastVaccineType": "N"
+                        }
+                    ],
+                    "allowableVaccine": [
+                        {
+                            "vaccineType": "Hep B, Dialysis",
+                            "cvx": "44",
+                            "beginAge": "0 days"
+                        }
+                    ],
+                    "conditionalSkip": [
+                        {
+                            "context": "Both",
+                            "setLogic": "n/a",
+                            "set": [
+                                {
+                                    "setID": "1",
+                                    "setDescription": "Dose is not required if the patient has received a complete standard series of vaccinations",
+                                    "condition": [
+                                        {
+                                            "conditionID": "1",
+                                            "conditionType": "Completed Series",
+                                            "doseCountLogic": "n/a",
+                                            "seriesGroups": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "recurringDose": "No"
+                },
+                {
+                    "doseNumber": "Dose 2",
+                    "preferableInterval": [
+                        {
+                            "fromPrevious": "Y",
+                            "absMinInt": "4 weeks - 4 days",
+                            "minInt": "4 weeks",
+                            "earliestRecInt": "4 weeks"
+                        }
+                    ],
+                    "preferableVaccine": [
+                        {
+                            "vaccineType": "Hep B, Dialysis",
+                            "cvx": "44",
+                            "beginAge": "20 years",
+                            "volume": "1",
+                            "forecastVaccineType": "N"
+                        }
+                    ],
+                    "allowableVaccine": [
+                        {
+                            "vaccineType": "Hep B, Dialysis",
+                            "cvx": "44",
+                            "beginAge": "0 days"
+                        }
+                    ],
+                    "conditionalSkip": [
+                        {
+                            "context": "Both",
+                            "setLogic": "n/a",
+                            "set": [
+                                {
+                                    "setID": "1",
+                                    "setDescription": "Dose is not required if the patient has received a complete standard series of vaccinations",
+                                    "condition": [
+                                        {
+                                            "conditionID": "1",
+                                            "conditionType": "Completed Series",
+                                            "doseCountLogic": "n/a",
+                                            "seriesGroups": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "recurringDose": "No"
+                },
+                {
+                    "doseNumber": "Dose 3",
+                    "preferableInterval": [
+                        {
+                            "fromPrevious": "Y",
+                            "absMinInt": "8 weeks - 4 days",
+                            "minInt": "8 weeks"
+                        },
+                        {
+                            "fromPrevious": "N",
+                            "fromTargetDose": 1,
+                            "absMinInt": "16 weeks - 4 days",
+                            "minInt": "16 weeks",
+                            "earliestRecInt": "6 months"
+                        }
+                    ],
+                    "preferableVaccine": [
+                        {
+                            "vaccineType": "Hep B, Dialysis",
+                            "cvx": "44",
+                            "beginAge": "20 years",
+                            "volume": "1",
+                            "forecastVaccineType": "Y"
+                        }
+                    ],
+                    "allowableVaccine": [
+                        {
+                            "vaccineType": "Hep B, Dialysis",
+                            "cvx": "44",
+                            "beginAge": "0 days"
+                        }
+                    ],
+                    "conditionalSkip": [
+                        {
+                            "context": "Both",
+                            "setLogic": "n/a",
+                            "set": [
+                                {
+                                    "setID": "1",
+                                    "setDescription": "Dose is not required if the patient has received a complete standard series of vaccinations",
+                                    "condition": [
+                                        {
+                                            "conditionID": "1",
+                                            "conditionType": "Completed Series",
+                                            "doseCountLogic": "n/a",
+                                            "seriesGroups": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "recurringDose": "No"
+                },
+                {
+                    "doseNumber": "Dose 4",
                     "preferableInterval": [
                         {
                             "fromPrevious": "Y",

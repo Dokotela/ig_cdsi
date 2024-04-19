@@ -39,11 +39,6 @@
         "vaccineGroup": {
             "contraindication": [
                 {
-                    "observationCode": "003",
-                    "observationTitle": "Immunocompromised",
-                    "contraindicationText": "Do not vaccinate if the patient is immunocompromised."
-                },
-                {
                     "observationCode": "007",
                     "observationTitle": "Pregnant",
                     "contraindicationText": "Do not vaccinate if the patient is pregnant."
@@ -212,6 +207,11 @@
                     "observationCode": "168",
                     "observationTitle": "Chemotherapy",
                     "contraindicationText": "Do not vaccinate if the patient is undergoing chemotherapy, including 14 days before the start of therapy and 3 months after the completion of therapy."
+                },
+                {
+                    "observationCode": "246",
+                    "observationTitle": "Severe immunocompromise",
+                    "contraindicationText": "Do not vaccinate persons with severe immunocompromise."
                 }
             ]
         }
@@ -221,6 +221,9 @@
             "seriesName": "Varicella childhood 2-dose series",
             "targetDisease": "Varicella",
             "vaccineGroup": "Varicella",
+            "seriesAdminGuidance": [
+                "HIV-infected people eligible for vaccination should get 2 doses of single-antigen varicella vaccine separated by 3 months. HIV-infected people should not get the combination MMRV vaccine."
+            ],
             "seriesType": "Standard",
             "selectSeries": {
                 "defaultSeries": "Yes",
@@ -345,7 +348,8 @@
             "targetDisease": "Varicella",
             "vaccineGroup": "Varicella",
             "seriesAdminGuidance": [
-                "Vaccination should be emphasized for those who have close contact with persons at high risk for severe disease or are at high risk for exposure or transmission. Pregnant women should be assessed for evidence of varicella immunity. Women who do not have evidence of immunity should receive the first dose of varicella vaccine upon completion or termination of pregnancy and before discharge from the health care facility."
+                "Vaccination should be emphasized for those who have close contact with persons at high risk for severe disease or are at high risk for exposure or transmission. Pregnant women should be assessed for evidence of varicella immunity. Women who do not have evidence of immunity should receive the first dose of varicella vaccine upon completion or termination of pregnancy and before discharge from the health care facility.",
+                "HIV-infected people eligible for vaccination should get 2 doses of single-antigen varicella vaccine separated by 3 months. HIV-infected people should not get the combination MMRV vaccine."
             ],
             "seriesType": "Standard",
             "selectSeries": {
@@ -353,8 +357,7 @@
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "maxAgeToStart": "50 years"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {

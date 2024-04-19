@@ -184,14 +184,6 @@ final tetanus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "DTaP, 5 pertussis antigens",
                             "cvx": "106",
                             "beginAge": "6 weeks",
@@ -374,11 +366,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -416,14 +407,6 @@ final tetanus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "DTaP, 5 pertussis antigens",
                             "cvx": "106",
                             "beginAge": "6 weeks",
@@ -606,11 +589,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -648,14 +630,6 @@ final tetanus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "DTaP, 5 pertussis antigens",
                             "cvx": "106",
                             "beginAge": "6 weeks",
@@ -838,11 +812,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -878,14 +851,6 @@ final tetanus = AntigenSupportingData.fromJson({
                         {
                             "vaccineType": "DTaP",
                             "cvx": "20",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
                             "beginAge": "6 weeks",
                             "endAge": "7 years",
                             "volume": "0.5",
@@ -933,6 +898,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -1062,11 +1032,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -1098,14 +1067,6 @@ final tetanus = AntigenSupportingData.fromJson({
                         {
                             "vaccineType": "DTaP",
                             "cvx": "20",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
                             "beginAge": "6 weeks",
                             "endAge": "7 years",
                             "volume": "0.5",
@@ -1153,6 +1114,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -1282,11 +1248,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -1362,6 +1327,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -1499,7 +1469,7 @@ final tetanus = AntigenSupportingData.fromJson({
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 },
@@ -1589,6 +1559,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -1769,6 +1744,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "beginAge": "6 weeks - 4 days"
                         },
                         {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
+                        },
+                        {
                             "vaccineType": "DTaP-Hib",
                             "cvx": "50",
                             "beginAge": "6 weeks - 4 days"
@@ -1935,6 +1915,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -2107,6 +2092,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "beginAge": "6 weeks - 4 days"
                         },
                         {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
+                        },
+                        {
                             "vaccineType": "DTaP-Hib",
                             "cvx": "50",
                             "beginAge": "6 weeks - 4 days"
@@ -2227,14 +2217,6 @@ final tetanus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "DTaP, 5 pertussis antigens",
                             "cvx": "106",
                             "beginAge": "6 weeks",
@@ -2417,11 +2399,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -2451,14 +2432,6 @@ final tetanus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "DTaP, 5 pertussis antigens",
                             "cvx": "106",
                             "beginAge": "6 weeks",
@@ -2641,11 +2614,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -2675,14 +2647,6 @@ final tetanus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "DTaP, 5 pertussis antigens",
                             "cvx": "106",
                             "beginAge": "6 weeks",
@@ -2865,11 +2829,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -2905,14 +2868,6 @@ final tetanus = AntigenSupportingData.fromJson({
                         {
                             "vaccineType": "DTaP",
                             "cvx": "20",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
                             "beginAge": "6 weeks",
                             "endAge": "7 years",
                             "volume": "0.5",
@@ -2960,6 +2915,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -3089,11 +3049,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -3125,14 +3084,6 @@ final tetanus = AntigenSupportingData.fromJson({
                         {
                             "vaccineType": "DTaP",
                             "cvx": "20",
-                            "beginAge": "6 weeks",
-                            "endAge": "7 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
-                            "vaccineType": "DT - Pediatric",
-                            "cvx": "28",
                             "beginAge": "6 weeks",
                             "endAge": "7 years",
                             "volume": "0.5",
@@ -3180,6 +3131,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -3309,11 +3265,10 @@ final tetanus = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;09;20;22;28;50;102;106;107;110;113;115;120;130;132;138;139;146;170; 195; 196"
+                                            "vaccineTypes": "01;09;20;22;28;35;50;102;106;107;110;113;115;120;130;132;138;139;146;170;195;196;198"
                                         }
                                     ]
                                 }
@@ -3389,6 +3344,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -3544,7 +3504,7 @@ final tetanus = AntigenSupportingData.fromJson({
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         },
                                         {
                                             "conditionID": "3",
@@ -3575,7 +3535,7 @@ final tetanus = AntigenSupportingData.fromJson({
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         },
                                         {
                                             "conditionID": "3",
@@ -3682,6 +3642,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -3862,6 +3827,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "beginAge": "6 weeks - 4 days"
                         },
                         {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
+                        },
+                        {
                             "vaccineType": "DTaP-Hib",
                             "cvx": "50",
                             "beginAge": "6 weeks - 4 days"
@@ -4028,6 +3998,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",
@@ -4198,6 +4173,11 @@ final tetanus = AntigenSupportingData.fromJson({
                             "vaccineType": "DT - Pediatric",
                             "cvx": "28",
                             "beginAge": "6 weeks - 4 days"
+                        },
+                        {
+                            "vaccineType": "TT",
+                            "cvx": "35",
+                            "beginAge": "12 months - 4 days"
                         },
                         {
                             "vaccineType": "DTaP-Hib",

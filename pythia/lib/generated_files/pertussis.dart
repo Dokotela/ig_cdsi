@@ -336,11 +336,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -531,11 +530,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -726,11 +724,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -908,11 +905,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -1086,11 +1082,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -1254,7 +1249,7 @@ final pertussis = AntigenSupportingData.fromJson({
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 },
@@ -1418,7 +1413,7 @@ final pertussis = AntigenSupportingData.fromJson({
                         },
                         {
                             "context": "Forecast",
-                            "setLogic": "n/a",
+                            "setLogic": "OR",
                             "set": [
                                 {
                                     "setID": "3",
@@ -2059,11 +2054,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -2246,11 +2240,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -2433,11 +2426,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -2615,11 +2607,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -2793,11 +2784,10 @@ final pertussis = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Age",
-                                            "beginAge": "6 weeks - 4 days",
                                             "doseCount": "5",
                                             "doseType": "Total",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         }
                                     ]
                                 }
@@ -2979,7 +2969,7 @@ final pertussis = AntigenSupportingData.fromJson({
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         },
                                         {
                                             "conditionID": "3",
@@ -3010,7 +3000,7 @@ final pertussis = AntigenSupportingData.fromJson({
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
-                                            "vaccineTypes": "01;20;22;50;102;106;107;110;115;120;130;132;146;170"
+                                            "vaccineTypes": "01;11;20;22;50;102;106;107;110;115;120;130;132;146;170;198"
                                         },
                                         {
                                             "conditionID": "3",
@@ -3191,7 +3181,7 @@ final pertussis = AntigenSupportingData.fromJson({
                         },
                         {
                             "context": "Forecast",
-                            "setLogic": "n/a",
+                            "setLogic": "OR",
                             "set": [
                                 {
                                     "setID": "3",
@@ -3685,6 +3675,8 @@ final pertussis = AntigenSupportingData.fromJson({
                                 "text": "Onset of pregnancy",
                                 "code": "170"
                             },
+                            "absMinInt": "0 days",
+                            "minInt": "27 weeks",
                             "earliestRecInt": "27 weeks",
                             "latestRecInt": "36 weeks"
                         }

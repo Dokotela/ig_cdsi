@@ -70,6 +70,11 @@ final dengue = AntigenSupportingData.fromJson({
                     "observationCode": "210",
                     "observationTitle": "Severe allergic reaction after previous dose of Dengue vaccine",
                     "contraindicationText": "Do not vaccinate if the patient has had a severe allergic reaction after a previous dose of Dengue vaccine."
+                },
+                {
+                    "observationCode": "243",
+                    "observationTitle": "Lack of laboratory confirmation of a previous Dengue infection",
+                    "contraindicationText": "Do not vaccinate if the patient has had a severe allergic reaction after a previous dose of Dengue vaccine."
                 }
             ]
         }

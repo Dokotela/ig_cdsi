@@ -8,12 +8,12 @@ import 'utils/download_sheets.dart';
 
 Future<void> main() async {
   /// Downloads all information from Google Sheets
-  // final supportingStringsList = await downloadSheets();
+  final supportingStringsList = await downloadSheets();
 
-  // final files = supportingStringsList.map((e) => e.toJson()).toList();
+  final files = supportingStringsList.map((e) => e.toJson()).toList();
 
-  // await File('pythia_generator/lib/supporting_strings.json')
-  //     .writeAsString(jsonEncode(files));
+  await File('pythia_generator/lib/supporting_strings.json')
+      .writeAsString(jsonEncode(files));
 
   final listFromFile = jsonDecode(
       await File('pythia_generator/lib/supporting_strings.json')

@@ -24,11 +24,6 @@ final measles = AntigenSupportingData.fromJson({
         "vaccineGroup": {
             "contraindication": [
                 {
-                    "observationCode": "003",
-                    "observationTitle": "Immunocompromised",
-                    "contraindicationText": "Do not vaccinate if the patient is immunocompromised."
-                },
-                {
                     "observationCode": "007",
                     "observationTitle": "Pregnant",
                     "contraindicationText": "Do not vaccinate if the patient is pregnant."
@@ -197,6 +192,11 @@ final measles = AntigenSupportingData.fromJson({
                     "observationCode": "168",
                     "observationTitle": "Chemotherapy",
                     "contraindicationText": "Do not vaccinate if the patient is undergoing chemotherapy, including 14 days before the start of therapy and 3 months after the completion of therapy."
+                },
+                {
+                    "observationCode": "246",
+                    "observationTitle": "Severe immunocompromise",
+                    "contraindicationText": "Do not vaccinate persons with severe immunocompromise."
                 }
             ]
         }

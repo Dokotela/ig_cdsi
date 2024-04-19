@@ -37,8 +37,9 @@ Future<void> createPatients(
     if (!v[0].contains('CDC')) {
       final patient = Patient(
         fhirId: FhirId(v[0].toString()),
-        name: [HumanName(family: v[1])],
-        birthDate: FhirDate(epoch.add(Duration(days: v[2]))),
+        name: [HumanName(family: v[1]?.toString())],
+        birthDate: FhirDate(
+            epoch.add(Duration(days: int.tryParse(v[2].toString()) ?? 0))),
         gender: v[3].contains('F')
             ? FhirCode('female')
             : v[3].contains('M')

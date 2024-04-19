@@ -185,7 +185,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
             "seriesAdminGuidance": [
                 "Persons who previously received ACAM2000 should decide before their next booster dose whether to receive ACAM2000 or JYNNEOS. Persons who transition to receiving JYNNEOS boosters are expected to continue receiving JYNNEOS boosters and to not revert to ACAM2000; in addition, the frequency of booster doses should correspond to the vaccine used for boosters. For example, persons who previously received ACAM2000 every 3 years because of work with more virulent orthopoxviruses might decide to change to JYNNEOS when their next booster dose is due; in these cases, subsequent JYNNEOS booster doses should be administered every 2 years.",
                 "Evidence of a take is often used as a marker of successful vaccination after ACAM2000. Because JYNNEOS is a replication-deficient vaccine, vaccination with JYNNEOS does not produce a take",
-                "When vaccination is used for prevention of monkeypox in persons with HIV infection, JYNNEOS is preferred over ACAM2000."
+                "When vaccination is used for prevention of mpox in persons with HIV infection, JYNNEOS is preferred over ACAM2000."
             ],
             "seriesType": "Risk",
             "selectSeries": {
@@ -199,36 +199,28 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
             "indication": [
                 {
                     "observationCode": {
-                        "text": "Research laboratory personnel working with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
+                        "text": "Research laboratory personnel working with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
                         "code": "232"
                     },
-                    "description": "Administer to research laboratory personnel working with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
+                    "description": "Administer to research laboratory personnel working with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
                     "beginAge": "18 years"
                 },
                 {
                     "observationCode": {
-                        "text": "Clinical laboratory personnel performing diagnostic testing for more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
+                        "text": "Clinical laboratory personnel performing diagnostic testing for more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
                         "code": "233"
                     },
-                    "description": "Administer to clinical laboratory personnel performing diagnostic testing for more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
+                    "description": "Administer to clinical laboratory personnel performing diagnostic testing for more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
                     "beginAge": "18 years"
                 },
                 {
                     "observationCode": {
-                        "text": "Designated response team members working with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
+                        "text": "Designated response team members working with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
                         "code": "234"
                     },
-                    "description": "Administer to designated response team members working with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
+                    "description": "Administer to designated response team members working with more virulent orthopoxviruses (e.g., Variola virus or mpox virus)",
                     "beginAge": "18 years",
                     "guidance": "Booster doses are     recommended for response personnel only once an event is identified."
-                },
-                {
-                    "observationCode": {
-                        "text": "Healthcare personnel who care for patients infected with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
-                        "code": "235"
-                    },
-                    "description": "Administer to healthcare personnel who care for patients infected with more virulent orthopoxviruses (e.g., Variola virus or Monkeypox virus)",
-                    "beginAge": "18 years"
                 }
             ],
             "seriesDose": [
@@ -250,7 +242,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "18 years",
                             "volume": "0.5",
@@ -269,7 +261,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "beginAge": "1 year - 4 days"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "1 year - 4 days"
                         }
@@ -288,7 +280,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "18 years",
                             "volume": "0.5",
@@ -307,7 +299,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "beginAge": "1 year - 4 days"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "1 year - 4 days"
                         }
@@ -357,7 +349,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "18 years",
                             "volume": "0.5",
@@ -376,7 +368,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "beginAge": "1 year - 4 days"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "1 year - 4 days"
                         }
@@ -391,7 +383,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
             "vaccineGroup": "Orthopoxvirus",
             "seriesAdminGuidance": [
                 "Persons who previously received ACAM2000 should decide before their next booster dose whether to receive ACAM2000 or JYNNEOS. Persons who transition to receiving JYNNEOS boosters are expected to continue receiving JYNNEOS boosters and to not revert to ACAM2000.",
-                "When vaccination is used for prevention of monkeypox in persons with HIV infection, JYNNEOS is preferred over ACAM2000."
+                "When vaccination is used for prevention of mpox in persons with HIV infection, JYNNEOS is preferred over ACAM2000."
             ],
             "seriesType": "Risk",
             "selectSeries": {
@@ -435,14 +427,6 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                     },
                     "description": "Administer to healthcare personnel who administer ACAM2000",
                     "beginAge": "18 years"
-                },
-                {
-                    "observationCode": {
-                        "text": "Healthcare personnel who care for patients infected with less virulent orthopoxviruses (e.g., Vaccinia virus or Cowpox virus)",
-                        "code": "240"
-                    },
-                    "description": "Administer to healthcare personnel who care for patients infected with less virulent orthopoxviruses (e.g., Vaccinia virus or Cowpox virus)",
-                    "beginAge": "18 years"
                 }
             ],
             "seriesDose": [
@@ -464,7 +448,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "18 years",
                             "volume": "0.5",
@@ -483,7 +467,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "beginAge": "1 year - 4 days"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "1 year - 4 days"
                         }
@@ -502,7 +486,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "18 years",
                             "volume": "0.5",
@@ -521,7 +505,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "beginAge": "1 year - 4 days"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "1 year - 4 days"
                         }
@@ -570,7 +554,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "18 years",
                             "volume": "0.5",
@@ -589,7 +573,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "beginAge": "1 year - 4 days"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "1 year - 4 days"
                         }
@@ -599,16 +583,12 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
             ]
         },
         {
-            "seriesName": "Risk post exposure 2-dose series",
+            "seriesName": "Risk pre-exposure 2-dose",
             "targetDisease": "Orthopoxvirus",
             "vaccineGroup": "Orthopoxvirus",
             "seriesAdminGuidance": [
-                "CDC recommends initiating vaccination within 4 days following the date of exposure for the best chance to prevent on set of the disease. If initiated between 4 and 14 days following the date of exposure, vaccination might be less effective. Benefits might still outweigh risks when administering more than 14 days after exposure in some clinical situations (e.g., severely immunosuppressed)",
-                "JYNNEOS vaccine can be administered through 2 different regimens. Please see https://www.cdc.gov/poxvirus/monkeypox/interim-considerations/jynneos-vaccine.html for more details.",
-                "Prior to administration in people younger than age 6 months, clinicians should first contact their jurisdictional health department (https://resources.cste.org/epiafterhours). Jurisdictional health departments can facilitate consultation with CDC if needed.",
-                "In response to the current outbreak, vaccines and other medical measures should be given to eligible people who were previously vaccinated against smallpox.",
-                "Evidence of a take is often used as a marker of successful vaccination after ACAM2000. Because JYNNEOS is a replication-deficient vaccine, vaccination with JYNNEOS does not produce a take",
-                "When vaccination is used for prevention of monkeypox in persons with HIV infection, JYNNEOS is preferred over ACAM2000."
+                "There is currently no ACIP recommendation for Jynneos use in pregnancy due to lack of safety data in pregnant persons. Pregnant persons with any risk factors may receive Jynneos",
+                "Adolescents at risk for mpox may receive Jynneos vaccine before exposure"
             ],
             "seriesType": "Risk",
             "selectSeries": {
@@ -621,21 +601,119 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
             "indication": [
                 {
                     "observationCode": {
-                        "text": "Known exposure to monkeypox",
-                        "code": "241"
+                        "text": "Gay, bisexual, and other men who have sex with men, transgender or nonbinary peope who in the past 6 months have had one of the following:  1) A new diagnosis of ≥ 1 sexually transmitted disease 2)  More than one sex partner 3)  Sex at a commercial sex venue 4)  Sex in association with a large public event in a geographic area where mpox transmission is occurring",
+                        "code": "247"
                     },
-                    "description": "Administer to persons who are known contacts to someone with monkeypox who are identified by public health authorities",
-                    "beginAge": "0 days",
-                    "guidance": "People who are known contacts to someone with monkeypox who are identified by public health authorities, for example via case investigation, contact tracing, or risk exposure assessment"
+                    "description": "Administer to gay, bisexual, and other men who have sex with men, transgender or nonbinary peope who in the past 6 months have had one of the following:  1) A new diagnosis of ≥ 1 sexually transmitted disease 2)  More than one sex partner 3)  Sex at a commercial sex venue 4)  Sex in association with a large public event in a geographic area where mpox transmission is occurring.",
+                    "beginAge": "18 years",
+                    "guidance": "Includes persons who anticipate experiencing any of the risk factors."
                 },
                 {
                     "observationCode": {
-                        "text": "Presumed exposure to monkeypox",
+                        "text": "Sexual partners of gay, bisexual, and other men who have sex with men, transgender or nonbinary peope who in the past 6 months have had one of the following:  1) A new diagnosis of ≥ 1 sexually transmitted disease 2)  More than one sex partner 3)  Sex at a commercial sex venue 4)  Sex in association with a large public event in a geographic area where mpox transmission is occurring",
+                        "code": "248"
+                    },
+                    "description": "Administer to sexual partners of gay, bisexual, and other men who have sex with men, transgender or nonbinary peope who in the past 6 months have had one of the following:  1) A new diagnosis of ≥ 1 sexually transmitted disease 2)  More than one sex partner 3)  Sex at a commercial sex venue 4)  Sex in association with a large public event in a geographic area where mpox transmission is occurring.",
+                    "beginAge": "18 years",
+                    "guidance": "Includes persons who anticipate experiencing any of the risk factors."
+                }
+            ],
+            "seriesDose": [
+                {
+                    "doseNumber": "Dose 1",
+                    "age": [
+                        {
+                            "absMinAge": "0 days",
+                            "minAge": "18 years",
+                            "earliestRecAge": "18 years"
+                        }
+                    ],
+                    "preferableVaccine": [
+                        {
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
+                            "cvx": "206",
+                            "beginAge": "18 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        }
+                    ],
+                    "allowableVaccine": [
+                        {
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
+                            "cvx": "206",
+                            "beginAge": "0 days"
+                        }
+                    ],
+                    "recurringDose": "No"
+                },
+                {
+                    "doseNumber": "Dose 2",
+                    "preferableInterval": [
+                        {
+                            "fromPrevious": "Y",
+                            "absMinInt": "0 days",
+                            "minInt": "28 days",
+                            "earliestRecInt": "28 days"
+                        }
+                    ],
+                    "preferableVaccine": [
+                        {
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
+                            "cvx": "206",
+                            "beginAge": "18 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        }
+                    ],
+                    "allowableVaccine": [
+                        {
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
+                            "cvx": "206",
+                            "beginAge": "0 days"
+                        }
+                    ],
+                    "recurringDose": "No"
+                }
+            ]
+        },
+        {
+            "seriesName": "Risk post-exposure 2-dose series",
+            "targetDisease": "Orthopoxvirus",
+            "vaccineGroup": "Orthopoxvirus",
+            "seriesAdminGuidance": [
+                "CDC recommends initiating vaccination within 4 days following the date of exposure for the best chance to prevent on set of the disease. If initiated between 4 and 14 days following the date of exposure, vaccination might be less effective. Benefits might still outweigh risks when administering more than 14 days after exposure in some clinical situations (e.g., severely immunosuppressed)",
+                "JYNNEOS vaccine can be administered through 2 different regimens. Please see https://www.cdc.gov/poxvirus/mpox/interim-considerations/jynneos-vaccine.html for more details.",
+                "Prior to administration in people younger than age 6 months, clinicians should first contact their jurisdictional health department (https://resources.cste.org/epiafterhours). Jurisdictional health departments can facilitate consultation with CDC if needed.",
+                "In response to the current outbreak, vaccines and other medical measures should be given to eligible people who were previously vaccinated against smallpox.",
+                "Evidence of a take is often used as a marker of successful vaccination after ACAM2000. Because JYNNEOS is a replication-deficient vaccine, vaccination with JYNNEOS does not produce a take",
+                "When vaccination is used for prevention of mpox in persons with HIV infection, JYNNEOS is preferred over ACAM2000."
+            ],
+            "seriesType": "Risk",
+            "selectSeries": {
+                "defaultSeries": "No",
+                "productPath": "No",
+                "seriesGroupName": "Increased Risk",
+                "seriesGroup": "1",
+                "seriesPriority": "C"
+            },
+            "indication": [
+                {
+                    "observationCode": {
+                        "text": "Known exposure to mpox",
+                        "code": "241"
+                    },
+                    "description": "Administer to persons who are known contacts to someone with mpox who are identified by public health authorities",
+                    "beginAge": "0 days",
+                    "guidance": "People who are known contacts to someone with mpox who are identified by public health authorities, for example via case investigation, contact tracing, or risk exposure assessment"
+                },
+                {
+                    "observationCode": {
+                        "text": "Presumed exposure to mpox",
                         "code": "242"
                     },
-                    "description": "Administer to persons who have presumed exposure to monkeypox",
+                    "description": "Administer to persons who have presumed exposure to mpox",
                     "beginAge": "0 days",
-                    "guidance": "People who are aware that a recent sex partner within the  past 14 days was diagnosed with monkeypox. Certain gay, bisexual, or other men who have sex with men, or transgender people who have had any of following within the past 14 days: sex with multiple partners (or group sex); sex at a commercial sex venue; or sex in association with an event, venue, or defined geographic area where monkeypox transmission is occurring."
+                    "guidance": "People who are aware that a recent sex partner within the  past 14 days was diagnosed with mpox. Certain gay, bisexual, or other men who have sex with men, or transgender people who have had any of following within the past 14 days: sex with multiple partners (or group sex); sex at a commercial sex venue; or sex in association with an event, venue, or defined geographic area where mpox transmission is occurring."
                 }
             ],
             "seriesDose": [
@@ -657,14 +735,14 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "0 days",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "18 years",
                             "volume": "0.1",
@@ -683,7 +761,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "beginAge": "1 year - 4 days"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "0 days"
                         }
@@ -702,14 +780,14 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "0 days",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "18 years",
                             "volume": "0.1",
@@ -728,7 +806,7 @@ final orthopoxvirus = AntigenSupportingData.fromJson({
                             "beginAge": "1 year - 4 days"
                         },
                         {
-                            "vaccineType": "vaccinia - smallpox monkeypox vaccine live, PF",
+                            "vaccineType": "vaccinia - smallpox mpox vaccine live, PF",
                             "cvx": "206",
                             "beginAge": "0 days"
                         }

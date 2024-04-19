@@ -295,6 +295,15 @@ final hpv = AntigenSupportingData.fromJson({
                             "effectiveDate": "2016-12-16"
                         }
                     ],
+                    "preferableInterval": [
+                        {
+                            "fromPrevious": "Y",
+                            "absMinInt": "4 weeks - 4 days",
+                            "minInt": "4 weeks",
+                            "earliestRecInt": "4 weeks",
+                            "latestRecInt": "4 weeks"
+                        }
+                    ],
                     "preferableVaccine": [
                         {
                             "vaccineType": "9vHPV",
@@ -398,9 +407,7 @@ final hpv = AntigenSupportingData.fromJson({
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "12 weeks - 4 days",
-                            "minInt": "12 weeks",
-                            "earliestRecInt": "4 months",
-                            "latestRecInt": "5 months + 4 weeks"
+                            "minInt": "12 weeks"
                         }
                     ],
                     "preferableVaccine": [
@@ -571,9 +578,7 @@ final hpv = AntigenSupportingData.fromJson({
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "12 weeks - 4 days",
-                            "minInt": "12 weeks",
-                            "earliestRecInt": "4 months",
-                            "latestRecInt": "5 months + 4 weeks"
+                            "minInt": "12 weeks"
                         }
                     ],
                     "preferableVaccine": [
@@ -876,6 +881,15 @@ final hpv = AntigenSupportingData.fromJson({
                             "effectiveDate": "2016-12-16"
                         }
                     ],
+                    "preferableInterval": [
+                        {
+                            "fromPrevious": "Y",
+                            "absMinInt": "4 weeks - 4 days",
+                            "minInt": "4 weeks",
+                            "earliestRecInt": "4 weeks",
+                            "latestRecInt": "4 weeks"
+                        }
+                    ],
                     "preferableVaccine": [
                         {
                             "vaccineType": "9vHPV",
@@ -981,9 +995,7 @@ final hpv = AntigenSupportingData.fromJson({
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "12 weeks - 4 days",
-                            "minInt": "12 weeks",
-                            "earliestRecInt": "4 months",
-                            "latestRecInt": "5 months + 4 weeks"
+                            "minInt": "12 weeks"
                         }
                     ],
                     "preferableVaccine": [
@@ -1156,9 +1168,7 @@ final hpv = AntigenSupportingData.fromJson({
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "12 weeks - 4 days",
-                            "minInt": "12 weeks",
-                            "earliestRecInt": "4 months",
-                            "latestRecInt": "5 months + 4 weeks"
+                            "minInt": "12 weeks"
                         }
                     ],
                     "preferableVaccine": [

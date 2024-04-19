@@ -14,9 +14,10 @@ Future<List<SupportingStrings>> downloadSheets() async {
 
   for (var gsheet in gSheetsList) {
     sleep(Duration(seconds: 15));
+    final url = gsheet.split('/').last;
 
     /// Get all of tabs/sheets at the stated location
-    final ss = await gsheets.spreadsheet(gsheet);
+    final ss = await gsheets.spreadsheet(url);
     print('Downloading ${ss.data.properties.title}');
 
     /// If the first sheet is entitled Antigen Series Overview, it is an sheet

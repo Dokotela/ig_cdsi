@@ -133,8 +133,7 @@ final hepa = AntigenSupportingData.fromJson({
                         {
                             "absMinAge": "18 months - 4 days",
                             "minAge": "18 months",
-                            "earliestRecAge": "18 months",
-                            "latestRecAge": "24 months + 4 weeks"
+                            "earliestRecAge": "18 months"
                         }
                     ],
                     "preferableInterval": [
@@ -405,9 +404,8 @@ final hepa = AntigenSupportingData.fromJson({
                     "age": [
                         {
                             "absMinAge": "12 months - 4 days",
-                            "minAge": "12 months",
-                            "earliestRecAge": "12 months",
-                            "latestRecAge": "24 months + 4 weeks"
+                            "minAge": "19 years",
+                            "earliestRecAge": "19 years"
                         }
                     ],
                     "preferableVaccine": [
@@ -628,8 +626,8 @@ final hepa = AntigenSupportingData.fromJson({
                     "age": [
                         {
                             "absMinAge": "18 years - 4 days",
-                            "minAge": "18 years",
-                            "earliestRecAge": "18 years"
+                            "minAge": "19 years",
+                            "earliestRecAge": "19 years"
                         }
                     ],
                     "preferableVaccine": [
@@ -904,8 +902,8 @@ final hepa = AntigenSupportingData.fromJson({
                     "age": [
                         {
                             "absMinAge": "18 years - 4 days",
-                            "minAge": "18 years",
-                            "earliestRecAge": "18 years"
+                            "minAge": "19 years",
+                            "earliestRecAge": "19 years"
                         }
                     ],
                     "preferableVaccine": [

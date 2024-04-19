@@ -21,53 +21,10 @@ final meningococcal = AntigenSupportingData.fromJson({
         "vaccine": {
             "contraindication": [
                 {
-                    "observationCode": "154",
-                    "observationTitle": "HIV/AIDS - severely immunocompromised",
-                    "contraindicationText": "Do not vaccinate with Meningococcal MCV4P (Menactra) if the patient is between the ages of 9 months and 2 years and is severely immunocompromised due to HIV/AIDS.",
-                    "contraindicatedVaccine": [
-                        {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "2 months",
-                            "endAge": "2 years"
-                        }
-                    ]
-                },
-                {
-                    "observationCode": "155",
-                    "observationTitle": "HIV/AIDS - not severely immunocompromised",
-                    "contraindicationText": "Do not vaccinate with Meningococcal MCV4P (Menactra) if the patient is between the ages of 9 months and 2 years and is severely immunocompromised due to HIV/AIDS.",
-                    "contraindicatedVaccine": [
-                        {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "2 months",
-                            "endAge": "2 years"
-                        }
-                    ]
-                },
-                {
-                    "observationCode": "160",
-                    "observationTitle": "Anatomical or functional asplenia",
-                    "contraindicationText": "Do not vaccinate with Meningococcal MCV4P (Menactra) if the patient is between the ages of 9 months and 2 years and has anatomical or functional asplenia.",
-                    "contraindicatedVaccine": [
-                        {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "2 months",
-                            "endAge": "2 years"
-                        }
-                    ]
-                },
-                {
                     "observationCode": "117",
                     "observationTitle": "Severe allergic reaction to diphtheria toxoid",
                     "contraindicationText": "Do not vaccinate if the patient has had a severe allergic reaction to diphtheria toxoid.",
                     "contraindicatedVaccine": [
-                        {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114"
-                        },
                         {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136"
@@ -82,6 +39,10 @@ final meningococcal = AntigenSupportingData.fromJson({
                         {
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316"
                         }
                     ]
                 }
@@ -93,6 +54,9 @@ final meningococcal = AntigenSupportingData.fromJson({
             "seriesName": "Meningococcal ACWY 2-dose series",
             "targetDisease": "Meningococcal",
             "vaccineGroup": "Meningococcal",
+            "seriesAdminGuidance": [
+                "Penbraya (MenABCWY - Pfizer) may be used when both MenACWY and MenB are indicated at the same visit."
+            ],
             "seriesType": "Standard",
             "selectSeries": {
                 "defaultSeries": "Yes",
@@ -114,14 +78,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                         }
                     ],
                     "preferableVaccine": [
-                        {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "endAge": "56 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
                         {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
@@ -168,6 +124,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "conditionalSkip": [
@@ -223,6 +185,13 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableInterval": [
                         {
+                            "fromPrevious": "N",
+                            "fromMostRecent": "316",
+                            "absMinInt": "8 weeks - 4 days",
+                            "minInt": "6 months",
+                            "earliestRecInt": "6 months"
+                        },
+                        {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
                             "minInt": "8 weeks",
@@ -231,14 +200,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                         }
                     ],
                     "preferableVaccine": [
-                        {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "endAge": "56 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
                         {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
@@ -251,6 +212,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -280,6 +249,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "recurringDose": "No"
@@ -291,7 +266,7 @@ final meningococcal = AntigenSupportingData.fromJson({
             "targetDisease": "Meningococcal",
             "vaccineGroup": "Meningococcal",
             "seriesAdminGuidance": [
-                "If MenACWY-D is used, it should be administered at least 4 weeks after completion of all PCV doses."
+                "Penbraya (MenABCWY - Pfizer) may be used when both MenACWY and MenB are indicated at the same visit."
             ],
             "seriesType": "Risk",
             "selectSeries": {
@@ -424,14 +399,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "endAge": "56 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -508,13 +475,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -589,13 +549,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                         }
                     ],
                     "preferableVaccine": [
-                        {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
                         {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
@@ -686,13 +639,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -703,6 +649,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -727,6 +681,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "recurringDose": "No"
@@ -743,13 +703,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -760,6 +713,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -784,6 +745,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "conditionalSkip": [
@@ -822,13 +789,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -839,6 +799,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -863,6 +831,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "recurringDose": "Yes"
@@ -873,6 +847,9 @@ final meningococcal = AntigenSupportingData.fromJson({
             "seriesName": "Meningococcal ACWY risk Hib-MenCY-TT 4-dose series",
             "targetDisease": "Meningococcal",
             "vaccineGroup": "Meningococcal",
+            "seriesAdminGuidance": [
+                "Penbraya (MenABCWY - Pfizer) may be used when both MenACWY and MenB are indicated at the same visit."
+            ],
             "seriesType": "Risk",
             "selectSeries": {
                 "defaultSeries": "No",
@@ -1107,13 +1084,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -1124,6 +1094,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -1148,6 +1126,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "conditionalSkip": [
@@ -1186,13 +1170,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -1203,6 +1180,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -1227,6 +1212,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "recurringDose": "Yes"
@@ -1238,7 +1229,7 @@ final meningococcal = AntigenSupportingData.fromJson({
             "targetDisease": "Meningococcal",
             "vaccineGroup": "Meningococcal",
             "seriesAdminGuidance": [
-                "If MenACWY-D is used, it should be administered at least 4 weeks after completion of all PCV doses."
+                "Penbraya (MenABCWY - Pfizer) may be used when both MenACWY and MenB are indicated at the same visit."
             ],
             "seriesType": "Risk",
             "selectSeries": {
@@ -1286,14 +1277,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "endAge": "56 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -1305,6 +1288,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -1329,6 +1320,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "recurringDose": "No"
@@ -1336,6 +1333,13 @@ final meningococcal = AntigenSupportingData.fromJson({
                 {
                     "doseNumber": "Dose 2",
                     "preferableInterval": [
+                        {
+                            "fromPrevious": "N",
+                            "fromMostRecent": "316",
+                            "absMinInt": "8 weeks - 4 days",
+                            "minInt": "6 months",
+                            "earliestRecInt": "6 months"
+                        },
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1346,14 +1350,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "endAge": "56 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -1365,6 +1361,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -1389,6 +1393,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "recurringDose": "No"
@@ -1405,14 +1415,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "endAge": "56 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -1424,6 +1426,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -1448,6 +1458,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "conditionalSkip": [
@@ -1486,14 +1502,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "endAge": "56 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -1505,6 +1513,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -1529,6 +1545,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "recurringDose": "Yes"
@@ -1540,8 +1562,8 @@ final meningococcal = AntigenSupportingData.fromJson({
             "targetDisease": "Meningococcal",
             "vaccineGroup": "Meningococcal",
             "seriesAdminGuidance": [
-                "If MenACWY-D is used, it should be administered at least 4 weeks after completion of all PCV doses.",
-                "Persons with HIV infection who are recommended routinely to receive vaccine should receive a 2-dose primary series, administered 8-12 weeks apart, because evidence suggests that persons with HIV do not respond optimally to a single dose."
+                "Persons with HIV infection who are recommended routinely to receive vaccine should receive a 2-dose primary series, administered 8-12 weeks apart, because evidence suggests that persons with HIV do not respond optimally to a single dose.",
+                "Penbraya (MenABCWY - Pfizer) may be used when both MenACWY and MenB are indicated at the same visit."
             ],
             "seriesType": "Risk",
             "selectSeries": {
@@ -1559,8 +1581,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                         "code": "046"
                     },
                     "description": "Administer to college students living in residence halls.",
-                    "beginAge": "19 years",
-                    "endAge": "22 years"
+                    "beginAge": "19 years"
                 },
                 {
                     "observationCode": {
@@ -1607,14 +1628,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "endAge": "56 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -1626,6 +1639,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -1655,6 +1676,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "recurringDose": "No"
@@ -1671,14 +1698,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "endAge": "56 years",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -1690,6 +1709,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -1714,6 +1741,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "conditionalSkip": [
@@ -1752,13 +1785,6 @@ final meningococcal = AntigenSupportingData.fromJson({
                     ],
                     "preferableVaccine": [
                         {
-                            "vaccineType": "Meningococcal, MCV4P",
-                            "cvx": "114",
-                            "beginAge": "9 months",
-                            "volume": "0.5",
-                            "forecastVaccineType": "N"
-                        },
-                        {
                             "vaccineType": "Meningococcal, MCV4O",
                             "cvx": "136",
                             "beginAge": "2 months",
@@ -1769,6 +1795,14 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years",
+                            "volume": "0.5",
+                            "forecastVaccineType": "N"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years",
+                            "endAge": "26 years",
                             "volume": "0.5",
                             "forecastVaccineType": "N"
                         }
@@ -1793,6 +1827,12 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "vaccineType": "Meningococcal Polysaccharide A, C, Y, W-135 TT Conjugate",
                             "cvx": "203",
                             "beginAge": "2 years - 4 days"
+                        },
+                        {
+                            "vaccineType": "meningococcal polysaccharide (MenACWY-TT conjugate), (MenB), PF",
+                            "cvx": "316",
+                            "beginAge": "10 years - 4 days",
+                            "endAge": "26 years"
                         }
                     ],
                     "recurringDose": "Yes"

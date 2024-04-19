@@ -393,8 +393,7 @@ final influenza = AntigenSupportingData.fromJson({
             "vaccineGroup": "Influenza",
             "seriesAdminGuidance": [
                 "ACIP recommends persons aged 65 years and older preferentially receive any one of the following higher dose or adjuvanted influenza vaccines: quadrivalent high-dose inactivated influenza vaccine (HD-IIV4), quadrivalent recombinant influenza vaccine (RIV4), or quadrivalent adjuvanted inactivated influenza vaccine (aIIV4). If none of these three vaccines is available at an opportunity for vaccine administration, then any other age-appropriate influenza vaccine should be used.",
-                "Persons with a history of egg allergy may receive any licensed, recommended influenza vaccine that is otherwise appropriate for their age and health status.",
-                "Persons who report having had reactions to egg involving symptoms other than urticaria (e.g., angioedema or swelling, respiratory distress, lightheadedness, or recurrent emesis) or who required epinephrine or another emergency medical intervention should be vaccinated in an inpatient or outpatient medical setting (including, but not necessarily limited to, hospitals, clinics, health departments, and physician offices). Vaccine administration should be supervised by a health care provider who is able to recognize and manage severe allergic reactions."
+                "All persons aged 6 months and older with egg allergy should receive influenza vaccine. Any influenza vaccine (egg based or non-egg based) that is otherwise appropriate for the recipient's age and health status can be used."
             ],
             "seriesType": "Standard",
             "selectSeries": {
@@ -639,8 +638,8 @@ final influenza = AntigenSupportingData.fromJson({
                     ],
                     "recurringDose": "No",
                     "seasonalRecommendation": {
-                        "startDate": "2022-07-01",
-                        "endDate": "2022-07-01"
+                        "startDate": "2023-07-01",
+                        "endDate": "2023-07-01"
                     }
                 },
                 {
@@ -901,8 +900,8 @@ final influenza = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "2022-07-01",
-                                            "endDate": "2023-06-30",
+                                            "startDate": "2023-07-01",
+                                            "endDate": "2024-06-30",
                                             "doseCount": "1",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
@@ -918,8 +917,8 @@ final influenza = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "2022-07-01",
-                                            "endDate": "2023-06-30",
+                                            "startDate": "2023-07-01",
+                                            "endDate": "2024-06-30",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
@@ -938,14 +937,14 @@ final influenza = AntigenSupportingData.fromJson({
                                 },
                                 {
                                     "setID": "3",
-                                    "setDescription": "Dose is not required if the patient has received 1 or more doses during the current season AND patient has received 2 or more doses before July 1, 2022.",
+                                    "setDescription": "Dose is not required if the patient has received 1 or more doses during the current season AND patient has received 2 or more doses before July 1, 2023.",
                                     "conditionLogic": "AND",
                                     "condition": [
                                         {
                                             "conditionID": "1",
                                             "conditionType": "Vaccine Count by Date",
-                                            "startDate": "2022-07-01",
-                                            "endDate": "2023-06-30",
+                                            "startDate": "2023-07-01",
+                                            "endDate": "2024-06-30",
                                             "doseCount": "0",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
@@ -954,7 +953,7 @@ final influenza = AntigenSupportingData.fromJson({
                                         {
                                             "conditionID": "2",
                                             "conditionType": "Vaccine Count by Date",
-                                            "endDate": "2022-07-01",
+                                            "endDate": "2023-07-01",
                                             "doseCount": "1",
                                             "doseType": "Valid",
                                             "doseCountLogic": "greater than",
@@ -967,8 +966,8 @@ final influenza = AntigenSupportingData.fromJson({
                     ],
                     "recurringDose": "Yes",
                     "seasonalRecommendation": {
-                        "startDate": "2022-07-01",
-                        "endDate": "2022-07-01"
+                        "startDate": "2023-07-01",
+                        "endDate": "2023-07-01"
                     }
                 }
             ]

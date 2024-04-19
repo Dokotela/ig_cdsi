@@ -13,7 +13,7 @@ import 'schedule_supporting_data/schedule_supporting_data.dart';
 Future<void> createSupportingData(
   List<SupportingStrings> supportingStrings,
 ) async {
-  var scheduleSupportingData = ScheduleSupportingData();
+  var newScheduleSupportingData = scheduleSupportingData.copyWith();
   const JsonEncoder jsonEncoder = JsonEncoder.withIndent('    ');
 
   /// Make copies of all of the spreadsheets so that we can divide them into
@@ -35,24 +35,24 @@ Future<void> createSupportingData(
   for (final scheduleSupportingString in scheduleSupportingStrings) {
     switch ((scheduleSupportingString as ScheduleSupportingStrings).type) {
       case SupportingType.codedObservations:
-        scheduleSupportingData = scheduleSupportingData.copyWith(
+        newScheduleSupportingData = newScheduleSupportingData.copyWith(
             observations: observations(scheduleSupportingString.data));
         break;
       case SupportingType.cvxToAntigenMap:
-        scheduleSupportingData = scheduleSupportingData.copyWith(
+        newScheduleSupportingData = newScheduleSupportingData.copyWith(
             cvxToAntigenMap: cvxToAntigenMap(scheduleSupportingString.data));
         break;
       case SupportingType.liveVirusConflicts:
-        scheduleSupportingData = scheduleSupportingData.copyWith(
+        newScheduleSupportingData = newScheduleSupportingData.copyWith(
             liveVirusConflicts:
                 liveVirusConflicts(scheduleSupportingString.data));
         break;
       case SupportingType.vaccineGroups:
-        scheduleSupportingData = scheduleSupportingData.copyWith(
+        newScheduleSupportingData = newScheduleSupportingData.copyWith(
             vaccineGroups: vaccineGroups(scheduleSupportingString.data));
         break;
       case SupportingType.vaccineGroupToAntigenMap:
-        scheduleSupportingData = scheduleSupportingData.copyWith(
+        newScheduleSupportingData = newScheduleSupportingData.copyWith(
             vaccineGroupToAntigenMap:
                 vaccineGroupToAntigenMap(scheduleSupportingString.data));
         break;
@@ -60,10 +60,10 @@ Future<void> createSupportingData(
         null;
     }
   }
-  if (scheduleSupportingData.toJson().isNotEmpty) {
+  if (newScheduleSupportingData.toJson().isNotEmpty) {
     final dataString = "import 'package:pythia/pythia.dart';\n\n"
         'final scheduleSupportingData = '
-        'ScheduleSupportingData.fromJson(${jsonEncoder.convert(scheduleSupportingData)});';
+        'ScheduleSupportingData.fromJson(${jsonEncoder.convert(newScheduleSupportingData)});';
 
     await File(
             'pythia_generator/lib/generated_files/schedule_supporting_data.dart')
@@ -86,12 +86,6 @@ Future<void> createSupportingData(
       vaccineGroup: antigenSupportingData.series?[0].vaccineGroup,
     );
 
-    print('Target Disease: ${antigenSupportingData.series?[0].targetDisease}');
-    // print(
-    //     antigenSupportingData.series?[0].targetDisease?.replaceAll(' ', '_'));
-    // print(antigenSupportingData.series?[0].targetDisease
-    //     ?.replaceAll(' ', '_')
-    //     .replaceAll('-', '_'));
     final fileName = antigenSupportingData.series?[0].targetDisease
         ?.replaceAll(' ', '_')
         .replaceAll('-', '_')
@@ -122,6 +116,6 @@ Future<void> createSupportingData(
       .writeAsString('$importString\n$listString];\n\n$mapString};');
 
   for (final string in testCasesStrings as List<TestCasesStrings>) {
-    createPatients(string, scheduleSupportingData);
+    createPatients(string, newScheduleSupportingData);
   }
 }
