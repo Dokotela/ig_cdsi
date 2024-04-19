@@ -45,7 +45,7 @@ Map<String, dynamic> _$$VaccineGroupImplToJson(_$VaccineGroupImpl instance) {
 
   writeNotNull('name', instance.name);
   writeNotNull('administerFullVaccineGroup',
-      _$BinaryEnumMap[instance.administerFullVaccineGroup]);
+      instance.administerFullVaccineGroup?.toJson());
   return val;
 }
 

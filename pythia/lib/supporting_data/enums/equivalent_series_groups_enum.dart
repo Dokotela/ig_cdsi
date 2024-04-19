@@ -6,17 +6,34 @@ enum EquivalentSeriesGroups {
   @JsonValue('2')
   group2,
   @JsonValue('')
-  none,
+  none;
+
+  static EquivalentSeriesGroups? fromJson(Object? json) {
+    if (json is String) {
+      switch (json) {
+        case '1':
+          return EquivalentSeriesGroups.group1;
+        case '2':
+          return EquivalentSeriesGroups.group2;
+        case '':
+          return EquivalentSeriesGroups.none;
+        default:
+          return null;
+      }
+    }
+    return null;
+  }
+
+  String toJson() {
+    switch (this) {
+      case EquivalentSeriesGroups.group1:
+        return '1';
+      case EquivalentSeriesGroups.group2:
+        return '2';
+      case EquivalentSeriesGroups.none:
+        return '';
+      default:
+        return '';
+    }
+  }
 }
-
-const equivalentSeriesGroupsStringToEnum = {
-  '1': EquivalentSeriesGroups.group1,
-  '2': EquivalentSeriesGroups.group2,
-  '': EquivalentSeriesGroups.none,
-};
-
-const equivalentSeriesGroupsEnumToString = {
-  EquivalentSeriesGroups.group1: '1',
-  EquivalentSeriesGroups.group2: '2',
-  EquivalentSeriesGroups.none: '',
-};

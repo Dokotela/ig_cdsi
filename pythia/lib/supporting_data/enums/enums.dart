@@ -11,7 +11,7 @@ export 'preferred_allowed_reason_enum.dart';
 export 'series_preference_enum.dart';
 export 'series_priority_enum.dart';
 export 'series_status_enum.dart';
+export 'series_type_enum.dart';
 export 'skip_context_enum.dart';
-export 'string_to_enum.dart';
 export 'target_dose_status_enum.dart';
 export 'valid_age_reason_enum.dart';

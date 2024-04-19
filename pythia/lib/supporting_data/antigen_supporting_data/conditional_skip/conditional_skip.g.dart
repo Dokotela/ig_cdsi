@@ -26,7 +26,7 @@ Map<String, dynamic> _$$ConditionalSkipImplToJson(
     }
   }
 
-  writeNotNull('context', _$SkipContextEnumMap[instance.context]);
+  writeNotNull('context', instance.context?.toJson());
   writeNotNull('setLogic', instance.setLogic);
   writeNotNull('set', instance.set_?.map((e) => e.toJson()).toList());
   return val;

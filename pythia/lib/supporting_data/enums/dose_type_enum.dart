@@ -6,17 +6,32 @@ enum DoseType {
   @JsonValue('Valid')
   valid,
   @JsonValue('')
-  none,
+  none;
+
+  static DoseType? fromJson(Object? json) {
+    if (json is String) {
+      switch (json) {
+        case 'Total':
+          return DoseType.total;
+        case 'Valid':
+          return DoseType.valid;
+        case '':
+          return DoseType.none;
+        default:
+          return null;
+      }
+    }
+    return null;
+  }
+
+  String toJson() {
+    switch (this) {
+      case DoseType.total:
+        return 'Total';
+      case DoseType.valid:
+        return 'Valid';
+      case DoseType.none:
+        return '';
+    }
+  }
 }
-
-const doseTypeStringToEnum = {
-  'Total': DoseType.total,
-  'Valid': DoseType.valid,
-  '': DoseType.none,
-};
-
-const doseTypeEnumToString = {
-  DoseType.total: 'Total',
-  DoseType.valid: 'Valid',
-  DoseType.none: '',
-};

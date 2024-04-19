@@ -48,7 +48,7 @@ Map<String, dynamic> _$$SeriesDoseImplToJson(_$SeriesDoseImpl instance) {
     }
   }
 
-  writeNotNull('doseNumber', _$DoseNumberEnumMap[instance.doseNumber]);
+  writeNotNull('doseNumber', instance.doseNumber?.toJson());
   writeNotNull('age', instance.age?.map((e) => e.toJson()).toList());
   writeNotNull('interval', instance.interval?.map((e) => e.toJson()).toList());
   writeNotNull('allowableInterval', instance.allowableInterval?.toJson());
@@ -60,7 +60,7 @@ Map<String, dynamic> _$$SeriesDoseImplToJson(_$SeriesDoseImpl instance) {
       instance.inadvertentVaccine?.map((e) => e.toJson()).toList());
   writeNotNull('conditionalSkip',
       instance.conditionalSkip?.map((e) => e.toJson()).toList());
-  writeNotNull('recurringDose', _$BinaryEnumMap[instance.recurringDose]);
+  writeNotNull('recurringDose', instance.recurringDose?.toJson());
   writeNotNull(
       'seasonalRecommendation', instance.seasonalRecommendation?.toJson());
   return val;

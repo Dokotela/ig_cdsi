@@ -51,6 +51,8 @@ enum EvalReason {
     }
   }
 
+  String toJson() => toString();
+
   static EvalReason? fromJson(String? json) {
     switch (json) {
       case 'No Date Given':

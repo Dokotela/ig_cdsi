@@ -26,14 +26,12 @@ Map<String, dynamic> _$$SelectSeriesImplToJson(_$SelectSeriesImpl instance) {
     }
   }
 
-  writeNotNull('defaultSeries', _$BinaryEnumMap[instance.defaultSeries]);
-  writeNotNull('productPath', _$BinaryEnumMap[instance.productPath]);
+  writeNotNull('defaultSeries', instance.defaultSeries?.toJson());
+  writeNotNull('productPath', instance.productPath?.toJson());
   writeNotNull('seriesGroupName', instance.seriesGroupName);
   writeNotNull('seriesGroup', instance.seriesGroup);
-  writeNotNull(
-      'seriesPriority', _$SeriesPriorityEnumMap[instance.seriesPriority]);
-  writeNotNull(
-      'seriesPreference', _$SeriesPreferenceEnumMap[instance.seriesPreference]);
+  writeNotNull('seriesPriority', instance.seriesPriority?.toJson());
+  writeNotNull('seriesPreference', instance.seriesPreference?.toJson());
   writeNotNull('minAgeToStart', instance.minAgeToStart);
   writeNotNull('maxAgeToStart', instance.maxAgeToStart);
   return val;

@@ -18,6 +18,8 @@ enum EvalStatus {
     }
   }
 
+  String toJson() => toString();
+
   static fromJson(String json) {
     switch (json) {
       case 'Valid':

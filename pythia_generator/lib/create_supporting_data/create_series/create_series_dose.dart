@@ -10,7 +10,7 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
       return seriesDose;
     } else if (row[0]!.toString().contains('Series Dose')) {
       seriesDose = seriesDose.copyWith(
-          doseNumber: doseNumberStringToEnum[row[1]!.toString().trim()]);
+          doseNumber: DoseNumber.fromJson(row[1]!.toString().trim()));
     } else if (row[0]!.toString().contains('Age') &&
         !row[1]!.toString().contains('Absolute Minimum Age')) {
       if ((row[1] != null && row[1] != '' && row[1] != 'n/a') ||
@@ -224,7 +224,7 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
         seriesDose = seriesDose.copyWith(
           conditionalSkip: [
             ConditionalSkip(
-              context: skipContextStringToEnum[row[1]!.toString().trim()],
+              context: SkipContext.fromString(row[1]!.toString().trim()),
               setLogic: row[2]!.toString().trim(),
               set_: index == -1
                   ? null
@@ -246,7 +246,7 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                             interval: valueToString(row[14]!),
                             doseCount: valueToString(row[15]!),
                             doseType:
-                                _valueToEnum(row[16]!, doseTypeStringToEnum),
+                                DoseType.fromJson(row[16]!.toString().trim()),
                             doseCountLogic: row[17]!,
                             vaccineTypes: valueToString(row[18]!),
                             seriesGroups: valueToString(row[19]!),
@@ -258,7 +258,7 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
           ],
         );
       } else if (seriesDose.conditionalSkip?.last.context !=
-              _valueToEnum(row[1]!, skipContextStringToEnum) ||
+              SkipContext.fromString(row[1]!.toString().trim()) ||
           (seriesDose.conditionalSkip?.last.setLogic !=
                   row[2]!.toString().trim() &&
               !(seriesDose.conditionalSkip?.last.setLogic == null &&
@@ -269,7 +269,7 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                 seriesDose.conditionalSkip!.isNotEmpty)
               ...seriesDose.conditionalSkip!,
             ConditionalSkip(
-              context: skipContextStringToEnum[row[1]!.toString().trim()],
+              context: SkipContext.fromString(row[1]!.toString().trim()),
               setLogic: row[2]!.toString().trim(),
               set_: index == -1
                   ? null
@@ -291,7 +291,7 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                             interval: valueToString(row[14]!),
                             doseCount: valueToString(row[15]!),
                             doseType:
-                                _valueToEnum(row[16]!, doseTypeStringToEnum),
+                                DoseType.fromJson(row[16]!.toString().trim()),
                             doseCountLogic: row[17]!,
                             vaccineTypes: valueToString(row[18]!),
                             seriesGroups: valueToString(row[19]!),
@@ -329,7 +329,7 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                       endAge: valueToString(row[13]!),
                       interval: valueToString(row[14]!),
                       doseCount: valueToString(row[15]!),
-                      doseType: _valueToEnum(row[16]!, doseTypeStringToEnum),
+                      doseType: DoseType.fromJson(row[16]!.toString().trim()),
                       doseCountLogic: row[17]!,
                       vaccineTypes: valueToString(row[18]!),
                       seriesGroups: valueToString(row[19]!),
@@ -369,7 +369,7 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
                       endAge: valueToString(row[13]!),
                       interval: valueToString(row[14]!),
                       doseCount: valueToString(row[15]!),
-                      doseType: _valueToEnum(row[16]!, doseTypeStringToEnum),
+                      doseType: DoseType.fromJson(row[16]!.toString().trim()),
                       doseCountLogic: row[17]!,
                       vaccineTypes: valueToString(row[18]!),
                       seriesGroups: valueToString(row[19]!),
@@ -384,7 +384,7 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
     } else if (row[0]!.toString().contains('Recurring Dose') &&
         !row[1]!.toString().contains('Recurring Dose (Yes/No)')) {
       seriesDose = seriesDose.copyWith(
-        recurringDose: binaryStringToEnum[row[1]!.toString().trim()],
+        recurringDose: Binary.fromJson(row[1]!.toString().trim()),
       );
     } else if (row[0]!.toString().contains('Seasonal Recommendation') &&
         !row[1]!.toString().contains('Start Date') &&

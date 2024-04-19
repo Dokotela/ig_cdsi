@@ -24,7 +24,7 @@ mixin _$Series {
   String? get targetDisease => throw _privateConstructorUsedError;
   String? get vaccineGroup => throw _privateConstructorUsedError;
   List<String>? get seriesAdminGuidance => throw _privateConstructorUsedError;
-  String? get seriesType => throw _privateConstructorUsedError;
+  SeriesType? get seriesType => throw _privateConstructorUsedError;
   EquivalentSeriesGroups? get equivalentSeriesGroups =>
       throw _privateConstructorUsedError;
   List<Gender>? get requiredGender => throw _privateConstructorUsedError;
@@ -47,7 +47,7 @@ abstract class $SeriesCopyWith<$Res> {
       String? targetDisease,
       String? vaccineGroup,
       List<String>? seriesAdminGuidance,
-      String? seriesType,
+      SeriesType? seriesType,
       EquivalentSeriesGroups? equivalentSeriesGroups,
       List<Gender>? requiredGender,
       SelectSeries? selectSeries,
@@ -101,7 +101,7 @@ class _$SeriesCopyWithImpl<$Res, $Val extends Series>
       seriesType: freezed == seriesType
           ? _value.seriesType
           : seriesType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as SeriesType?,
       equivalentSeriesGroups: freezed == equivalentSeriesGroups
           ? _value.equivalentSeriesGroups
           : equivalentSeriesGroups // ignore: cast_nullable_to_non_nullable
@@ -150,7 +150,7 @@ abstract class _$$SeriesImplCopyWith<$Res> implements $SeriesCopyWith<$Res> {
       String? targetDisease,
       String? vaccineGroup,
       List<String>? seriesAdminGuidance,
-      String? seriesType,
+      SeriesType? seriesType,
       EquivalentSeriesGroups? equivalentSeriesGroups,
       List<Gender>? requiredGender,
       SelectSeries? selectSeries,
@@ -203,7 +203,7 @@ class __$$SeriesImplCopyWithImpl<$Res>
       seriesType: freezed == seriesType
           ? _value.seriesType
           : seriesType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as SeriesType?,
       equivalentSeriesGroups: freezed == equivalentSeriesGroups
           ? _value.equivalentSeriesGroups
           : equivalentSeriesGroups // ignore: cast_nullable_to_non_nullable
@@ -269,7 +269,7 @@ class _$SeriesImpl extends _Series {
   }
 
   @override
-  final String? seriesType;
+  final SeriesType? seriesType;
   @override
   final EquivalentSeriesGroups? equivalentSeriesGroups;
   final List<Gender>? _requiredGender;
@@ -371,7 +371,7 @@ abstract class _Series extends Series {
       final String? targetDisease,
       final String? vaccineGroup,
       final List<String>? seriesAdminGuidance,
-      final String? seriesType,
+      final SeriesType? seriesType,
       final EquivalentSeriesGroups? equivalentSeriesGroups,
       final List<Gender>? requiredGender,
       final SelectSeries? selectSeries,
@@ -390,7 +390,7 @@ abstract class _Series extends Series {
   @override
   List<String>? get seriesAdminGuidance;
   @override
-  String? get seriesType;
+  SeriesType? get seriesType;
   @override
   EquivalentSeriesGroups? get equivalentSeriesGroups;
   @override

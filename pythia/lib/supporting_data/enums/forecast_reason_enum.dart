@@ -26,4 +26,29 @@ enum ForecastReason {
         return 'Patient is unable to finish the series prior to the maximum age';
     }
   }
+
+  String toJson() => toString();
+
+  static ForecastReason? fromJson(String? json) {
+    switch (json) {
+      case 'Patient has evidence of immunity':
+        return ForecastReason.patientHasEvidenceOfImmunity;
+      case 'Patient has a contraindication':
+        return ForecastReason.patientHasAContraindication;
+      case 'Not recommended at this time due to past immunization history':
+        return ForecastReason
+            .notRecommendedAtThisTimeDueToPastImmunizationHistory;
+      case 'Patient series is complete':
+        return ForecastReason.patientSeriesIsComplete;
+      case 'Past seasonal recommendation end date':
+        return ForecastReason.pastSeasonalRecommendationEndDate;
+      case 'Patient has exceeded the maximum age':
+        return ForecastReason.patientHasExceededTheMaximumAge;
+      case 'Patient is unable to finish the series prior to the maximum age':
+        return ForecastReason
+            .patientIsUnableToFinishTheSeriesPriorToTheMaximumAge;
+      default:
+        return null;
+    }
+  }
 }

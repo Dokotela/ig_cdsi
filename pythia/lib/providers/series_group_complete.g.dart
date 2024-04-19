@@ -9,7 +9,12 @@ part of 'series_group_complete.dart';
 String _$seriesGroupCompleteHash() =>
     r'a33072cf2c9f1f45ffdd0512b315dfaf7a7be5c7';
 
-/// See also [SeriesGroupComplete].
+/// This provider is used to track the completion of a series group. Each
+/// antigen has a multiple series of vaccines that can provide immunity.
+/// These series are put into groups. This provider tracks the completion
+/// of each series group.
+///
+/// Copied from [SeriesGroupComplete].
 @ProviderFor(SeriesGroupComplete)
 final seriesGroupCompleteProvider = AutoDisposeNotifierProvider<
     SeriesGroupComplete, Map<String, Map<String, bool>>>.internal(

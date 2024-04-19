@@ -24,9 +24,7 @@ class VaxGroup {
   void newDose(VaxDose dose) =>
       series.forEach((element) => element.doses.add(dose.copyWith()));
 
-  void evaluate() {
-    series.forEach((element) => element.evaluate());
-  }
+  void evaluate() => series.forEach((element) => element.evaluate());
 
   List<VaxSeries> getRelevantSeries(List<VaxSeries> series) {
     final List<VaxSeries> relevantSeries = series

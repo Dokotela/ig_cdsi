@@ -40,26 +40,26 @@ Series createSeries(String? seriesString) {
         }
       } else if (row[0]!.toString().contains('Series Type') &&
           row[1]?.toString() != 'Type') {
-        newSeries = newSeries.copyWith(seriesType: valueToString(row[1]!));
+        newSeries =
+            newSeries.copyWith(seriesType: SeriesType.fromString(row[1]!));
       } else if (row[0]!.toString().contains('Equivalent Series Groups') &&
           row[1]?.toString() != 'Series Groups') {
         if (!row[1]!.toString().contains('n/a')) {
           newSeries = newSeries.copyWith(
-              equivalentSeriesGroups:
-                  equivalentSeriesGroupsStringToEnum[valueToString(row[1]!)]);
+              equivalentSeriesGroups: EquivalentSeriesGroups.fromJson(row[1]!));
         }
       } else if (row[0]!.toString().contains('Gender') &&
           row[1]?.toString() != 'Required Gender') {
         if (!row[1]!.toString().contains('n/a')) {
           if (newSeries.requiredGender == null) {
-            newSeries = newSeries.copyWith(
-                requiredGender: [genderStringToEnum[valueToString(row[1]!)]!]);
+            newSeries =
+                newSeries.copyWith(requiredGender: [Gender.fromJson(row[1]!)!]);
           } else {
             newSeries = newSeries.copyWith(requiredGender: [
               if (newSeries.requiredGender != null &&
                   newSeries.requiredGender!.isNotEmpty)
                 ...newSeries.requiredGender!,
-              genderStringToEnum[valueToString(row[1]!)]!
+              Gender.fromJson(row[1]!)!,
             ]);
           }
         }
@@ -67,13 +67,12 @@ Series createSeries(String? seriesString) {
           row[1]?.toString() != 'Default Series') {
         newSeries = newSeries.copyWith(
           selectSeries: SelectSeries(
-            defaultSeries: binaryStringToEnum[valueToString(row[1]!)],
-            productPath: binaryStringToEnum[valueToString(row[2]!)],
+            defaultSeries: Binary.fromJson(row[1]!),
+            productPath: Binary.fromJson(row[2]!),
             seriesGroupName: valueToString(row[3]!),
             seriesGroup: row[4]!.toString(),
-            seriesPriority: seriesPriorityStringToEnum[valueToString(row[5]!)],
-            seriesPreference:
-                seriesPreferenceStringToEnum[valueToString(row[6]!)],
+            seriesPriority: SeriesPriority.fromJson(row[5]!),
+            seriesPreference: SeriesPreference.fromJson(row[6]!),
             minAgeToStart: row[7]!.toString().contains('n/a')
                 ? null
                 : valueToString(row[7]!),

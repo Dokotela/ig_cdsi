@@ -39,7 +39,7 @@ Map<String, dynamic> _$$VaxConditionImplToJson(_$VaxConditionImpl instance) {
   writeNotNull('endAge', instance.endAge);
   writeNotNull('interval', instance.interval);
   writeNotNull('doseCount', instance.doseCount);
-  writeNotNull('doseType', _$DoseTypeEnumMap[instance.doseType]);
+  writeNotNull('doseType', instance.doseType?.toJson());
   writeNotNull('doseCountLogic', instance.doseCountLogic);
   writeNotNull('vaccineTypes', instance.vaccineTypes);
   writeNotNull('seriesGroups', instance.seriesGroups);
