@@ -26,9 +26,15 @@ Bundle forecastFromParameters(Parameters parameters) {
   final Map<String, VaxAntigen> agMap = antigenMap(patient);
 
   /// Sort into groups
-  agMap.forEach((k, v) => v.groups.forEach((key, value) => container
-      .read(seriesGroupCompleteProvider.notifier)
-      .newSeriesGroup(k, key)));
+  agMap.forEach((k, v) {
+    // print('k: $k');
+    v.groups.forEach((key, value) {
+      // print('key: $key');
+      container
+          .read(seriesGroupCompleteProvider.notifier)
+          .newSeriesGroup(k, key);
+    });
+  });
 
   /// Evaluate
   agMap.forEach((k, v) => v.evaluate());
@@ -48,7 +54,7 @@ Bundle forecastFromParameters(Parameters parameters) {
             .map((e) => e.toLowerCase())
             .toList()
             .contains(k.toLowerCase())) {
-      // print(k);
+      print(k);
       v.groups.forEach((key, value) {
         final List<VaxSeries>? bestSeries;
         if (value.bestSeries != null) {
@@ -56,6 +62,9 @@ Bundle forecastFromParameters(Parameters parameters) {
         } else {
           bestSeries = value.prioritizedSeries;
         }
+        bestSeries.forEach((element) {
+          print(element.series.seriesName);
+        });
 
         bestSeries.forEach((element) {
           for (int i = 0; i < element.evaluatedDoses.length; i++) {

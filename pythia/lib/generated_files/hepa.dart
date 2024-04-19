@@ -58,14 +58,12 @@ final hepa = AntigenSupportingData.fromJson({
             "targetDisease": "HepA",
             "vaccineGroup": "HepA",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "Yes",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "19 years"
             },
             "seriesDose": [
@@ -139,7 +137,7 @@ final hepa = AntigenSupportingData.fromJson({
                             "latestRecAge": "24 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -215,7 +213,6 @@ final hepa = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "3",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "6 months",
                 "maxAgeToStart": "12 months"
             },
@@ -290,14 +287,12 @@ final hepa = AntigenSupportingData.fromJson({
             "targetDisease": "HepA",
             "vaccineGroup": "HepA",
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "19 years"
             },
             "indication": [
@@ -460,7 +455,7 @@ final hepa = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -515,14 +510,12 @@ final hepa = AntigenSupportingData.fromJson({
             "targetDisease": "HepA",
             "vaccineGroup": "HepA",
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "2",
                 "minAgeToStart": "19 years"
             },
             "indication": [
@@ -681,7 +674,7 @@ final hepa = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -731,7 +724,7 @@ final hepa = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "5 months - 4 days",
@@ -793,14 +786,12 @@ final hepa = AntigenSupportingData.fromJson({
             "targetDisease": "HepA",
             "vaccineGroup": "HepA",
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "3",
                 "minAgeToStart": "19 years"
             },
             "indication": [
@@ -937,7 +928,7 @@ final hepa = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "7 days",
@@ -965,7 +956,7 @@ final hepa = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "14 days",
@@ -994,7 +985,7 @@ final hepa = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,

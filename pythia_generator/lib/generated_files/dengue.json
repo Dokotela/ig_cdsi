@@ -87,7 +87,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "17 years"
             },
             "indication": [
@@ -134,7 +133,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -163,7 +162,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",

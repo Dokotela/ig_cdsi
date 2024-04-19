@@ -402,8 +402,7 @@ final influenza = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -646,7 +645,7 @@ final influenza = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",

@@ -1,8 +1,8 @@
 import 'package:riverpod/riverpod.dart';
+
 import '../pythia.dart';
 
 class VaxAntigen {
-  // Private constructor for initializing an instance of VaxAntigen
   VaxAntigen._({
     required this.targetDisease,
     required this.vaccineGroupName,
@@ -13,30 +13,29 @@ class VaxAntigen {
     required this.assessmentDate,
   });
 
-  // Factory constructor to create a VaxAntigen from a series of vaccinations
-  // It organizes series into groups based on the patient's characteristics and series selection criteria
   factory VaxAntigen.fromSeries({
     required List<Series> series,
     required List<GroupContraindication> groupContraindications,
     required List<VaccineContraindication> vaccineContraindications,
     required VaxPatient patient,
   }) {
-    final Map<String, VaxGroup> groups = {};
-    for (var element in relevantSeries(patient, series)) {
+    final Map<String, VaxGroup> groups = <String, VaxGroup>{};
+    relevantSeries(patient, series).forEach((element) {
       final nextGroup = element.selectSeries?.seriesGroup ?? 'none';
-      // Add a new series to the group or create a new group if it doesn't exist
-      groups[nextGroup] = (groups[nextGroup] ??
-          VaxGroup(
-            targetDisease: series.first.targetDisease!,
-            vaccineGroup: nextGroup,
-            vaccineGroupName:
-                series.first.vaccineGroup ?? series.first.targetDisease!,
-            series: [],
-            assessmentDate: patient.assessmentDate,
-            dob: patient.birthdate,
-          ))
-        ..newSeries(element);
-    }
+      print(nextGroup);
+      if (!groups.keys.contains(nextGroup)) {
+        groups[nextGroup] = VaxGroup(
+          targetDisease: series.first.targetDisease!,
+          vaccineGroup: nextGroup,
+          vaccineGroupName:
+              series.first.vaccineGroup ?? series.first.targetDisease!,
+          series: [],
+          assessmentDate: patient.assessmentDate,
+          dob: patient.birthdate,
+        );
+      }
+      groups[nextGroup]!.newSeries(element);
+    });
 
     return VaxAntigen._(
       targetDisease: series.first.targetDisease!,
@@ -50,30 +49,35 @@ class VaxAntigen {
     );
   }
 
-  // Method to add a new vaccination dose to all relevant groups
   void newDose(VaxDose dose) {
-    groups.values.forEach((group) => group.newDose(dose));
-  }
-
-  // Method to evaluate the status of vaccination for each group
-  void evaluate() {
-    groups.values.forEach((group) => group.evaluate());
-  }
-
-  // Main forecasting method to determine vaccination needs and constraints
-  void forecast() {
-    immunity(); // Check for existing immunity
-    contraindicated(); // Check for any contraindications
-    if (!contraindication) {
-      groups.values.forEach((group) {
-        group.forecast(evidenceOfImmunity, vaccineContraindications);
-      });
+    for (final key in groups.keys) {
+      groups[key]!.newDose(dose);
     }
   }
 
-  // Check for contraindications based on patient's age and specified contraindications
+  void evaluate() {
+    for (final key in groups.keys) {
+      groups[key]!.evaluate();
+    }
+  }
+
+  void forecast() {
+    /// We do these slightly out of order because they don't impact each other
+    /// and it lets me pass the immunity and contraindication during the forecast
+    immunity();
+    contraindicated();
+    if (!contraindication)
+      for (final key in groups.keys) {
+        groups[key]!.forecast(evidenceOfImmunity, vaccineContraindications);
+      }
+  }
+
   void contraindicated() {
-    for (var contraindication in groupContraindications) {
+    /// Check each of the contraindications (we already ensured they apply
+    /// to the patient in a previous step)
+    for (final contraindication in groupContraindications) {
+      /// If the dates are appropriate to apply to a patient, we note that
+      /// this dose is contraindicated, and stop checking
       if (dob.changeNullable(contraindication.beginAge, false)! <=
               assessmentDate &&
           assessmentDate < dob.changeNullable(contraindication.endAge, true)!) {
@@ -83,44 +87,56 @@ class VaxAntigen {
     }
   }
 
-  // Determine if the patient is already immune either through clinical history or birthdate
   void immunity() {
-    final container =
-        ProviderContainer(); // Get a container for dependency injection
-    final obsInts = container
-        .read(observationsProvider)
-        .codesAsInt; // Get observed codes as integers
-    final ag = antigenSupportingDataMap[
-        targetDisease]; // Get supporting data for the antigen
+    final container = ProviderContainer();
+    final obsInts = container.read(observationsProvider).codesAsInt;
+    final ag = antigenSupportingDataMap[targetDisease];
 
-    // Check clinical history for immunity
-    var index = ag?.immunity?.clinicalHistory?.indexWhere((element) {
-      return obsInts?.contains(int.tryParse(element.guidelineCode ?? '')) ??
-          false;
+    /// We check to see if the patient has any listed conditions that could
+    /// make them immune
+    final index = ag?.immunity?.clinicalHistory?.indexWhere((element) {
+      final code = element.guidelineCode == null
+          ? null
+          : int.tryParse(element.guidelineCode!);
+      if (code == null) {
+        return false;
+      } else {
+        return obsInts?.contains(code) ?? false;
+      }
     });
 
+    /// If they do, mark it
     if (index != null && index != -1) {
       evidenceOfImmunity = true;
     } else {
-      // If clinical history does not confirm immunity, check birthdate-based immunity
-      checkBirthdateImmunity(ag, dob, obsInts?.toSet());
-    }
-  }
+      /// Otherwise, we check and see if their birthdate affords them immunity
+      final immunityBirthdate = ag?.immunity?.dateOfBirth?.immunityBirthDate;
+      if (dob <
+          (immunityBirthdate == null
+              ? VaxDate.max()
+              : VaxDate.fromNullableString(
+                  ag!.immunity!.dateOfBirth!.immunityBirthDate!, true))) {
+        /// If it does, then we have to check and see if they have
+        /// any exclusion criteria
+        final index =
+            ag?.immunity?.dateOfBirth?.exclusion?.indexWhere((element) {
+          final code = element.exclusionCode == null
+              ? null
+              : int.tryParse(element.exclusionCode!);
+          if (code == null) {
+            return false;
+          } else {
+            return obsInts?.contains(code) ?? false;
+          }
+        });
 
-  // Helper method to check for birthdate-based immunity and exclusions
-  void checkBirthdateImmunity(
-      AntigenSupportingData? ag, VaxDate dob, Set<int>? obsInts) {
-    final immunityBirthdate = ag?.immunity?.dateOfBirth?.immunityBirthDate;
-    if (dob < VaxDate.fromString(immunityBirthdate ?? '', true)) {
-      var index = ag?.immunity?.dateOfBirth?.exclusion?.indexWhere((element) {
-        return obsInts?.contains(int.tryParse(element.exclusionCode ?? '')) ??
-            false;
-      });
-
-      // Confirm immunity unless an exclusion criterion is met
-      if (index == null || index == -1) {
-        evidenceOfImmunity =
-            true; // Assume true pending further checks (e.g., birth country)
+        /// If we couldn't find an exclusion criteria
+        if (index == null || index == -1) {
+          /// Then the one last thing we have to look for is the patient's country
+          // TODO(Dokotela): check on birth countries
+          /// Until I include birth countries, we're going to assume that it's true
+          evidenceOfImmunity = true;
+        }
       }
     }
   }

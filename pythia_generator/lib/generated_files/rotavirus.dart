@@ -58,8 +58,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -125,7 +124,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                             "maxAge": "8 months + 1 day"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -187,7 +186,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                             "maxAge": "8 months + 1 day"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -254,8 +253,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "3"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -318,7 +316,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                             "maxAge": "8 months + 1 day"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -378,7 +376,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                             "maxAge": "8 months + 1 day"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -444,8 +442,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                 "productPath": "Yes",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -488,7 +485,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                             "maxAge": "8 months + 1 day"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -532,8 +529,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                 "productPath": "Yes",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "4"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -573,7 +569,7 @@ final rotavirus = AntigenSupportingData.fromJson({
                             "maxAge": "8 months + 1 day"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",

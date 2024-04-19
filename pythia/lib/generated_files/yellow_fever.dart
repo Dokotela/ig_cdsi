@@ -125,7 +125,6 @@ final yellowFever = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "9 months"
             },
             "indication": [

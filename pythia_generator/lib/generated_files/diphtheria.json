@@ -159,7 +159,6 @@
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "12 months - 4 days"
             },
             "seriesDose": [
@@ -396,7 +395,7 @@
                             "latestRecAge": "5 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -628,7 +627,7 @@
                             "latestRecAge": "7 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -860,7 +859,7 @@
                             "latestRecAge": "19 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -1084,7 +1083,7 @@
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -1304,7 +1303,7 @@
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -1530,7 +1529,7 @@
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1708,7 +1707,7 @@
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -2047,7 +2046,7 @@
                 },
                 {
                     "doseNumber": "Dose 10",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -2205,8 +2204,7 @@
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -2432,7 +2430,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2656,7 +2654,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2888,7 +2886,7 @@
                             "latestRecAge": "19 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -3112,7 +3110,7 @@
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -3332,7 +3330,7 @@
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -3624,7 +3622,7 @@
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -3802,7 +3800,7 @@
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -4141,7 +4139,7 @@
                 },
                 {
                     "doseNumber": "Dose 10",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",

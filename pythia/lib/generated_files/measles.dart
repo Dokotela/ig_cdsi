@@ -212,8 +212,7 @@ final measles = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -277,7 +276,7 @@ final measles = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -363,7 +362,6 @@ final measles = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk Infant",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "6 months",
                 "maxAgeToStart": "12 months"
             },
@@ -431,7 +429,6 @@ final measles = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "3",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "18 years"
             },
             "indication": [
@@ -530,7 +527,7 @@ final measles = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -583,8 +580,7 @@ final measles = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "3",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -605,7 +601,7 @@ final measles = AntigenSupportingData.fromJson({
                             "earliestRecAge": "12 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromRelevantObs": {
@@ -651,7 +647,7 @@ final measles = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",

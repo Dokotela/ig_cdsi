@@ -8,23 +8,24 @@ enum DoseType {
   @JsonValue('')
   none;
 
-  static DoseType? fromJson(Object? json) {
-    if (json is String) {
-      switch (json) {
-        case 'Total':
-          return DoseType.total;
-        case 'Valid':
-          return DoseType.valid;
-        case '':
-          return DoseType.none;
-        default:
-          return null;
-      }
+  static DoseType? fromString(String? string) {
+    switch (string) {
+      case 'Total':
+        return DoseType.total;
+      case 'Valid':
+        return DoseType.valid;
+      case '':
+        return DoseType.none;
+      default:
+        return null;
     }
-    return null;
   }
 
-  String toJson() {
+  static DoseType? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
+
+  @override
+  String toString() {
     switch (this) {
       case DoseType.total:
         return 'Total';
@@ -34,4 +35,6 @@ enum DoseType {
         return '';
     }
   }
+
+  String toJson() => toString();
 }

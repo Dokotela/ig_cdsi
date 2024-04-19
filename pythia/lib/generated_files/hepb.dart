@@ -112,14 +112,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "Yes",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "19 years"
             },
             "seriesDose": [
@@ -272,7 +270,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "latestRecAge": "3 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -420,7 +418,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "latestRecAge": "19 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -574,14 +572,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -719,7 +715,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "latestRecAge": "3 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -845,7 +841,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -978,7 +974,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "latestRecAge": "19 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 2,
@@ -1117,14 +1113,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "3",
                 "maxAgeToStart": "16 years - 4 months"
             },
             "seriesDose": [
@@ -1156,7 +1150,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "maxAge": "16 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 months - 4 days",
@@ -1187,14 +1181,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "4"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -1337,7 +1329,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1476,7 +1468,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1629,14 +1621,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "5",
                 "minAgeToStart": "18 years"
             },
             "seriesDose": [
@@ -1649,7 +1639,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -1676,7 +1666,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1718,14 +1708,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "6"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -1854,7 +1842,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -1881,7 +1869,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2011,7 +1999,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 2,
@@ -2081,7 +2069,6 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
@@ -2099,7 +2086,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -2126,7 +2113,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2244,7 +2231,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2374,7 +2361,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -2439,7 +2426,6 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
@@ -2477,7 +2463,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2505,7 +2491,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "5 months - 4 days",
@@ -2553,7 +2539,6 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
@@ -2593,7 +2578,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "7 days",
@@ -2621,7 +2606,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "14 days",
@@ -2650,7 +2635,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -2687,14 +2672,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "1",
                 "minAgeToStart": "60 years"
             },
             "indication": [
@@ -2931,7 +2914,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -3032,7 +3015,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -3147,14 +3130,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "2",
                 "minAgeToStart": "60 years"
             },
             "indication": [
@@ -3318,7 +3299,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -3360,14 +3341,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "3",
                 "minAgeToStart": "60 years"
             },
             "indication": [
@@ -3621,7 +3600,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "earliestRecAge": "60 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -3648,7 +3627,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -3770,7 +3749,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 2,
@@ -3840,14 +3819,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "3",
                 "minAgeToStart": "60 years"
             },
             "indication": [
@@ -3991,7 +3968,7 @@ final hepb = AntigenSupportingData.fromJson({
                             "earliestRecAge": "60 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -4018,7 +3995,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -4128,7 +4105,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -4250,7 +4227,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -4315,14 +4292,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "2",
                 "minAgeToStart": "60 years"
             },
             "indication": [
@@ -4486,7 +4461,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -4519,7 +4494,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "5 months - 4 days",
@@ -4567,14 +4542,12 @@ final hepb = AntigenSupportingData.fromJson({
                 "Anyone age 60 years or older who does not meet risk-based recommendations may still receive Hepatitis B vaccination."
             ],
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "3",
                 "minAgeToStart": "60 years"
             },
             "indication": [
@@ -4738,7 +4711,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "7 days",
@@ -4766,7 +4739,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "14 days",
@@ -4795,7 +4768,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -4902,7 +4875,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -4950,7 +4923,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -5004,7 +4977,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -5204,7 +5177,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -5320,7 +5293,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -5450,7 +5423,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -5595,7 +5568,7 @@ final hepb = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 5",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",

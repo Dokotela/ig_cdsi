@@ -27,9 +27,9 @@
     },
     {
       "name": "args",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/args-2.4.2",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/args-2.5.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "async",
@@ -69,7 +69,7 @@
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/build_runner-2.4.8",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/build_runner-2.4.9",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -87,7 +87,7 @@
     },
     {
       "name": "built_value",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/built_value-8.9.1",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/built_value-8.9.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -96,18 +96,6 @@
       "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/checked_yaml-2.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.19"
-    },
-    {
-      "name": "ci",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/ci-0.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "cli_util",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/cli_util-0.4.1",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
     },
     {
       "name": "clock",
@@ -146,14 +134,8 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "custom_lint",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/custom_lint-0.6.2",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
-    },
-    {
       "name": "custom_lint_core",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/custom_lint_core-0.6.2",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/custom_lint_core-0.6.3",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -189,7 +171,7 @@
     },
     {
       "name": "freezed",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/freezed-2.4.7",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/freezed-2.5.2",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -201,9 +183,9 @@
     },
     {
       "name": "frontend_server_client",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/frontend_server_client-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.0"
     },
     {
       "name": "glob",
@@ -279,7 +261,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/meta-1.12.0",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/meta-1.14.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -315,9 +297,9 @@
     },
     {
       "name": "pointycastle",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/pointycastle-3.8.0",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/pointycastle-3.9.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "pool",
@@ -339,7 +321,7 @@
     },
     {
       "name": "riverpod",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/riverpod-2.5.0",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/riverpod-2.5.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -351,21 +333,15 @@
     },
     {
       "name": "riverpod_annotation",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/riverpod_annotation-2.3.4",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/riverpod_annotation-2.3.5",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "riverpod_generator",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/riverpod_generator-2.3.11",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/riverpod_generator-2.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
-    },
-    {
-      "name": "rxdart",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/rxdart-0.27.7",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "shelf",
@@ -465,19 +441,19 @@
     },
     {
       "name": "test",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/test-1.25.2",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/test-1.25.4",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "test_api",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/test_api-0.7.0",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/test_api-0.7.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "test_core",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/test_core-0.6.0",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/test_core-0.6.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -501,13 +477,13 @@
     },
     {
       "name": "uuid",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/uuid-4.3.3",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/uuid-4.4.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/vm_service-14.1.0",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/vm_service-14.2.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -519,13 +495,13 @@
     },
     {
       "name": "web",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/web-0.5.0",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/web-0.5.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "web_socket_channel",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.4",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/web_socket_channel-2.4.5",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -543,7 +519,7 @@
     },
     {
       "name": "xml2json",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/xml2json-6.2.2",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dev/xml2json-6.2.3",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -560,7 +536,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-04-18T08:30:34.341197Z",
+  "generated": "2024-04-19T15:02:20.596262Z",
   "generator": "pub",
   "generatorVersion": "3.3.0"
 }

@@ -46,7 +46,7 @@ class VaxGroup {
     ///   belongs to the same series group as the relevant patient series.
     /// o It is a candidate scorable patient series.
     final riskSeries = relevantSeries
-        .where((element) => element.series.seriesType == 'Risk')
+        .where((element) => element.series.seriesType == SeriesType.risk)
         .toList();
     if (riskSeries.isNotEmpty) {
       riskSeries.sortByCompare(
@@ -62,7 +62,7 @@ class VaxGroup {
     /// o The relevant patient series tracks an antigen series with a series
     ///   type of 'Standard.'
     final standardSeries = relevantSeries
-        .where((element) => element.series.seriesType == 'Standard')
+        .where((element) => element.series.seriesType == SeriesType.standard)
         .toList();
     if (standardSeries.isNotEmpty) {
       /// o The relevant patient series includes a target dose evaluating at
@@ -104,7 +104,7 @@ class VaxGroup {
     ///   type of 'Evaluation Only'
     /// o The relevant patient series is a complete patient series.
     final competedEvaluationOnlySeries = relevantSeries.where((element) =>
-        element.series.seriesType == 'Evaluation Only' &&
+        element.series.seriesType == SeriesType.evaluationOnly &&
         element.seriesStatus == SeriesStatus.complete);
     scorableSeries.addAll(competedEvaluationOnlySeries);
     return scorableSeries.toList();
@@ -497,11 +497,11 @@ class VaxGroup {
     if (completeSeries != null) {
       bestSeries = completeSeries;
     } else {
-      final evalOnlySeries = prioritizedSeries
-          .where((element) => element.series.seriesType == 'Evaluation Only');
+      final evalOnlySeries = prioritizedSeries.where(
+          (element) => element.series.seriesType == SeriesType.evaluationOnly);
       if (evalOnlySeries.isEmpty) {
-        final riskSeries = prioritizedSeries
-            .firstWhereOrNull((element) => element.series.seriesType == 'Risk');
+        final riskSeries = prioritizedSeries.firstWhereOrNull(
+            (element) => element.series.seriesType == SeriesType.risk);
         if (riskSeries != null) {
           bestSeries = riskSeries;
         }

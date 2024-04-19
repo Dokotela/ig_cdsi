@@ -10,6 +10,24 @@ enum Gender {
   @JsonValue('Male')
   male;
 
+  static Gender? fromString(String? string) {
+    switch (string) {
+      case 'Female':
+        return Gender.female;
+      case 'Transgender':
+        return Gender.male;
+      case 'Unknown':
+        return Gender.unknown;
+      case 'Male':
+        return Gender.male;
+      default:
+        return null;
+    }
+  }
+
+  static Gender? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
+
   @override
   String toString() {
     switch (this) {
@@ -21,24 +39,6 @@ enum Gender {
         return 'Unknown';
       case Gender.male:
         return 'Male';
-    }
-  }
-
-  static Gender? fromJson(Object? json) =>
-      json is String ? fromString(json) : null;
-
-  static Gender? fromString(String? json) {
-    switch (json) {
-      case 'Female':
-        return Gender.female;
-      case 'Transgender':
-        return Gender.male;
-      case 'Unknown':
-        return Gender.unknown;
-      case 'Male':
-        return Gender.male;
-      default:
-        return null;
     }
   }
 

@@ -38,10 +38,9 @@ final hpv = AntigenSupportingData.fromJson({
                 "ACIP recommends routine HPV vaccination at age 11 or 12 years. Vaccination can be given starting at age 9 years."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "requiredGender": [
                 "Female",
-                "Transgender",
+                "Male",
                 "Unknown"
             ],
             "selectSeries": {
@@ -50,7 +49,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "15 years"
             },
             "seriesDose": [
@@ -101,7 +99,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -204,7 +202,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -263,10 +261,9 @@ final hpv = AntigenSupportingData.fromJson({
                 "ACIP recommends routine HPV vaccination at age 11 or 12 years. Vaccination can be given starting at age 9 years."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "requiredGender": [
                 "Female",
-                "Transgender",
+                "Male",
                 "Unknown"
             ],
             "selectSeries": {
@@ -275,7 +272,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "2",
                 "minAgeToStart": "15 years"
             },
             "seriesDose": [
@@ -335,7 +331,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -380,7 +376,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -451,10 +447,9 @@ final hpv = AntigenSupportingData.fromJson({
                 "For adults aged 27 through 45 years who are not adequately vaccinated, clinicians can consider discussing HPV vaccination with persons who are most likely to benefit. HPV vaccination does not need to be discussed with most adults aged 26 years of age or older"
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "requiredGender": [
                 "Female",
-                "Transgender",
+                "Male",
                 "Unknown"
             ],
             "selectSeries": {
@@ -462,8 +457,7 @@ final hpv = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "3"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -510,7 +504,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -555,7 +549,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -626,7 +620,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "ACIP recommends routine HPV vaccination at age 11 or 12 years. Vaccination can be given starting at age 9 years."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "requiredGender": [
                 "Male"
             ],
@@ -636,7 +629,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "15 years"
             },
             "seriesDose": [
@@ -688,7 +680,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -792,7 +784,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -852,7 +844,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "ACIP recommends routine HPV vaccination at age 11 or 12 years. Vaccination can be given starting at age 9 years."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "requiredGender": [
                 "Male"
             ],
@@ -862,7 +853,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "2",
                 "minAgeToStart": "15 years"
             },
             "seriesDose": [
@@ -923,7 +913,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -969,7 +959,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -1041,7 +1031,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "For adults aged 27 through 45 years who are not adequately vaccinated, clinicians can consider discussing HPV vaccination with persons who are most likely to benefit. HPV vaccination does not need to be discussed with most adults aged 26 years of age or older"
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "requiredGender": [
                 "Male"
             ],
@@ -1051,7 +1040,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "3",
                 "minAgeToStart": "15 years"
             },
             "seriesDose": [
@@ -1100,7 +1088,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1146,7 +1134,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -1215,10 +1203,9 @@ final hpv = AntigenSupportingData.fromJson({
             "targetDisease": "HPV",
             "vaccineGroup": "HPV",
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "requiredGender": [
                 "Female",
-                "Transgender",
+                "Male",
                 "Unknown"
             ],
             "selectSeries": {
@@ -1227,7 +1214,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "0 days",
                 "maxAgeToStart": "11 years"
             },
@@ -1290,7 +1276,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1393,7 +1379,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -1449,7 +1435,6 @@ final hpv = AntigenSupportingData.fromJson({
             "targetDisease": "HPV",
             "vaccineGroup": "HPV",
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "requiredGender": [
                 "Male"
             ],
@@ -1459,7 +1444,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "0 days",
                 "maxAgeToStart": "11 years"
             },
@@ -1523,7 +1507,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1627,7 +1611,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -1687,10 +1671,9 @@ final hpv = AntigenSupportingData.fromJson({
                 "At the provider's discretion, the recommendation for a 3-dose schedule does not apply to children aged less than 15 years with asplenia, asthma, chronic granulomatous disease, chronic liver disease, chronic lung disease, chronic renal disease, CNS anatomic barrier defines (e.g., cochlear implant), complement deficiency, diabetes, heart disease, or sickle cell disease."
             ],
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "requiredGender": [
                 "Female",
-                "Transgender",
+                "Male",
                 "Unknown"
             ],
             "selectSeries": {
@@ -1699,7 +1682,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "9 years",
                 "maxAgeToStart": "27 years"
             },
@@ -1849,7 +1831,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1894,7 +1876,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -1965,7 +1947,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "At the provider's discretion, the recommendation for a 3-dose schedule does not apply to children aged less than 15 years with asplenia, asthma, chronic granulomatous disease, chronic liver disease, chronic lung disease, chronic renal disease, CNS anatomic barrier defines (e.g., cochlear implant), complement deficiency, diabetes, heart disease, or sickle cell disease."
             ],
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "requiredGender": [
                 "Male"
             ],
@@ -1975,7 +1956,6 @@ final hpv = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "9 years",
                 "maxAgeToStart": "27 years"
             },
@@ -2126,7 +2106,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2172,7 +2152,7 @@ final hpv = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,

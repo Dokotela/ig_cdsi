@@ -77,8 +77,7 @@
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -204,7 +203,7 @@
                             "maxAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -325,7 +324,7 @@
                             "maxAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -512,7 +511,7 @@
                             "effectiveDate": "2009-08-07"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -646,8 +645,7 @@
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -773,7 +771,7 @@
                             "maxAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -894,7 +892,7 @@
                             "maxAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1068,7 +1066,7 @@
                             "maxAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -1196,7 +1194,7 @@
                             "maxAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -1317,7 +1315,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "18 years"
             },
             "indication": [
@@ -1457,7 +1454,7 @@
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1567,7 +1564,7 @@
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",

@@ -12,25 +12,6 @@ enum SeriesPriority {
   @JsonValue('E')
   e;
 
-  @override
-  String toString() {
-    switch (this) {
-      case SeriesPriority.a:
-        return 'A';
-      case SeriesPriority.b:
-        return 'B';
-      case SeriesPriority.c:
-        return 'C';
-      case SeriesPriority.d:
-        return 'D';
-      case SeriesPriority.e:
-        return 'E';
-    }
-  }
-
-  static SeriesPriority? fromJson(Object? json) =>
-      json is String ? fromString(json) : null;
-
   static SeriesPriority? fromString(String? json) {
     switch (json) {
       case 'A':
@@ -45,6 +26,25 @@ enum SeriesPriority {
         return SeriesPriority.e;
       default:
         return null;
+    }
+  }
+
+  static SeriesPriority? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
+
+  @override
+  String toString() {
+    switch (this) {
+      case SeriesPriority.a:
+        return 'A';
+      case SeriesPriority.b:
+        return 'B';
+      case SeriesPriority.c:
+        return 'C';
+      case SeriesPriority.d:
+        return 'D';
+      case SeriesPriority.e:
+        return 'E';
     }
   }
 

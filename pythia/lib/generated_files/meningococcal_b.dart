@@ -25,7 +25,6 @@ final meningococcalB = AntigenSupportingData.fromJson({
             "targetDisease": "Meningococcal B",
             "vaccineGroup": "Meningococcal B",
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
@@ -95,7 +94,7 @@ final meningococcalB = AntigenSupportingData.fromJson({
                             "earliestRecAge": "16 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -146,7 +145,6 @@ final meningococcalB = AntigenSupportingData.fromJson({
                 "A 2-dose series for MenB-FHbp (Trumenba) which is used only for healthy adolescents and young adults who are not at increased risk for meningococcal B disease."
             ],
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
@@ -216,7 +214,7 @@ final meningococcalB = AntigenSupportingData.fromJson({
                             "earliestRecAge": "16 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 months - 4 days",
@@ -346,7 +344,7 @@ final meningococcalB = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -389,7 +387,7 @@ final meningococcalB = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "1 years - 4 days",
@@ -422,7 +420,7 @@ final meningococcalB = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "2 years - 4 days",
@@ -544,7 +542,7 @@ final meningococcalB = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -604,7 +602,7 @@ final meningococcalB = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -654,7 +652,7 @@ final meningococcalB = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "1 years - 4 days",
@@ -687,7 +685,7 @@ final meningococcalB = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 5",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "2 years - 4 days",

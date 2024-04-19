@@ -16,11 +16,8 @@ enum SeriesPreference {
   @JsonValue('')
   none;
 
-  static SeriesPreference? fromJson(Object? json) =>
-      json is String ? fromString(json) : null;
-
-  static SeriesPreference? fromString(String? json) {
-    switch (json) {
+  static SeriesPreference? fromString(String? string) {
+    switch (string) {
       case '1':
         return SeriesPreference.one;
       case '2':
@@ -39,6 +36,9 @@ enum SeriesPreference {
         return null;
     }
   }
+
+  static SeriesPreference? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
 
   String toString() {
     switch (this) {

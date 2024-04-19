@@ -8,21 +8,6 @@ enum SkipContext {
   @JsonValue('Both')
   both;
 
-  @override
-  String toString() {
-    switch (this) {
-      case SkipContext.evaluation:
-        return 'Evaluation';
-      case SkipContext.forecast:
-        return 'Forecast';
-      case SkipContext.both:
-        return 'Both';
-    }
-  }
-
-  static SkipContext? fromJson(Object? json) =>
-      json is String ? fromString(json) : null;
-
   static SkipContext? fromString(String? json) {
     switch (json) {
       case 'Evaluation':
@@ -33,6 +18,21 @@ enum SkipContext {
         return SkipContext.both;
       default:
         return null;
+    }
+  }
+
+  static SkipContext? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
+
+  @override
+  String toString() {
+    switch (this) {
+      case SkipContext.evaluation:
+        return 'Evaluation';
+      case SkipContext.forecast:
+        return 'Forecast';
+      case SkipContext.both:
+        return 'Both';
     }
   }
 

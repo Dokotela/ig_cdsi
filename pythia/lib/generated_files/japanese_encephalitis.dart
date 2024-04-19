@@ -42,7 +42,6 @@ final japaneseEncephalitis = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "2 months"
             },
             "indication": [
@@ -109,7 +108,7 @@ final japaneseEncephalitis = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -145,7 +144,7 @@ final japaneseEncephalitis = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "12 months - 4 days",
@@ -198,7 +197,6 @@ final japaneseEncephalitis = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "18 years",
                 "maxAgeToStart": "65 years"
             },
@@ -266,7 +264,7 @@ final japaneseEncephalitis = AntigenSupportingData.fromJson({
                             "maxAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "7 days",
@@ -295,7 +293,7 @@ final japaneseEncephalitis = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "12 months - 4 days",

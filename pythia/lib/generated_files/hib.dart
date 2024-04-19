@@ -103,14 +103,12 @@ final hib = AntigenSupportingData.fromJson({
             "targetDisease": "Hib",
             "vaccineGroup": "Hib",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "Yes",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "7 months - 4 days"
             },
             "seriesDose": [
@@ -245,7 +243,7 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -412,7 +410,7 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -603,7 +601,7 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -725,14 +723,12 @@ final hib = AntigenSupportingData.fromJson({
             "targetDisease": "Hib",
             "vaccineGroup": "Hib",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "3",
                 "maxAgeToStart": "12 months - 4 days"
             },
             "seriesDose": [
@@ -861,7 +857,7 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1052,7 +1048,7 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1174,14 +1170,12 @@ final hib = AntigenSupportingData.fromJson({
             "targetDisease": "Hib",
             "vaccineGroup": "Hib",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "4",
                 "maxAgeToStart": "15 months - 4 days"
             },
             "seriesDose": [
@@ -1315,7 +1309,7 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1437,14 +1431,12 @@ final hib = AntigenSupportingData.fromJson({
             "targetDisease": "Hib",
             "vaccineGroup": "Hib",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "5"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -1569,14 +1561,12 @@ final hib = AntigenSupportingData.fromJson({
             "targetDisease": "Hib",
             "vaccineGroup": "Hib",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -1625,7 +1615,7 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1667,7 +1657,7 @@ final hib = AntigenSupportingData.fromJson({
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1795,7 +1785,6 @@ final hib = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "1",
                 "minAgeToStart": "12 months",
                 "maxAgeToStart": "5 years"
             },
@@ -1837,7 +1826,7 @@ final hib = AntigenSupportingData.fromJson({
                             "minAge": "12 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1969,7 +1958,7 @@ final hib = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -2121,14 +2110,12 @@ final hib = AntigenSupportingData.fromJson({
             "targetDisease": "Hib",
             "vaccineGroup": "Hib",
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "C",
-                "seriesPreference": "1",
                 "minAgeToStart": "15 months"
             },
             "indication": [
@@ -2272,7 +2259,6 @@ final hib = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "6 weeks"
             },
             "indication": [
@@ -2295,7 +2281,7 @@ final hib = AntigenSupportingData.fromJson({
                             "minAge": "6 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromRelevantObs": {
@@ -2348,7 +2334,7 @@ final hib = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2398,7 +2384,7 @@ final hib = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",

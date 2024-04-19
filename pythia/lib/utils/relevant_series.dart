@@ -13,13 +13,13 @@ List<Series> relevantSeries(
   /// Keep each series where....
   series.retainWhere((series) {
     /// If it's a Standard or Evaluation Only Series
-    if (series.seriesType == 'Standard' ||
-        series.seriesType == 'Evaluation Only') {
+    if (series.seriesType == SeriesType.standard ||
+        series.seriesType == SeriesType.evaluationOnly) {
       return true;
     }
 
     /// If it's a Risk group
-    else if (series.seriesType == 'Risk') {
+    else if (series.seriesType == SeriesType.risk) {
       /// Get the list of indications for this series
       final indicationList =
           series.indication?.map((e) => e.observationCode?.code ?? '').toList();

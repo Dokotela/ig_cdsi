@@ -8,22 +8,8 @@ enum Binary {
   @JsonValue('')
   na;
 
-  static Binary? fromJson(Object? json) =>
-      json is String? ? fromString(json) : null;
-
-  String toJson() {
-    switch (this) {
-      case Binary.yes:
-        return 'Yes';
-      case Binary.no:
-        return 'No';
-      case Binary.na:
-        return '';
-    }
-  }
-
-  static Binary? fromString(String? json) {
-    switch (json) {
+  static Binary? fromString(String? string) {
+    switch (string) {
       case 'Yes':
         return Binary.yes;
       case 'No':
@@ -34,6 +20,9 @@ enum Binary {
         return null;
     }
   }
+
+  static Binary? fromJson(Object? json) =>
+      json is String? ? fromString(json) : null;
 
   @override
   String toString() {
@@ -46,4 +35,6 @@ enum Binary {
         return '';
     }
   }
+
+  String toJson() => toString();
 }

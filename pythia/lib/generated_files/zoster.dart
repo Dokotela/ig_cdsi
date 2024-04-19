@@ -35,14 +35,12 @@ final zoster = AntigenSupportingData.fromJson({
             "targetDisease": "Zoster",
             "vaccineGroup": "Zoster",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "Yes",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -54,7 +52,7 @@ final zoster = AntigenSupportingData.fromJson({
                             "earliestRecAge": "50 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "21; 94; 121",
@@ -89,7 +87,7 @@ final zoster = AntigenSupportingData.fromJson({
                             "minAge": "50 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -135,14 +133,12 @@ final zoster = AntigenSupportingData.fromJson({
             "targetDisease": "Zoster",
             "vaccineGroup": "Zoster",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -165,7 +161,7 @@ final zoster = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -193,7 +189,7 @@ final zoster = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -232,14 +228,12 @@ final zoster = AntigenSupportingData.fromJson({
             "targetDisease": "Zoster",
             "vaccineGroup": "Zoster",
             "seriesType": "Risk",
-            "equivalentSeriesGroups": "1",
             "selectSeries": {
                 "defaultSeries": "Yes",
                 "productPath": "No",
                 "seriesGroupName": "Risk",
                 "seriesGroup": "2",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -368,7 +362,7 @@ final zoster = AntigenSupportingData.fromJson({
                             "earliestRecAge": "19 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "21; 94; 121",
@@ -397,7 +391,7 @@ final zoster = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",

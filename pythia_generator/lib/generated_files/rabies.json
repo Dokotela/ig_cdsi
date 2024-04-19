@@ -32,7 +32,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "0 days"
             },
             "indication": [
@@ -113,7 +112,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "7 days",
@@ -163,7 +162,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "14 days",
@@ -258,7 +257,7 @@
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months",
@@ -322,7 +321,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "1",
                 "seriesPriority": "B",
-                "seriesPreference": "1",
                 "minAgeToStart": "0 days"
             },
             "indication": [
@@ -412,7 +410,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "7 days",
@@ -462,7 +460,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "14 days",
@@ -557,7 +555,7 @@
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "2 years",
@@ -623,7 +621,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "1",
                 "seriesPriority": "C",
-                "seriesPreference": "1",
                 "minAgeToStart": "0 days"
             },
             "indication": [
@@ -698,7 +695,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "7 days",
@@ -748,7 +745,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "14 days",
@@ -843,7 +840,7 @@
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "21 days",

@@ -94,14 +94,12 @@ final meningococcal = AntigenSupportingData.fromJson({
             "targetDisease": "Meningococcal",
             "vaccineGroup": "Meningococcal",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "Yes",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -223,7 +221,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "maxAge": "19 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -416,7 +414,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "earliestRecAge": "4 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -500,7 +498,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -582,7 +580,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "earliestRecAge": "7 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -678,7 +676,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "earliestRecAge": "12 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "12 weeks - 4 days",
@@ -735,7 +733,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 6",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "3 years - 4 days",
@@ -814,7 +812,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 7",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "5 years - 4 days",
@@ -939,7 +937,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "maxAge": "19 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -984,7 +982,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "maxAge": "19 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1044,7 +1042,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                             "maxAge": "19 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -1099,7 +1097,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 5",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "3 years - 4 days",
@@ -1178,7 +1176,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 6",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "5 years - 4 days",
@@ -1337,7 +1335,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1397,7 +1395,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "3 years - 4 days",
@@ -1478,7 +1476,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "5 years - 4 days",
@@ -1663,7 +1661,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "3 years - 4 days",
@@ -1744,7 +1742,7 @@ final meningococcal = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "5 years - 4 days",

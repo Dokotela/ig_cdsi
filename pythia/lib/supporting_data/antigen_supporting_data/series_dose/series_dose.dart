@@ -11,7 +11,7 @@ class SeriesDose with _$SeriesDose {
   factory SeriesDose({
     DoseNumber? doseNumber,
     List<VaxAge>? age,
-    List<Interval>? interval,
+    List<Interval>? preferableInterval,
     Interval? allowableInterval,
     List<Vaccine>? preferableVaccine,
     List<Vaccine>? allowableVaccine,

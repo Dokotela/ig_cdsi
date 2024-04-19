@@ -55,8 +55,8 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
     } else if (row[0]!.toString().contains('Preferable Interval') &&
         !row[1]!.toString().contains('Previous Dose Administered? Y/N') &&
         !row[1]!.toString().contains('n/a')) {
-      if (seriesDose.interval == null) {
-        seriesDose = seriesDose.copyWith(interval: []);
+      if (seriesDose.preferableInterval == null) {
+        seriesDose = seriesDose.copyWith(preferableInterval: []);
       }
 
       /// extract the code from the text for the observation
@@ -69,9 +69,10 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
         text = row[4]!.toString().substring(0, open - 1);
       }
       seriesDose = seriesDose.copyWith(
-        interval: [
-          if (seriesDose.interval != null && seriesDose.interval!.isNotEmpty)
-            ...seriesDose.interval!,
+        preferableInterval: [
+          if (seriesDose.preferableInterval != null &&
+              seriesDose.preferableInterval!.isNotEmpty)
+            ...seriesDose.preferableInterval!,
           Interval(
             fromPrevious: row[1]!,
             fromTargetDose: int.tryParse(row[2]!.toString()),
@@ -399,11 +400,6 @@ SeriesDose createSeriesDose(int index, List<List<dynamic>> rows) {
   }
   return seriesDose;
 }
-
-dynamic _valueToEnum(dynamic value, Map map) =>
-    value.toString().trim().contains('n/a')
-        ? null
-        : map[value.toString().trim()];
 
 String? dateFromNumberString(dynamic rowValue) =>
     valueToString(rowValue) == null

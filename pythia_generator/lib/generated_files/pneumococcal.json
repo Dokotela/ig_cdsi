@@ -46,14 +46,12 @@
             "targetDisease": "Pneumococcal",
             "vaccineGroup": "Pneumococcal",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "Yes",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "12 months - 4 days"
             },
             "seriesDose": [
@@ -135,7 +133,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -249,7 +247,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -382,7 +380,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -454,7 +452,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -529,14 +527,12 @@
             "targetDisease": "Pneumococcal",
             "vaccineGroup": "Pneumococcal",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "2",
                 "maxAgeToStart": "12 months - 4 days"
             },
             "seriesDose": [
@@ -618,7 +614,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -714,7 +710,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -790,7 +786,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -862,7 +858,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -937,14 +933,12 @@
             "targetDisease": "Pneumococcal",
             "vaccineGroup": "Pneumococcal",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "3",
                 "maxAgeToStart": "24 months - 4 days"
             },
             "seriesDose": [
@@ -1022,7 +1016,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1094,7 +1088,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1169,14 +1163,12 @@
             "targetDisease": "Pneumococcal",
             "vaccineGroup": "Pneumococcal",
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "4"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -1253,7 +1245,7 @@
                             "maxAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1334,7 +1326,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "E",
-                "seriesPreference": "1",
                 "minAgeToStart": "2 years",
                 "maxAgeToStart": "6 years"
             },
@@ -1424,7 +1415,7 @@
                             "earliestRecAge": "2 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "133; 215",
@@ -1529,7 +1520,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1633,7 +1624,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -1695,7 +1686,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "D",
-                "seriesPreference": "1",
                 "minAgeToStart": "2 years",
                 "maxAgeToStart": "6 years"
             },
@@ -1849,7 +1839,7 @@
                             "earliestRecAge": "2 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "133; 215",
@@ -1954,7 +1944,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -2058,7 +2048,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -2109,7 +2099,7 @@
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -2171,7 +2161,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "C",
-                "seriesPreference": "1",
                 "minAgeToStart": "6 years",
                 "maxAgeToStart": "19 years"
             },
@@ -2260,7 +2249,7 @@
                             "earliestRecAge": "6 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "133",
@@ -2305,7 +2294,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "1",
                 "minAgeToStart": "6 years"
             },
             "indication": [
@@ -2476,7 +2464,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "133",
@@ -2554,7 +2542,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33; 109",
@@ -2650,7 +2638,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "2",
                 "minAgeToStart": "6 years",
                 "maxAgeToStart": "19 years"
             },
@@ -2705,7 +2692,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -2780,7 +2767,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33",
@@ -2880,7 +2867,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "B",
-                "seriesPreference": "2",
                 "minAgeToStart": "19 years"
             },
             "indication": [
@@ -3004,7 +2990,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -3079,7 +3065,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33",
@@ -3180,7 +3166,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "6 years"
             },
             "indication": [
@@ -3417,7 +3402,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "133",
@@ -3488,7 +3473,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -3573,7 +3558,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33; 109",
@@ -3669,7 +3654,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "2",
                 "minAgeToStart": "6 years",
                 "maxAgeToStart": "19 years"
             },
@@ -3879,7 +3863,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -3947,7 +3931,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -4039,7 +4023,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33; 109",
@@ -4139,7 +4123,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "2",
                 "minAgeToStart": "19 years"
             },
             "indication": [
@@ -4329,7 +4312,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -4397,7 +4380,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromTargetDose": 1,
@@ -4489,7 +4472,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33; 109",
@@ -4585,7 +4568,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "3",
                 "minAgeToStart": "6 years",
                 "maxAgeToStart": "19 years"
             },
@@ -4795,7 +4777,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -4823,7 +4805,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -4898,7 +4880,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33",
@@ -4998,7 +4980,6 @@
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "3",
                 "minAgeToStart": "19 years"
             },
             "indication": [
@@ -5188,7 +5169,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -5216,7 +5197,7 @@
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -5291,7 +5272,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33",
@@ -5384,14 +5365,12 @@
                 "Adults who have received PCV13 but have not completed their recommended pneumococcal vaccine series with PPSV23, one dose of PCV20 may be used if PPSV23 is not available."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "Yes",
                 "productPath": "No",
                 "seriesGroupName": "Standard 65+",
                 "seriesGroup": "3",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "65 years"
             },
             "seriesDose": [
@@ -5404,7 +5383,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33",
@@ -5456,7 +5435,7 @@
                             "minAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "133; 215; 216",
@@ -5535,7 +5514,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33; 109",
@@ -5628,14 +5607,12 @@
                 "Adults who have only received PPSV23 may receive a PCV (either PCV20 or PCV15) at least 1 year after their last PPSV23 dose. When PCV15 is used in those with history of PPSV23 receipt, it need not be followed by another dose of PPSV23."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
                 "seriesGroupName": "Standard 65+",
                 "seriesGroup": "3",
                 "seriesPriority": "A",
-                "seriesPreference": "2",
                 "minAgeToStart": "65 years"
             },
             "seriesDose": [
@@ -5648,7 +5625,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33",
@@ -5677,7 +5654,7 @@
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -5729,7 +5706,7 @@
                             "earliestRecAge": "65 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "33",

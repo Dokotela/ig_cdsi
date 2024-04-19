@@ -8,23 +8,24 @@ enum EquivalentSeriesGroups {
   @JsonValue('')
   none;
 
-  static EquivalentSeriesGroups? fromJson(Object? json) {
-    if (json is String) {
-      switch (json) {
-        case '1':
-          return EquivalentSeriesGroups.group1;
-        case '2':
-          return EquivalentSeriesGroups.group2;
-        case '':
-          return EquivalentSeriesGroups.none;
-        default:
-          return null;
-      }
+  static EquivalentSeriesGroups? fromString(String? string) {
+    switch (string) {
+      case '1':
+        return EquivalentSeriesGroups.group1;
+      case '2':
+        return EquivalentSeriesGroups.group2;
+      case '':
+        return EquivalentSeriesGroups.none;
+      default:
+        return null;
     }
-    return null;
   }
 
-  String toJson() {
+  static EquivalentSeriesGroups? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
+
+  @override
+  String toString() {
     switch (this) {
       case EquivalentSeriesGroups.group1:
         return '1';
@@ -36,4 +37,6 @@ enum EquivalentSeriesGroups {
         return '';
     }
   }
+
+  String toJson() => toString();
 }

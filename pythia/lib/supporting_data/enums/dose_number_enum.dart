@@ -22,36 +22,8 @@ enum DoseNumber {
   @JsonValue('Dose 10')
   num10;
 
-  static DoseNumber? fromJson(Object? json) =>
-      json is String ? _fromString(json) : null;
-
-  String toJson() {
-    switch (this) {
-      case DoseNumber.num1:
-        return 'Dose 1';
-      case DoseNumber.num2:
-        return 'Dose 2';
-      case DoseNumber.num3:
-        return 'Dose 3';
-      case DoseNumber.num4:
-        return 'Dose 4';
-      case DoseNumber.num5:
-        return 'Dose 5';
-      case DoseNumber.num6:
-        return 'Dose 6';
-      case DoseNumber.num7:
-        return 'Dose 7';
-      case DoseNumber.num8:
-        return 'Dose 8';
-      case DoseNumber.num9:
-        return 'Dose 9';
-      case DoseNumber.num10:
-        return 'Dose 10';
-    }
-  }
-
-  static DoseNumber? _fromString(String? json) {
-    switch (json) {
+  static DoseNumber? fromString(String? string) {
+    switch (string) {
       case 'Dose 1':
         return DoseNumber.num1;
       case 'Dose 2':
@@ -76,6 +48,9 @@ enum DoseNumber {
         return null;
     }
   }
+
+  static DoseNumber? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
 
   @override
   String toString() {
@@ -102,4 +77,6 @@ enum DoseNumber {
         return 'Dose 10';
     }
   }
+
+  String toJson() => toString();
 }

@@ -122,14 +122,12 @@ final covid19 = AntigenSupportingData.fromJson({
                 "COVID-19 vaccination does not need to be delayed following receipt of monoclonal antibodies or convalescent plasma."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "Yes",
                 "productPath": "Yes",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "18 years"
             },
             "seriesDose": [
@@ -142,7 +140,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -245,7 +243,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -362,7 +360,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -470,7 +468,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -668,7 +666,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -894,14 +892,12 @@ final covid19 = AntigenSupportingData.fromJson({
                 "COVID-19 vaccination does not need to be delayed following receipt of monoclonal antibodies or convalescent plasma."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -913,7 +909,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -981,7 +977,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -1065,7 +1061,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -1210,7 +1206,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -1363,7 +1359,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 5",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -1521,14 +1517,12 @@ final covid19 = AntigenSupportingData.fromJson({
                 "COVID-19 vaccination does not need to be delayed following receipt of monoclonal antibodies or convalescent plasma."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "3"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -1540,7 +1534,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "208; 210; 211; 212; 213; 217; 218; 219; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -1620,7 +1614,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "208; 210; 211; 212; 213; 217; 218; 219; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -1716,7 +1710,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "208; 210; 211; 212; 213; 217; 218; 219; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -1924,7 +1918,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "208; 210; 211; 212; 213; 217; 218; 219; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -2185,7 +2179,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -2443,14 +2437,12 @@ final covid19 = AntigenSupportingData.fromJson({
                 "COVID-19 vaccination does not need to be delayed following receipt of monoclonal antibodies or convalescent plasma."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "4"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -2462,7 +2454,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 208; 210; 211; 213; 217; 218; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -2505,7 +2497,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -2635,7 +2627,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -2781,7 +2773,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -2931,14 +2923,12 @@ final covid19 = AntigenSupportingData.fromJson({
                 "COVID-19 vaccination does not need to be delayed following receipt of monoclonal antibodies or convalescent plasma."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "6"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -2984,7 +2974,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -3035,7 +3025,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "8 weeks - 4 days",
@@ -3172,7 +3162,6 @@ final covid19 = AntigenSupportingData.fromJson({
                 "COVID-19 vaccination does not need to be delayed following receipt of monoclonal antibodies or convalescent plasma."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
@@ -3190,7 +3179,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -3356,7 +3345,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -3538,7 +3527,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -3710,7 +3699,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -3927,7 +3916,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -4197,7 +4186,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -4465,7 +4454,6 @@ final covid19 = AntigenSupportingData.fromJson({
                 "COVID-19 vaccination does not need to be delayed following receipt of monoclonal antibodies or convalescent plasma."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "No",
@@ -4535,7 +4523,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -4688,7 +4676,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 213; 219; 221; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -4883,7 +4871,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 213; 219; 221; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -5109,7 +5097,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -5333,7 +5321,6 @@ final covid19 = AntigenSupportingData.fromJson({
                 "COVID-19 vaccination does not need to be delayed following receipt of monoclonal antibodies or convalescent plasma."
             ],
             "seriesType": "Standard",
-            "equivalentSeriesGroups": "2",
             "selectSeries": {
                 "defaultSeries": "No",
                 "productPath": "Yes",
@@ -5351,7 +5338,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 208; 210; 211; 212; 213; 217; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 513; 514; 515; 516; 517",
@@ -5401,7 +5388,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 208; 210; 211; 212; 213; 217; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 513; 514; 515; 516; 517",
@@ -5457,7 +5444,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 208; 210; 211; 212; 213; 217; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 513; 514; 515; 516; 517",
@@ -5652,7 +5639,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 208; 210; 211; 212; 213; 217; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 513; 514; 515; 516; 517",
@@ -5878,7 +5865,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -6107,8 +6094,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -6220,7 +6206,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -6323,7 +6309,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -6439,7 +6425,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -6561,7 +6547,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -6758,7 +6744,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -6985,7 +6971,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -7216,8 +7202,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -7329,7 +7314,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 221; 227; 228",
@@ -7416,7 +7401,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "208; 210; 211; 212; 213; 217; 218; 219; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -7511,7 +7496,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "208; 210; 211; 212; 213; 217; 218; 219; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -7606,7 +7591,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "208; 210; 211; 212; 213; 217; 218; 219; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -7814,7 +7799,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "208; 210; 211; 212; 213; 217; 218; 219; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -8075,7 +8060,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -8339,8 +8324,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
-                "seriesPriority": "A",
-                "seriesPreference": "3"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -8452,7 +8436,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 208; 210; 211; 213; 217; 218; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -8495,7 +8479,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 218; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -8612,7 +8596,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -8742,7 +8726,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 4",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -8888,7 +8872,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 5",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -9051,8 +9035,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
-                "seriesPriority": "A",
-                "seriesPreference": "4"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -9198,7 +9181,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -9248,7 +9231,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -9397,8 +9380,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 "productPath": "Yes",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
-                "seriesPriority": "A",
-                "seriesPreference": "5"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -9510,7 +9492,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -9675,7 +9657,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -9855,7 +9837,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "6 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -10027,7 +10009,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -10244,7 +10226,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -10514,7 +10496,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -10788,8 +10770,7 @@ final covid19 = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
-                "seriesPriority": "A",
-                "seriesPreference": "6"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -10953,7 +10934,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -11105,7 +11086,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -11234,7 +11215,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -11430,7 +11411,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -11656,7 +11637,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -11998,7 +11979,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 208; 210; 211; 212; 213; 217; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 513; 514; 515; 516; 517",
@@ -12048,7 +12029,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "18 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 208; 210; 211; 212; 213; 217; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 513; 514; 515; 516; 517",
@@ -12103,7 +12084,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "210; 211; 212; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -12232,7 +12213,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -12428,7 +12409,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 219; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",
@@ -12653,7 +12634,7 @@ final covid19 = AntigenSupportingData.fromJson({
                             "earliestRecAge": "5 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "207; 210; 211; 212; 213; 221; 227; 228; 500; 501; 502; 503; 504; 505; 506; 507; 508; 509; 510; 511; 512; 513; 514; 515; 516; 517",

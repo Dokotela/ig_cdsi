@@ -230,7 +230,6 @@ final varicella = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "13 years"
             },
             "seriesDose": [
@@ -291,7 +290,7 @@ final varicella = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "12 weeks - 4 days",
@@ -357,7 +356,6 @@ final varicella = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "2",
                 "maxAgeToStart": "50 years"
             },
             "seriesDose": [
@@ -402,7 +400,7 @@ final varicella = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",

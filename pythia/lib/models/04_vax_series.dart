@@ -72,7 +72,7 @@ class VaxSeries {
                   targetDose,
                 )) {
                   if (dose.isAllowedInterval(
-                      seriesDose.interval, doses, targetDose)) {
+                      seriesDose.preferableInterval, doses, targetDose)) {
                     if (!dose.isLiveVirusConflict(doses)) {
                       dose.isPreferredType(seriesDose.preferableVaccine, dob);
                       if (dose.isAllowedType(
@@ -543,13 +543,14 @@ class VaxSeries {
                 : dob.change(seriesDose!.age!.first.minAge!);
 
             /// • Latest of all minimum interval dates
-            final orderedIntervals = seriesDose?.interval?.sortedByCompare(
-                (element) => element.minInt,
-                (a, b) => evaluatedDoses.last.dateGiven
-                    .changeNullableOrElse(a, evaluatedDoses.last.dateGiven)
-                    .compareTo(evaluatedDoses.last.dateGiven
-                        .changeNullableOrElse(
-                            b, evaluatedDoses.last.dateGiven)));
+            final orderedIntervals = seriesDose?.preferableInterval
+                ?.sortedByCompare(
+                    (element) => element.minInt,
+                    (a, b) => evaluatedDoses.last.dateGiven
+                        .changeNullableOrElse(a, evaluatedDoses.last.dateGiven)
+                        .compareTo(evaluatedDoses.last.dateGiven
+                            .changeNullableOrElse(
+                                b, evaluatedDoses.last.dateGiven)));
             final latestInterval = (orderedIntervals?.isEmpty ?? true)
                 ? null
                 : orderedIntervals!.first.minInt;
@@ -666,7 +667,7 @@ class VaxSeries {
       latestRecommendedAgeDate = dob.changeNullable(age?.latestRecAge);
       maximumAgeDate = dob.changeNullable(age?.maxAge);
       final List<VaxDate>? earliestRecommendedIntervalDates = seriesDose
-          .interval
+          .preferableInterval
           ?.map((e) => dob.changeNullable(e.earliestRecInt))
           .whereType<VaxDate>()
           .toList()
@@ -676,7 +677,8 @@ class VaxSeries {
                   earliestRecommendedIntervalDates.isEmpty
               ? null
               : earliestRecommendedIntervalDates.first;
-      final List<VaxDate>? latestRecommendedIntervalDates = seriesDose.interval
+      final List<VaxDate>? latestRecommendedIntervalDates = seriesDose
+          .preferableInterval
           ?.map((e) => dob.changeNullable(e.latestRecInt))
           .whereType<VaxDate>()
           .toList()

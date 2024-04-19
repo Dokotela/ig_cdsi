@@ -1,6 +1,11 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum TargetDoseStatus {
+  @JsonValue('Satisfied')
   satisfied,
+  @JsonValue('Skipped')
   skipped,
+  @JsonValue('Not Satisfied')
   notSatisfied;
 
   static TargetDoseStatus? fromString(String? value) {
@@ -16,6 +21,9 @@ enum TargetDoseStatus {
     }
   }
 
+  static TargetDoseStatus? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
+
   String toString() {
     switch (this) {
       case TargetDoseStatus.satisfied:
@@ -26,9 +34,6 @@ enum TargetDoseStatus {
         return 'Not Satisfied';
     }
   }
-
-  static TargetDoseStatus? fromJson(Object? json) =>
-      json is String ? fromString(json) : null;
 
   String toJson() => toString();
 }

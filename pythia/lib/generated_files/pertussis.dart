@@ -161,7 +161,6 @@ final pertussis = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "12 months - 4 days"
             },
             "seriesDose": [
@@ -360,7 +359,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "5 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -555,7 +554,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -750,7 +749,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "19 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -932,7 +931,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -1110,7 +1109,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -1287,7 +1286,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1450,7 +1449,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -1613,7 +1612,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "13 years + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "09;28;35;113;138;139",
@@ -1756,7 +1755,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "13 years + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "09;28;35;113;138;139",
@@ -1887,8 +1886,7 @@ final pertussis = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -2076,7 +2074,7 @@ final pertussis = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2263,7 +2261,7 @@ final pertussis = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2458,7 +2456,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "19 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -2640,7 +2638,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -2818,7 +2816,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -3061,7 +3059,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -3224,7 +3222,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -3387,7 +3385,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "13 years + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "09;28;35;113;138;139",
@@ -3530,7 +3528,7 @@ final pertussis = AntigenSupportingData.fromJson({
                             "latestRecAge": "13 years + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromMostRecent": "09;28;35;113;138;139",
@@ -3665,8 +3663,7 @@ final pertussis = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -3681,7 +3678,7 @@ final pertussis = AntigenSupportingData.fromJson({
             "seriesDose": [
                 {
                     "doseNumber": "Dose 1",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromRelevantObs": {

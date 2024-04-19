@@ -1,7 +1,27 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum SeriesType {
+  @JsonValue('Standard')
   standard,
+  @JsonValue('Risk')
   risk,
+  @JsonValue('Evaluation Only')
   evaluationOnly;
+
+  static SeriesType? fromString(String? seriesType) {
+    switch (seriesType) {
+      case 'Standard':
+        return SeriesType.standard;
+      case 'Risk':
+        return SeriesType.risk;
+      case 'Evaluation Only':
+        return SeriesType.evaluationOnly;
+      default:
+        return null;
+    }
+  }
+
+  static SeriesType? fromJson(dynamic json) => fromString(json);
 
   @override
   String toString() {
@@ -15,31 +35,5 @@ enum SeriesType {
     }
   }
 
-  static SeriesType? fromJson(dynamic json) => fromString(json);
-
-  static SeriesType? fromString(String? seriesType) {
-    switch (seriesType) {
-      case 'standard':
-        return SeriesType.standard;
-      case 'risk':
-        return SeriesType.risk;
-      case 'evaluationOnly':
-        return SeriesType.evaluationOnly;
-      default:
-        return null;
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case SeriesType.standard:
-        return 'standard';
-      case SeriesType.risk:
-        return 'risk';
-      case SeriesType.evaluationOnly:
-        return 'evaluationOnly';
-      default:
-        return '';
-    }
-  }
+  String toJson() => toString();
 }

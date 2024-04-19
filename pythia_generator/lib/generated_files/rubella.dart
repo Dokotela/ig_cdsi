@@ -215,8 +215,7 @@ final rubella = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -285,7 +284,7 @@ final rubella = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -376,7 +375,6 @@ final rubella = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "2",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "6 months",
                 "maxAgeToStart": "12 months"
             },
@@ -457,7 +455,6 @@ final rubella = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "3",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "minAgeToStart": "18 years"
             },
             "indication": [
@@ -553,7 +550,7 @@ final rubella = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -611,8 +608,7 @@ final rubella = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Increased Risk",
                 "seriesGroup": "3",
-                "seriesPriority": "A",
-                "seriesPreference": "1"
+                "seriesPriority": "A"
             },
             "indication": [
                 {
@@ -633,7 +629,7 @@ final rubella = AntigenSupportingData.fromJson({
                             "earliestRecAge": "12 months"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "N",
                             "fromRelevantObs": {
@@ -684,7 +680,7 @@ final rubella = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",

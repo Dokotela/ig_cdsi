@@ -161,7 +161,6 @@ final tetanus = AntigenSupportingData.fromJson({
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
                 "seriesPriority": "A",
-                "seriesPreference": "1",
                 "maxAgeToStart": "12 months - 4 days"
             },
             "seriesDose": [
@@ -398,7 +397,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "5 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -630,7 +629,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -862,7 +861,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "19 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -1086,7 +1085,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -1306,7 +1305,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -1532,7 +1531,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -1710,7 +1709,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -2049,7 +2048,7 @@ final tetanus = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 10",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -2207,8 +2206,7 @@ final tetanus = AntigenSupportingData.fromJson({
                 "productPath": "No",
                 "seriesGroupName": "Standard",
                 "seriesGroup": "1",
-                "seriesPriority": "A",
-                "seriesPreference": "2"
+                "seriesPriority": "A"
             },
             "seriesDose": [
                 {
@@ -2434,7 +2432,7 @@ final tetanus = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 2",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2658,7 +2656,7 @@ final tetanus = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 3",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -2890,7 +2888,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "19 months + 4 weeks"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -3114,7 +3112,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -3334,7 +3332,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",
@@ -3626,7 +3624,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "4 weeks - 4 days",
@@ -3804,7 +3802,7 @@ final tetanus = AntigenSupportingData.fromJson({
                             "latestRecAge": "7 years"
                         }
                     ],
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "6 months - 4 days",
@@ -4143,7 +4141,7 @@ final tetanus = AntigenSupportingData.fromJson({
                 },
                 {
                     "doseNumber": "Dose 10",
-                    "interval": [
+                    "preferableInterval": [
                         {
                             "fromPrevious": "Y",
                             "absMinInt": "0 days",

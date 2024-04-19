@@ -1,7 +1,28 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum ValidAgeReason {
+  @JsonValue('Age: Grace Period')
   gracePeriod,
+  @JsonValue('Age: Too Young')
   tooYoung,
+  @JsonValue('Age: Too Old')
   tooOld;
+
+  static ValidAgeReason? fromString(String? string) {
+    switch (string?.toString().toLowerCase()) {
+      case 'age: grace period':
+        return ValidAgeReason.gracePeriod;
+      case 'age: too young':
+        return ValidAgeReason.tooYoung;
+      case 'age: too old':
+        return ValidAgeReason.tooOld;
+      default:
+        return null;
+    }
+  }
+
+  static ValidAgeReason? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
 
   @override
   String toString() {
@@ -15,16 +36,5 @@ enum ValidAgeReason {
     }
   }
 
-  static ValidAgeReason? fromJson(String? json) {
-    switch (json?.toString()) {
-      case 'age: grace period':
-        return ValidAgeReason.gracePeriod;
-      case 'age: too young':
-        return ValidAgeReason.tooYoung;
-      case 'age: too old':
-        return ValidAgeReason.tooOld;
-      default:
-        return null;
-    }
-  }
+  String toJson() => toString();
 }

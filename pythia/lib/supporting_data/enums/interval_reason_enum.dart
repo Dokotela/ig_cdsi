@@ -1,7 +1,28 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum IntervalReason {
+  @JsonValue('Interval: too late')
   tooLate,
+  @JsonValue('Interval: too short')
   tooShort,
+  @JsonValue('Interval: grace period')
   gracePeriod;
+
+  static IntervalReason? fromString(String? string) {
+    switch (string?.toLowerCase()) {
+      case 'interval: too late':
+        return IntervalReason.tooLate;
+      case 'interval: too short':
+        return IntervalReason.tooShort;
+      case 'interval: grace period':
+        return IntervalReason.gracePeriod;
+      default:
+        return null;
+    }
+  }
+
+  static IntervalReason? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
 
   @override
   String toString() {
@@ -15,16 +36,5 @@ enum IntervalReason {
     }
   }
 
-  static IntervalReason? fromJson(String? json) {
-    switch (json?.toLowerCase()) {
-      case 'interval: too late':
-        return IntervalReason.tooLate;
-      case 'interval: too short':
-        return IntervalReason.tooShort;
-      case 'interval: grace period':
-        return IntervalReason.gracePeriod;
-      default:
-        return null;
-    }
-  }
+  String toJson() => toString();
 }

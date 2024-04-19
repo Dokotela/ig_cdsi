@@ -53,9 +53,9 @@ Map<String, dynamic> _$$SeriesImplToJson(_$SeriesImpl instance) {
 }
 
 const _$SeriesTypeEnumMap = {
-  SeriesType.standard: 'standard',
-  SeriesType.risk: 'risk',
-  SeriesType.evaluationOnly: 'evaluationOnly',
+  SeriesType.standard: 'Standard',
+  SeriesType.risk: 'Risk',
+  SeriesType.evaluationOnly: 'Evaluation Only',
 };
 
 const _$EquivalentSeriesGroupsEnumMap = {

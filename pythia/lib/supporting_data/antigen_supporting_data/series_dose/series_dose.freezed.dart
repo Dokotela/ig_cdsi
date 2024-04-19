@@ -22,7 +22,7 @@ SeriesDose _$SeriesDoseFromJson(Map<String, dynamic> json) {
 mixin _$SeriesDose {
   DoseNumber? get doseNumber => throw _privateConstructorUsedError;
   List<VaxAge>? get age => throw _privateConstructorUsedError;
-  List<Interval>? get interval => throw _privateConstructorUsedError;
+  List<Interval>? get preferableInterval => throw _privateConstructorUsedError;
   Interval? get allowableInterval => throw _privateConstructorUsedError;
   List<Vaccine>? get preferableVaccine => throw _privateConstructorUsedError;
   List<Vaccine>? get allowableVaccine => throw _privateConstructorUsedError;
@@ -48,7 +48,7 @@ abstract class $SeriesDoseCopyWith<$Res> {
   $Res call(
       {DoseNumber? doseNumber,
       List<VaxAge>? age,
-      List<Interval>? interval,
+      List<Interval>? preferableInterval,
       Interval? allowableInterval,
       List<Vaccine>? preferableVaccine,
       List<Vaccine>? allowableVaccine,
@@ -76,7 +76,7 @@ class _$SeriesDoseCopyWithImpl<$Res, $Val extends SeriesDose>
   $Res call({
     Object? doseNumber = freezed,
     Object? age = freezed,
-    Object? interval = freezed,
+    Object? preferableInterval = freezed,
     Object? allowableInterval = freezed,
     Object? preferableVaccine = freezed,
     Object? allowableVaccine = freezed,
@@ -94,9 +94,9 @@ class _$SeriesDoseCopyWithImpl<$Res, $Val extends SeriesDose>
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
               as List<VaxAge>?,
-      interval: freezed == interval
-          ? _value.interval
-          : interval // ignore: cast_nullable_to_non_nullable
+      preferableInterval: freezed == preferableInterval
+          ? _value.preferableInterval
+          : preferableInterval // ignore: cast_nullable_to_non_nullable
               as List<Interval>?,
       allowableInterval: freezed == allowableInterval
           ? _value.allowableInterval
@@ -166,7 +166,7 @@ abstract class _$$SeriesDoseImplCopyWith<$Res>
   $Res call(
       {DoseNumber? doseNumber,
       List<VaxAge>? age,
-      List<Interval>? interval,
+      List<Interval>? preferableInterval,
       Interval? allowableInterval,
       List<Vaccine>? preferableVaccine,
       List<Vaccine>? allowableVaccine,
@@ -194,7 +194,7 @@ class __$$SeriesDoseImplCopyWithImpl<$Res>
   $Res call({
     Object? doseNumber = freezed,
     Object? age = freezed,
-    Object? interval = freezed,
+    Object? preferableInterval = freezed,
     Object? allowableInterval = freezed,
     Object? preferableVaccine = freezed,
     Object? allowableVaccine = freezed,
@@ -212,9 +212,9 @@ class __$$SeriesDoseImplCopyWithImpl<$Res>
           ? _value._age
           : age // ignore: cast_nullable_to_non_nullable
               as List<VaxAge>?,
-      interval: freezed == interval
-          ? _value._interval
-          : interval // ignore: cast_nullable_to_non_nullable
+      preferableInterval: freezed == preferableInterval
+          ? _value._preferableInterval
+          : preferableInterval // ignore: cast_nullable_to_non_nullable
               as List<Interval>?,
       allowableInterval: freezed == allowableInterval
           ? _value.allowableInterval
@@ -254,7 +254,7 @@ class _$SeriesDoseImpl extends _SeriesDose {
   _$SeriesDoseImpl(
       {this.doseNumber,
       final List<VaxAge>? age,
-      final List<Interval>? interval,
+      final List<Interval>? preferableInterval,
       this.allowableInterval,
       final List<Vaccine>? preferableVaccine,
       final List<Vaccine>? allowableVaccine,
@@ -263,7 +263,7 @@ class _$SeriesDoseImpl extends _SeriesDose {
       this.recurringDose,
       this.seasonalRecommendation})
       : _age = age,
-        _interval = interval,
+        _preferableInterval = preferableInterval,
         _preferableVaccine = preferableVaccine,
         _allowableVaccine = allowableVaccine,
         _inadvertentVaccine = inadvertentVaccine,
@@ -285,12 +285,13 @@ class _$SeriesDoseImpl extends _SeriesDose {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<Interval>? _interval;
+  final List<Interval>? _preferableInterval;
   @override
-  List<Interval>? get interval {
-    final value = _interval;
+  List<Interval>? get preferableInterval {
+    final value = _preferableInterval;
     if (value == null) return null;
-    if (_interval is EqualUnmodifiableListView) return _interval;
+    if (_preferableInterval is EqualUnmodifiableListView)
+      return _preferableInterval;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -347,7 +348,7 @@ class _$SeriesDoseImpl extends _SeriesDose {
 
   @override
   String toString() {
-    return 'SeriesDose(doseNumber: $doseNumber, age: $age, interval: $interval, allowableInterval: $allowableInterval, preferableVaccine: $preferableVaccine, allowableVaccine: $allowableVaccine, inadvertentVaccine: $inadvertentVaccine, conditionalSkip: $conditionalSkip, recurringDose: $recurringDose, seasonalRecommendation: $seasonalRecommendation)';
+    return 'SeriesDose(doseNumber: $doseNumber, age: $age, preferableInterval: $preferableInterval, allowableInterval: $allowableInterval, preferableVaccine: $preferableVaccine, allowableVaccine: $allowableVaccine, inadvertentVaccine: $inadvertentVaccine, conditionalSkip: $conditionalSkip, recurringDose: $recurringDose, seasonalRecommendation: $seasonalRecommendation)';
   }
 
   @override
@@ -358,7 +359,8 @@ class _$SeriesDoseImpl extends _SeriesDose {
             (identical(other.doseNumber, doseNumber) ||
                 other.doseNumber == doseNumber) &&
             const DeepCollectionEquality().equals(other._age, _age) &&
-            const DeepCollectionEquality().equals(other._interval, _interval) &&
+            const DeepCollectionEquality()
+                .equals(other._preferableInterval, _preferableInterval) &&
             (identical(other.allowableInterval, allowableInterval) ||
                 other.allowableInterval == allowableInterval) &&
             const DeepCollectionEquality()
@@ -381,7 +383,7 @@ class _$SeriesDoseImpl extends _SeriesDose {
       runtimeType,
       doseNumber,
       const DeepCollectionEquality().hash(_age),
-      const DeepCollectionEquality().hash(_interval),
+      const DeepCollectionEquality().hash(_preferableInterval),
       allowableInterval,
       const DeepCollectionEquality().hash(_preferableVaccine),
       const DeepCollectionEquality().hash(_allowableVaccine),
@@ -408,7 +410,7 @@ abstract class _SeriesDose extends SeriesDose {
   factory _SeriesDose(
       {final DoseNumber? doseNumber,
       final List<VaxAge>? age,
-      final List<Interval>? interval,
+      final List<Interval>? preferableInterval,
       final Interval? allowableInterval,
       final List<Vaccine>? preferableVaccine,
       final List<Vaccine>? allowableVaccine,
@@ -426,7 +428,7 @@ abstract class _SeriesDose extends SeriesDose {
   @override
   List<VaxAge>? get age;
   @override
-  List<Interval>? get interval;
+  List<Interval>? get preferableInterval;
   @override
   Interval? get allowableInterval;
   @override
