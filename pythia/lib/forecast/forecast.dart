@@ -67,15 +67,11 @@ Bundle forecastFromParameters(Parameters parameters) {
         for (final VaxSeries element in bestSeries) {
           for (int i = 0; i < element.evaluatedDoses.length; i++) {
             if (evaluatedDoses[i].validity !=
-                element.evaluatedDoses[i].validity) {
-              // bestSeries?.forEach((element) {
-              //   for (int i = 0; i < element.evaluatedDoses.length; i++) {
-              //     print('Official: ${evaluatedDoses[i].validity}\n'
-              //         'Pythia: ${element.evaluatedDoses[i].validity}');
-              //   }
-              // });
+                    element.evaluatedDoses[i].validity &&
+                !element.evaluatedDoses[i].validity
+                    .startsWith(evaluatedDoses[i].validity)) {
               disagree = true;
-              print('${element.series.seriesName}\n'
+              throw ('${element.series.seriesName}\n'
                   'Mismatch on patient ${patient.patient.fhirId} - Dose: ${i + 1}\n'
                   'Official: ${evaluatedDoses[i].validity}\n'
                   'Pythia: ${element.evaluatedDoses[i].validity}\n');
