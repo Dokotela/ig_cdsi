@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final hpv = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData hpv = AntigenSupportingData.fromJson({
     "targetDisease": "HPV",
     "vaccineGroup": "HPV",
     "contraindications": {

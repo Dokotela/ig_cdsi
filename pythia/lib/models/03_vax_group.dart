@@ -459,51 +459,76 @@ class VaxGroup {
 
     List<VaxSeries> relevantSeries = getRelevantSeries(series);
     List<VaxSeries> scorableSeries = getScorableSeries(relevantSeries);
-    final List<VaxSeries> scoredSeries = <VaxSeries>[];
-    final tempPrioritizedSeries = getPrioritizedSeries(scorableSeries, series);
+    final VaxSeries? tempPrioritizedSeries =
+        getPrioritizedSeries(scorableSeries, series);
     if (tempPrioritizedSeries != null) {
       prioritizedSeries.add(tempPrioritizedSeries);
     } else {
-      final completeScorableSeries = scorableSeries
-          .where((element) => element.seriesStatus == SeriesStatus.complete)
-          .toList();
-      if (completeScorableSeries.length >= 2) {
-        scoredSeries.addAll(scoreCompleteSeries(completeScorableSeries));
-      } else {
-        final inProcessSeries = scorableSeries
-            .where((element) =>
-                element.evaluatedTargetDose.values
-                    .contains(TargetDoseStatus.satisfied) &&
-                element.seriesStatus == SeriesStatus.notComplete)
-            .toList();
-        if (inProcessSeries.length >= 2) {
-          scoredSeries.addAll(scoreInProcessSeries(inProcessSeries));
-        } else {
-          scorableSeries.retainWhere((element) => element.targetDose == 0);
-          scoredSeries.addAll(scorableSeries);
-        }
-      }
-      int highestScore = 0;
-      for (final series in scoredSeries) {
-        if (series.score > highestScore) {
-          highestScore = series.score;
-        }
-      }
-      prioritizedSeries.addAll(
-          scoredSeries.where((element) => element.score == highestScore));
+      classifyScorableSeries(scorableSeries);
+      determineBestSeries();
     }
-    final completeSeries = prioritizedSeries.firstWhereOrNull(
-        (element) => element.seriesStatus == SeriesStatus.complete);
-    if (completeSeries != null) {
-      bestSeries = completeSeries;
+  }
+
+  void classifyScorableSeries(List<VaxSeries> scorableSeries) {
+    final completeScorableSeries = scorableSeries
+        .where((element) => element.seriesStatus == SeriesStatus.complete)
+        .toList();
+    final List<VaxSeries> scoredSeries = [];
+    if (completeScorableSeries.length == 1) {
+      scoredSeries.add(completeScorableSeries.first);
+    } else if (completeScorableSeries.length >= 2) {
+      scoredSeries.addAll(scoreCompleteSeries(completeScorableSeries));
     } else {
-      final evalOnlySeries = prioritizedSeries.where(
-          (element) => element.series.seriesType == SeriesType.evaluationOnly);
-      if (evalOnlySeries.isEmpty) {
-        final riskSeries = prioritizedSeries.firstWhereOrNull(
-            (element) => element.series.seriesType == SeriesType.risk);
-        if (riskSeries != null) {
-          bestSeries = riskSeries;
+      final inProcessSeries = scorableSeries
+          .where((element) =>
+              element.evaluatedTargetDose.values
+                  .contains(TargetDoseStatus.satisfied) &&
+              element.seriesStatus == SeriesStatus.notComplete)
+          .toList();
+      if (inProcessSeries.length == 1) {
+        scoredSeries.add(inProcessSeries.first);
+      } else if (inProcessSeries.length >= 2) {
+        scoredSeries.addAll(scoreInProcessSeries(inProcessSeries));
+      } else {
+        scoredSeries.addAll(scoreZeroValidDosesSeries(scorableSeries
+            .where((element) => element.targetDose == 0)
+            .toList()));
+      }
+    }
+  }
+
+  void prioritizedScoredSeries(List<VaxSeries> scoredSeries) {
+    int highestScore = -99;
+    for (final series in scoredSeries) {
+      if (series.score > highestScore) {
+        highestScore = series.score;
+      }
+    }
+    scoredSeries.retainWhere((element) => element.score == highestScore);
+    if (scoredSeries.length != 1) {
+      int preference = 10;
+      for (final series in scoredSeries) {
+        if ((series.series.selectSeries?.seriesPriority?.index ?? 10) <
+            preference) {
+          preference = series.series.selectSeries!.seriesPriority!.index;
+        }
+      }
+      scoredSeries.retainWhere((element) =>
+          element.series.selectSeries!.seriesPriority!.index == preference);
+      prioritizedSeries.addAll(scoredSeries);
+    } else {
+      prioritizedSeries.add(scoredSeries.first);
+    }
+  }
+
+  void determineBestSeries() {
+    if (prioritizedSeries.length == 1) {
+      if (prioritizedSeries.first.seriesStatus == SeriesStatus.complete) {
+        bestSeries = prioritizedSeries.first;
+      } else if (prioritizedSeries.first.series.seriesType !=
+          SeriesType.evaluationOnly) {
+        if (prioritizedSeries.first.series.seriesType == SeriesType.risk) {
+          bestSeries = prioritizedSeries.first;
         }
       }
     }

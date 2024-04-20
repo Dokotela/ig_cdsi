@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final pertussis = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData pertussis = AntigenSupportingData.fromJson({
     "targetDisease": "Pertussis",
     "vaccineGroup": "DTaP/Tdap/Td",
     "contraindications": {

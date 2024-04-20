@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final diphtheria = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData diphtheria = AntigenSupportingData.fromJson({
     "targetDisease": "Diphtheria",
     "vaccineGroup": "DTaP/Tdap/Td",
     "contraindications": {

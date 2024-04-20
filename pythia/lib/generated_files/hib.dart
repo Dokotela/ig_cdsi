@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final hib = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData hib = AntigenSupportingData.fromJson({
     "targetDisease": "Hib",
     "vaccineGroup": "Hib",
     "contraindications": {

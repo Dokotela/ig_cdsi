@@ -36,6 +36,7 @@ Future<void> main() async {
         await File(fileName).create();
       }
       await File(fileName).writeAsString(newFile);
+      await File(file).delete();
     }
   }
 }

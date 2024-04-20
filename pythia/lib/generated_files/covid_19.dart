@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final covid19 = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData covid19 = AntigenSupportingData.fromJson({
     "targetDisease": "COVID-19",
     "vaccineGroup": "COVID-19",
     "contraindications": {

@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final rotavirus = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData rotavirus = AntigenSupportingData.fromJson({
     "targetDisease": "Rotavirus",
     "vaccineGroup": "Rotavirus",
     "contraindications": {

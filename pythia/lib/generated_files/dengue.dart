@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final dengue = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData dengue = AntigenSupportingData.fromJson({
     "targetDisease": "Dengue",
     "vaccineGroup": "Dengue",
     "contraindications": {

@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final japaneseEncephalitis = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData japaneseEncephalitis = AntigenSupportingData.fromJson({
     "targetDisease": "Japanese Encephalitis",
     "vaccineGroup": "Japanese Encephalitis",
     "contraindications": {

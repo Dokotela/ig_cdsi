@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final measles = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData measles = AntigenSupportingData.fromJson({
     "targetDisease": "Measles",
     "vaccineGroup": "MMR",
     "immunity": {

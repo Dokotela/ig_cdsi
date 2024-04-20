@@ -21,7 +21,8 @@ enum SeriesType {
     }
   }
 
-  static SeriesType? fromJson(dynamic json) => fromString(json);
+  static SeriesType? fromJson(Object? json) =>
+      json is String ? fromString(json) : null;
 
   @override
   String toString() {

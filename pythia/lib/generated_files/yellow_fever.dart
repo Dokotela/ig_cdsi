@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final yellowFever = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData yellowFever = AntigenSupportingData.fromJson({
     "targetDisease": "Yellow Fever",
     "vaccineGroup": "Yellow Fever",
     "contraindications": {

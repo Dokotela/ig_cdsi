@@ -98,8 +98,10 @@ Future<void> createSupportingData(
           '${fileName?.substring(index + 2)}';
     }
 
-    final dataString = "import 'package:pythia/pythia.dart';\n\n"
-        'final $diseaseName = '
+    final dataString =
+        '// ignore_for_file: prefer_single_quotes, always_specify_types\n\n'
+        "import '../pythia.dart';\n\n"
+        'final AntigenSupportingData $diseaseName = '
         'AntigenSupportingData.fromJson(${jsonEncoder.convert(antigenSupportingData)});';
     importString += "import '$fileName.dart';\n";
     listString += '$diseaseName,\n';

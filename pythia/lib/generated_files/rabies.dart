@@ -1,6 +1,8 @@
-import 'package:pythia/pythia.dart';
+// ignore_for_file: prefer_single_quotes, always_specify_types
 
-final rabies = AntigenSupportingData.fromJson({
+import '../pythia.dart';
+
+final AntigenSupportingData rabies = AntigenSupportingData.fromJson({
     "targetDisease": "Rabies",
     "vaccineGroup": "Rabies",
     "contraindications": {
