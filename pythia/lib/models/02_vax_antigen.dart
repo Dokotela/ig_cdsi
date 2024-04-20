@@ -22,7 +22,6 @@ class VaxAntigen {
     final Map<String, VaxGroup> groups = <String, VaxGroup>{};
     relevantSeries(patient, series).forEach((element) {
       final nextGroup = element.selectSeries?.seriesGroup ?? 'none';
-      print(nextGroup);
       if (!groups.keys.contains(nextGroup)) {
         groups[nextGroup] = VaxGroup(
           targetDisease: series.first.targetDisease!,

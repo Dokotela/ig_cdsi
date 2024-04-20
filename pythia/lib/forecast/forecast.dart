@@ -62,9 +62,6 @@ Bundle forecastFromParameters(Parameters parameters) {
         } else {
           bestSeries = value.prioritizedSeries;
         }
-        bestSeries.forEach((element) {
-          print(element.series.seriesName);
-        });
 
         bestSeries.forEach((element) {
           for (int i = 0; i < element.evaluatedDoses.length; i++) {
