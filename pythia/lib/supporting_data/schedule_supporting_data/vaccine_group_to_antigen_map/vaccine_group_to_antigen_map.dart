@@ -5,10 +5,10 @@ part 'vaccine_group_to_antigen_map.g.dart';
 
 @freezed
 class VaccineGroupToAntigenMap with _$VaccineGroupToAntigenMap {
-  VaccineGroupToAntigenMap._();
   factory VaccineGroupToAntigenMap({
     List<VaccineGroupMap>? vaccineGroupMap,
   }) = _VaccineGroupToAntigenMap;
+  VaccineGroupToAntigenMap._();
 
   factory VaccineGroupToAntigenMap.fromJson(Map<String, dynamic> json) =>
       _$VaccineGroupToAntigenMapFromJson(json);
@@ -16,11 +16,11 @@ class VaccineGroupToAntigenMap with _$VaccineGroupToAntigenMap {
 
 @freezed
 class VaccineGroupMap with _$VaccineGroupMap {
-  VaccineGroupMap._();
   factory VaccineGroupMap({
     String? name,
     List<String>? antigen,
   }) = _VaccineGroupMap;
+  VaccineGroupMap._();
 
   factory VaccineGroupMap.fromJson(Map<String, dynamic> json) =>
       _$VaccineGroupMapFromJson(json);

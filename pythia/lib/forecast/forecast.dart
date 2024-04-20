@@ -1,15 +1,15 @@
-import 'package:collection/collection.dart';
 import 'package:fhir/r5.dart';
-import '../generated_files/test_doses.dart';
-import 'package:pythia/pythia.dart';
 import 'package:riverpod/riverpod.dart';
+
+import '../generated_files/test_doses.dart';
+import '../pythia.dart';
 
 Bundle forecastFromMap(Map<String, dynamic> parameters) {
   if (parameters['resourceType'] == 'Parameters') {
-    final newParameters = Parameters.fromJson(parameters);
+    final Parameters newParameters = Parameters.fromJson(parameters);
     return forecastFromParameters(newParameters);
   }
-  return Bundle();
+  return const Bundle();
 }
 
 Bundle forecastFromParameters(Parameters parameters) {
@@ -26,9 +26,9 @@ Bundle forecastFromParameters(Parameters parameters) {
   final Map<String, VaxAntigen> agMap = antigenMap(patient);
 
   /// Sort into groups
-  agMap.forEach((k, v) {
+  agMap.forEach((String k, VaxAntigen v) {
     // print('k: $k');
-    v.groups.forEach((key, value) {
+    v.groups.forEach((String key, VaxGroup value) {
       // print('key: $key');
       container
           .read(seriesGroupCompleteProvider.notifier)
@@ -37,33 +37,34 @@ Bundle forecastFromParameters(Parameters parameters) {
   });
 
   /// Evaluate
-  agMap.forEach((k, v) => v.evaluate());
+  agMap.forEach((String k, VaxAntigen v) => v.evaluate());
 
   /// Forecast
-  agMap.forEach((k, v) => v.forecast());
+  agMap.forEach((String k, VaxAntigen v) => v.forecast());
 
-  final evaluatedDoses = testDoses[patient.patient.fhirId.toString()]
-      ?.map((e) => VaxDose.fromJson(e))
-      .toList();
+  final List<VaxDose>? evaluatedDoses =
+      testDoses[patient.patient.fhirId.toString()]
+          ?.map((Map<String, Object> e) => VaxDose.fromJson(e))
+          .toList();
 
   bool disagree = false;
-  agMap.forEach((k, v) {
+  agMap.forEach((String k, VaxAntigen v) {
     if (evaluatedDoses != null &&
         evaluatedDoses.isNotEmpty &&
         evaluatedDoses.first.antigens
-            .map((e) => e.toLowerCase())
+            .map((String e) => e.toLowerCase())
             .toList()
             .contains(k.toLowerCase())) {
       print(k);
-      v.groups.forEach((key, value) {
+      v.groups.forEach((String key, VaxGroup value) {
         final List<VaxSeries>? bestSeries;
         if (value.bestSeries != null) {
-          bestSeries = [value.bestSeries!];
+          bestSeries = <VaxSeries>[value.bestSeries!];
         } else {
           bestSeries = value.prioritizedSeries;
         }
 
-        bestSeries.forEach((element) {
+        for (final VaxSeries element in bestSeries) {
           for (int i = 0; i < element.evaluatedDoses.length; i++) {
             if (evaluatedDoses[i].validity !=
                 element.evaluatedDoses[i].validity) {
@@ -81,7 +82,7 @@ Bundle forecastFromParameters(Parameters parameters) {
               break;
             }
           }
-        });
+        }
       });
     }
   });

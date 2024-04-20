@@ -5,7 +5,6 @@ part 'vax_age.g.dart';
 
 @freezed
 class VaxAge with _$VaxAge {
-  VaxAge._();
   factory VaxAge({
     String? absMinAge,
     String? minAge,
@@ -15,6 +14,7 @@ class VaxAge with _$VaxAge {
     String? effectiveDate,
     String? cessationDate,
   }) = _VaxAge;
+  VaxAge._();
 
   factory VaxAge.fromJson(Map<String, dynamic> json) => _$VaxAgeFromJson(json);
 }

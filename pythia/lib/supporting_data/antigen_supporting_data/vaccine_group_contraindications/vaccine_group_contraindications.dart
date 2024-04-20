@@ -5,28 +5,27 @@ part 'vaccine_group_contraindications.g.dart';
 
 @freezed
 class VaccineGroupContraindications with _$VaccineGroupContraindications {
-  VaccineGroupContraindications._();
   factory VaccineGroupContraindications({
     List<GroupContraindication>? contraindication,
   }) = _VaccineGroupContraindications;
+
+  factory VaccineGroupContraindications.fromJson(Map<String, dynamic> json) =>
+      _$VaccineGroupContraindicationsFromJson(json);
+  VaccineGroupContraindications._();
 
   List<int>? get codesAsInt {
     if (contraindication == null) {
       return null;
     } else {
-      final codes = contraindication!.map((e) => e.codeAsInt ?? -1).toList();
-      codes.removeWhere((element) => element == -1);
+      final List<int> codes = contraindication!.map((GroupContraindication e) => e.codeAsInt ?? -1).toList();
+      codes.removeWhere((int element) => element == -1);
       return codes;
     }
   }
-
-  factory VaccineGroupContraindications.fromJson(Map<String, dynamic> json) =>
-      _$VaccineGroupContraindicationsFromJson(json);
 }
 
 @freezed
 class GroupContraindication with _$GroupContraindication {
-  GroupContraindication._();
   factory GroupContraindication({
     String? observationCode,
     String? observationTitle,
@@ -36,9 +35,10 @@ class GroupContraindication with _$GroupContraindication {
     String? endAge,
   }) = _GroupContraindication;
 
-  int? get codeAsInt =>
-      observationCode == null ? null : int.tryParse(observationCode!);
-
   factory GroupContraindication.fromJson(Map<String, dynamic> json) =>
       _$GroupContraindicationFromJson(json);
+  GroupContraindication._();
+
+  int? get codeAsInt =>
+      observationCode == null ? null : int.tryParse(observationCode!);
 }

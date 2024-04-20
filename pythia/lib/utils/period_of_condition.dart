@@ -8,7 +8,7 @@ Period periodOfCondition(Condition condition, VaxDate birthdate) {
 
   /// Check to see if it's active, if it is, then we know we don't have to look
   /// for an end time
-  final activeIndex = condition.clinicalStatus.coding?.indexWhere((element) =>
+  final int? activeIndex = condition.clinicalStatus.coding?.indexWhere((Coding element) =>
       element.system ==
           FhirUri('http://terminology.hl7.org/CodeSystem/condition-clinical') &&
       element.code.toString().toLowerCase() == 'active');
@@ -30,7 +30,7 @@ Period periodOfCondition(Condition condition, VaxDate birthdate) {
   } else if (condition.onsetString != null) {
     if (FhirDateTime(condition.onsetString).isValid) {
       startDate =
-          VaxDate.fromDateTime(FhirDateTime(condition.onsetString!).value);
+          VaxDate.fromDateTime(FhirDateTime(condition.onsetString).value);
     }
   }
 
@@ -53,7 +53,7 @@ Period periodOfCondition(Condition condition, VaxDate birthdate) {
     } else if (condition.abatementString != null) {
       if (FhirDateTime(condition.abatementString).isValid) {
         endDate = VaxDate.fromDateTime(
-            FhirDateTime(condition.abatementString!).value);
+            FhirDateTime(condition.abatementString).value);
       }
     }
   }
@@ -66,12 +66,12 @@ Period periodOfCondition(Condition condition, VaxDate birthdate) {
 
 VaxDate? dateFromAge(VaxDate birthdate, Age age) {
   /// Ensure it has a numerical value
-  final value =
+  final double? value =
       age.value != null && age.value!.isValid ? age.value!.value : null;
   if (value != null) {
     /// Ensure the units are not null
     if (age.unit != null) {
-      final unit = age.unit!.toLowerCase();
+      final String unit = age.unit!.toLowerCase();
       if (unit == 'year' || unit == 'years' || unit == 'a' || unit == 'y') {
         return birthdate.change('$value years');
       } else if (unit == 'month' || unit == 'months' || unit == 'm') {
@@ -86,13 +86,13 @@ VaxDate? dateFromAge(VaxDate birthdate, Age age) {
 
 VaxDate? dateFromQuantity(VaxDate birthdate, Quantity quantity) {
   /// Ensure it has a numerical value
-  final value = quantity.value != null && quantity.value!.isValid
+  final double? value = quantity.value != null && quantity.value!.isValid
       ? quantity.value!.value
       : null;
   if (value != null) {
     /// Ensure the units are not null
     if (quantity.unit != null) {
-      final unit = quantity.unit!.toLowerCase();
+      final String unit = quantity.unit!.toLowerCase();
       if (unit == 'year' || unit == 'years' || unit == 'a' || unit == 'y') {
         return birthdate.change('$value years');
       } else if (unit == 'month' || unit == 'months' || unit == 'm') {

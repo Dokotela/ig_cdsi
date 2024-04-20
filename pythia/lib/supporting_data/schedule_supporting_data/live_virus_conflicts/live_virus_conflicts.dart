@@ -7,10 +7,10 @@ part 'live_virus_conflicts.g.dart';
 
 @freezed
 class LiveVirusConflicts with _$LiveVirusConflicts {
-  LiveVirusConflicts._();
   factory LiveVirusConflicts({
     List<LiveVirusConflict>? liveVirusConflict,
   }) = _LiveVirusConflicts;
+  LiveVirusConflicts._();
 
   factory LiveVirusConflicts.fromJson(Map<String, dynamic> json) =>
       _$LiveVirusConflictsFromJson(json);
@@ -18,7 +18,6 @@ class LiveVirusConflicts with _$LiveVirusConflicts {
 
 @freezed
 class LiveVirusConflict with _$LiveVirusConflict {
-  LiveVirusConflict._();
   factory LiveVirusConflict({
     Vaccine? previous,
     Vaccine? current,
@@ -26,6 +25,7 @@ class LiveVirusConflict with _$LiveVirusConflict {
     String? minConflictEndInterval,
     String? conflictEndInterval,
   }) = _LiveVirusConflict;
+  LiveVirusConflict._();
 
   factory LiveVirusConflict.fromJson(Map<String, dynamic> json) =>
       _$LiveVirusConflictFromJson(json);

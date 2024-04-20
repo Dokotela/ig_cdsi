@@ -33,8 +33,6 @@ enum EquivalentSeriesGroups {
         return '2';
       case EquivalentSeriesGroups.none:
         return '';
-      default:
-        return '';
     }
   }
 

@@ -13,7 +13,6 @@ part 'schedule_supporting_data.g.dart';
 
 @freezed
 class ScheduleSupportingData with _$ScheduleSupportingData {
-  ScheduleSupportingData._();
   factory ScheduleSupportingData({
     LiveVirusConflicts? liveVirusConflicts,
     VaccineGroups? vaccineGroups,
@@ -21,6 +20,7 @@ class ScheduleSupportingData with _$ScheduleSupportingData {
     CvxToAntigenMap? cvxToAntigenMap,
     VaxObservations? observations,
   }) = _ScheduleSupportingData;
+  ScheduleSupportingData._();
 
   factory ScheduleSupportingData.fromJson(Map<String, dynamic> json) =>
       _$ScheduleSupportingDataFromJson(json);

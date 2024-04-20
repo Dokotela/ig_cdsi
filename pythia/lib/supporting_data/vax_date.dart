@@ -1,7 +1,12 @@
 import 'package:fhir/primitive_types/primitive_types.dart';
 
 class VaxDate extends DateTime {
-  VaxDate(int year, int month, int day) : super(year, month, day);
+  VaxDate(super.year, super.month, super.day);
+
+  // Now and boundary dates constructors
+  VaxDate.now() : super.now();
+  VaxDate.min() : super(1900, 1, 1);
+  VaxDate.max() : super(2999, 12, 31);
 
   VaxDate.fromDateTime(DateTime dateTime)
       : super(dateTime.year, dateTime.month, dateTime.day);
@@ -33,12 +38,15 @@ class VaxDate extends DateTime {
     if (dateList.length != 3) {
       dateList = date.split('-');
     }
-    if (dateList.length >= 1) {
-      int year = int.tryParse(date.substring(0, 4)) ?? (useMax ? 2999 : 1900);
+    if (dateList.isNotEmpty) {
+      final int year =
+          int.tryParse(date.substring(0, 4)) ?? (useMax ? 2999 : 1900);
       if (dateList.length >= 2) {
-        int month = int.tryParse(date.substring(4, 6)) ?? (useMax ? 12 : 1);
+        final int month =
+            int.tryParse(date.substring(4, 6)) ?? (useMax ? 12 : 1);
         if (dateList.length == 3) {
-          int day = int.tryParse(date.substring(6, 8)) ?? (useMax ? 31 : 1);
+          final int day =
+              int.tryParse(date.substring(6, 8)) ?? (useMax ? 31 : 1);
           return VaxDate(year, month, day);
         } else {
           return VaxDate(year, month, (useMax ? 31 : 1));
@@ -53,16 +61,11 @@ class VaxDate extends DateTime {
     }
   }
 
-  // Now and boundary dates constructors
-  VaxDate.now() : super.now();
-  VaxDate.min() : super(1900, 1, 1);
-  VaxDate.max() : super(2999, 12, 31);
-
   // Overriding toString and toJson methods
   @override
   String toString() =>
       '${year.toString().padLeft(4, '0')}/${month.toString().padLeft(2, '0')}/${day.toString().padLeft(2, '0')}';
-  String toJson() => this.toString();
+  String toJson() => toString();
 
   // Conversion to DateTime and FHIR types
   DateTime toDateTime() => DateTime(year, month, day);
@@ -70,20 +73,18 @@ class VaxDate extends DateTime {
   FhirDate toFhirDate() => FhirDate(toDateTime());
 
   // Operators for comparison
-  bool operator <(VaxDate other) =>
-      this.toDateTime().isBefore(other.toDateTime());
-  bool operator >(VaxDate other) =>
-      this.toDateTime().isAfter(other.toDateTime());
-  bool operator <=(VaxDate other) => !(this > (other));
-  bool operator >=(VaxDate other) => !(this < (other));
+  bool operator <(VaxDate other) => toDateTime().isBefore(other.toDateTime());
+  bool operator >(VaxDate other) => toDateTime().isAfter(other.toDateTime());
+  bool operator <=(VaxDate other) => !(this > other);
+  bool operator >=(VaxDate other) => !(this < other);
   bool isEqualTo(VaxDate other) =>
-      this.toDateTime().isAtSameMomentAs(other.toDateTime());
+      toDateTime().isAtSameMomentAs(other.toDateTime());
 
   // Method for modifying date with textual descriptions of changes
   VaxDate change(String description) {
     int years = 0, months = 0, days = 0;
     int sign = 1; // Positive by default
-    List<String> parts = description.split(' ');
+    final List<String> parts = description.split(' ');
 
     for (int i = 0; i < parts.length; i++) {
       if (parts[i] == '-' || parts[i] == '+') {
@@ -92,15 +93,15 @@ class VaxDate extends DateTime {
       }
 
       if (i < parts.length - 1 && int.tryParse(parts[i]) != null) {
-        int value = int.parse(parts[i]) * sign;
-        String unit = parts[i + 1].toLowerCase();
+        final int value = int.parse(parts[i]) * sign;
+        final String unit = parts[i + 1].toLowerCase();
 
         if (unit.contains('year')) {
           years += value;
         } else if (unit.contains('month')) {
           months += value;
         } else if (unit.contains('day') || unit.contains('week')) {
-          int multiplier = unit.contains('week') ? 7 : 1;
+          final int multiplier = unit.contains('week') ? 7 : 1;
           days += value * multiplier;
         }
 
@@ -129,14 +130,14 @@ class VaxDate extends DateTime {
 
   VaxDate? changeNullable(String? description, [bool? useMax]) {
     if (description == null) {
-      return useMax == true
+      return useMax ?? false
           ? VaxDate.max()
           : (useMax == false ? VaxDate.min() : null);
     }
 
     int years = 0, months = 0, days = 0;
     int sign = 1; // Positive by default
-    List<String> parts = description.split(' ');
+    final List<String> parts = description.split(' ');
 
     for (int i = 0; i < parts.length; i++) {
       if (parts[i] == '-' || parts[i] == '+') {
@@ -145,15 +146,15 @@ class VaxDate extends DateTime {
       }
 
       if (i < parts.length - 1 && int.tryParse(parts[i]) != null) {
-        int value = int.parse(parts[i]) * sign;
-        String unit = parts[i + 1].toLowerCase();
+        final int value = int.parse(parts[i]) * sign;
+        final String unit = parts[i + 1].toLowerCase();
 
         if (unit.contains('year')) {
           years += value;
         } else if (unit.contains('month')) {
           months += value;
         } else if (unit.contains('day') || unit.contains('week')) {
-          int multiplier = unit.contains('week') ? 7 : 1;
+          final int multiplier = unit.contains('week') ? 7 : 1;
           days += value * multiplier;
         }
 
@@ -174,6 +175,7 @@ class VaxDate extends DateTime {
 }
 
 // Utility functions for finding the latest and earliest dates in a list
-VaxDate latestOf(List<VaxDate> dates) => dates.reduce((a, b) => a > b ? a : b);
+VaxDate latestOf(List<VaxDate> dates) =>
+    dates.reduce((VaxDate a, VaxDate b) => a > b ? a : b);
 VaxDate earliestOf(List<VaxDate> dates) =>
-    dates.reduce((a, b) => a < b ? a : b);
+    dates.reduce((VaxDate a, VaxDate b) => a < b ? a : b);

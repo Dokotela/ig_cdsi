@@ -40,6 +40,7 @@ enum SeriesPreference {
   static SeriesPreference? fromJson(Object? json) =>
       json is String ? fromString(json) : null;
 
+  @override
   String toString() {
     switch (this) {
       case SeriesPreference.one:

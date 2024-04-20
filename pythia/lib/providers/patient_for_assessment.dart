@@ -9,9 +9,9 @@ part 'patient_for_assessment.g.dart';
 class PatientForAssessment extends _$PatientForAssessment {
   @override
   VaxPatient build(Parameters parameters) {
-    final patient = patientFromParameters(parameters);
+    final VaxPatient? patient = patientFromParameters(parameters);
     if (patient == null) {
-      throw 'Patient or birthdate not found';
+      throw Exception('Patient or birthdate not found');
     } else {
       return patient;
     }
@@ -21,14 +21,15 @@ class PatientForAssessment extends _$PatientForAssessment {
     DateTime? assessmentDate;
     Patient? patient;
     VaxDate? birthdate;
-    List<Immunization> immunizations = <Immunization>[];
-    List<Condition> conditions = <Condition>[];
-    List<AllergyIntolerance> allergies = <AllergyIntolerance>[];
-    List<VaxDose> pastDoses = <VaxDose>[];
+    final List<Immunization> immunizations = <Immunization>[];
+    final List<Condition> conditions = <Condition>[];
+    final List<AllergyIntolerance> allergies = <AllergyIntolerance>[];
+    final List<VaxDose> pastDoses = <VaxDose>[];
 
     // We loop through all the parameters to find the patient, immunizations,
     // conditions, and allergies
-    for (final parameter in parameters.parameter ?? <ParametersParameter>[]) {
+    for (final ParametersParameter parameter
+        in parameters.parameter ?? <ParametersParameter>[]) {
       // we first make sure that there's a valid assessment date
       if (parameter.name == 'assesmentDate' &&
           parameter.valueDate != null &&
@@ -55,7 +56,7 @@ class PatientForAssessment extends _$PatientForAssessment {
           // Immunization Resource, and as pastDoses as a VaxDose (which is
           // a class that transforms Immunizations into something easier to
           // work with for our purposes)
-          final immunization =
+          final Immunization immunization =
               parameter.resource!.newIdIfNoId() as Immunization;
           immunizations.add(immunization);
           pastDoses.add(VaxDose.fromImmunization(
@@ -69,7 +70,7 @@ class PatientForAssessment extends _$PatientForAssessment {
           .addError('No Patient was found in the parameters');
       return null;
     } else {
-      List<VaxObservation> observations = observationsFromConditions(
+      final List<VaxObservation> observations = observationsFromConditions(
           conditions, birthdate ?? VaxDate(1900, 01, 01));
       return VaxPatient(
         assessmentDate: assessmentDate == null

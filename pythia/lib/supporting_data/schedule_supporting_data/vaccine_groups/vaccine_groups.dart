@@ -7,10 +7,10 @@ part 'vaccine_groups.g.dart';
 
 @freezed
 class VaccineGroups with _$VaccineGroups {
-  VaccineGroups._();
   factory VaccineGroups({
     List<VaccineGroup>? vaccineGroup,
   }) = _VaccineGroups;
+  VaccineGroups._();
 
   factory VaccineGroups.fromJson(Map<String, dynamic> json) =>
       _$VaccineGroupsFromJson(json);
@@ -18,11 +18,11 @@ class VaccineGroups with _$VaccineGroups {
 
 @freezed
 class VaccineGroup with _$VaccineGroup {
-  VaccineGroup._();
   factory VaccineGroup({
     String? name,
     Binary? administerFullVaccineGroup,
   }) = _VaccineGroup;
+  VaccineGroup._();
 
   factory VaccineGroup.fromJson(Map<String, dynamic> json) =>
       _$VaccineGroupFromJson(json);

@@ -5,11 +5,11 @@ part 'exclusion.g.dart';
 
 @freezed
 class Exclusion with _$Exclusion {
-  Exclusion._();
   factory Exclusion({
     String? exclusionCode,
     String? exclusionTitle,
   }) = _Exclusion;
+  Exclusion._();
 
   factory Exclusion.fromJson(Map<String, dynamic> json) =>
       _$ExclusionFromJson(json);

@@ -7,7 +7,6 @@ part 'series_dose.g.dart';
 
 @freezed
 class SeriesDose with _$SeriesDose {
-  SeriesDose._();
   factory SeriesDose({
     DoseNumber? doseNumber,
     List<VaxAge>? age,
@@ -20,13 +19,14 @@ class SeriesDose with _$SeriesDose {
     Binary? recurringDose,
     SeasonalRecommendation? seasonalRecommendation,
   }) = _SeriesDose;
+  SeriesDose._();
 
   factory SeriesDose.fromJson(Map<String, dynamic> json) =>
       _$SeriesDoseFromJson(json);
 
   VaxDate maxAgeDate(VaxDate date) {
-    List<String>? maxAgeList =
-        age?.map((e) => e.maxAge).whereType<String>().toList();
+    final List<String>? maxAgeList =
+        age?.map((VaxAge e) => e.maxAge).whereType<String>().toList();
     if (maxAgeList == null || maxAgeList.isEmpty) {
       return VaxDate.max();
     } else {
@@ -39,7 +39,7 @@ class SeriesDose with _$SeriesDose {
   }
 
   int? inadvertentVaccineIndex(int cvx) =>
-      inadvertentVaccine?.indexWhere((element) =>
+      inadvertentVaccine?.indexWhere((Vaccine element) =>
           element.cvx != null &&
           int.tryParse(element.cvx!) != null &&
           int.parse(element.cvx!) == cvx);

@@ -7,7 +7,6 @@ part 'vax_condition.g.dart';
 
 @freezed
 class VaxCondition with _$VaxCondition {
-  VaxCondition._();
   factory VaxCondition({
     String? conditionID,
     String? conditionType,
@@ -22,6 +21,7 @@ class VaxCondition with _$VaxCondition {
     String? vaccineTypes,
     String? seriesGroups,
   }) = _VaxCondition;
+  VaxCondition._();
 
   factory VaxCondition.fromJson(Map<String, dynamic> json) =>
       _$VaxConditionFromJson(json);

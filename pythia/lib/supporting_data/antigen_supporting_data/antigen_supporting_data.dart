@@ -27,7 +27,6 @@ part 'antigen_supporting_data.g.dart';
 
 @freezed
 class AntigenSupportingData with _$AntigenSupportingData {
-  AntigenSupportingData._();
   factory AntigenSupportingData({
     String? targetDisease,
     String? vaccineGroup,
@@ -35,6 +34,7 @@ class AntigenSupportingData with _$AntigenSupportingData {
     Contraindications? contraindications,
     List<Series>? series,
   }) = _AntigenSupportingData;
+  AntigenSupportingData._();
 
   factory AntigenSupportingData.fromJson(Map<String, dynamic> json) =>
       _$AntigenSupportingDataFromJson(json);

@@ -8,11 +8,11 @@ part 'immunity.g.dart';
 
 @freezed
 class Immunity with _$Immunity {
-  Immunity._();
   factory Immunity({
     List<ClinicalHistory>? clinicalHistory,
     DateOfBirth? dateOfBirth,
   }) = _Immunity;
+  Immunity._();
 
   factory Immunity.fromJson(Map<String, dynamic> json) =>
       _$ImmunityFromJson(json);

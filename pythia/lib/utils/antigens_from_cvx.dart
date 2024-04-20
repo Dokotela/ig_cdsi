@@ -3,13 +3,13 @@ import '../pythia.dart';
 /// Adds a single immunization
 List<String> antigensFromCvx(String? cvx) {
   if (cvx == null) {
-    return [];
+    return <String>[];
   } else {
-    final diseases = <String>[];
+    final List<String> diseases = <String>[];
 
     /// Make sure there's a matching CVX code in the CvxMap
-    final cvxIndex = scheduleSupportingData.cvxToAntigenMap?.cvxMap?.indexWhere(
-        (element) =>
+    final int? cvxIndex = scheduleSupportingData.cvxToAntigenMap?.cvxMap?.indexWhere(
+        (CvxMap element) =>
             element.cvx != null &&
             int.tryParse(element.cvx!) == int.tryParse(cvx) &&
             int.tryParse(cvx) != null);
@@ -17,17 +17,17 @@ List<String> antigensFromCvx(String? cvx) {
     /// If we find an index for that code in the supporting data
     if (cvxIndex != null && cvxIndex != -1) {
       /// Select the appropriate entry
-      final cvxEntry =
+      final CvxMap cvxEntry =
           scheduleSupportingData.cvxToAntigenMap!.cvxMap![cvxIndex];
 
       /// As lon as we find some associations
       if (cvxEntry.association != null && cvxEntry.association!.isNotEmpty) {
         diseases.addAll(
-            cvxEntry.association?.map((e) => e.antigen ?? '').toList() ?? []);
+            cvxEntry.association?.map((Association e) => e.antigen ?? '').toList() ?? <String>[]);
       }
     }
 
-    diseases.retainWhere((element) => element != '');
+    diseases.retainWhere((String element) => element != '');
     return diseases;
   }
 }

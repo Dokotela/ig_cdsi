@@ -24,6 +24,7 @@ enum TargetDoseStatus {
   static TargetDoseStatus? fromJson(Object? json) =>
       json is String ? fromString(json) : null;
 
+  @override
   String toString() {
     switch (this) {
       case TargetDoseStatus.satisfied:

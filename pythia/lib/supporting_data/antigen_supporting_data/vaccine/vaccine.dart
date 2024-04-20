@@ -5,7 +5,6 @@ part 'vaccine.g.dart';
 
 @freezed
 class Vaccine with _$Vaccine {
-  Vaccine._();
   factory Vaccine({
     String? vaccineType,
     String? cvx,
@@ -17,8 +16,9 @@ class Vaccine with _$Vaccine {
     String? forecastVaccineType,
   }) = _Vaccine;
 
-  int? get cvxAsInt => cvx == null ? null : int.tryParse(cvx!);
-
   factory Vaccine.fromJson(Map<String, dynamic> json) =>
       _$VaccineFromJson(json);
+  Vaccine._();
+
+  int? get cvxAsInt => cvx == null ? null : int.tryParse(cvx!);
 }

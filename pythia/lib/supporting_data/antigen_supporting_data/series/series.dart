@@ -7,7 +7,6 @@ part 'series.g.dart';
 
 @freezed
 class Series with _$Series {
-  Series._();
   factory Series({
     String? seriesName,
     String? targetDisease,
@@ -20,6 +19,7 @@ class Series with _$Series {
     List<Indication>? indication,
     List<SeriesDose>? seriesDose,
   }) = _Series;
+  Series._();
 
   factory Series.fromJson(Map<String, dynamic> json) => _$SeriesFromJson(json);
 

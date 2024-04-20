@@ -7,7 +7,6 @@ part 'interval.g.dart';
 
 @freezed
 class Interval with _$Interval {
-  Interval._();
   factory Interval({
     String? fromPrevious,
     int? fromTargetDose,
@@ -22,19 +21,20 @@ class Interval with _$Interval {
     String? cessationDate,
   }) = _Interval;
 
+  factory Interval.fromJson(Map<String, dynamic> json) =>
+      _$IntervalFromJson(json);
+  Interval._();
+
   List<int>? get mostRecent {
     if (fromMostRecent == null) {
       return null;
     } else {
-      final codes = fromMostRecent!
+      final List<int> codes = fromMostRecent!
           .split(';')
-          .map((e) => int.tryParse(e.trim()) ?? -1)
+          .map((String e) => int.tryParse(e.trim()) ?? -1)
           .toList();
-      codes.removeWhere((element) => element == -1);
+      codes.removeWhere((int element) => element == -1);
       return codes;
     }
   }
-
-  factory Interval.fromJson(Map<String, dynamic> json) =>
-      _$IntervalFromJson(json);
 }
